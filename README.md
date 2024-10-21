@@ -1,7 +1,7 @@
-# Titlu proiect
+# Deal or No Deal
 
 ## Descriere proiect
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Un joc bazat pe reality show-ul american Deal or No Deal (https://en.wikipedia.org/wiki/Deal_or_No_Deal_(American_game_show)). Jocul porneste cu 26 de valize ce contin diferite sume de bani de la 0.1$ pana la 1000000$. Jucatorul isi alege la inceput o valiza pe care nu o mai poate elimina ulterior. Apoi pe parcursul jocului acesta trebuie sa elimine un numar specific de valize. Dupa ce elimina acel numar de valize, va primi o oferta de la bancher. Jucatorul poate accepta oferta si paraseste jocul sau poate continua pana la valiza pe care a ales-o inital.
 
 ## Milestone #0
 
