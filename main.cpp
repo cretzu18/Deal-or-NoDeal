@@ -94,11 +94,11 @@ public:
 class Player {
     std::string username;
     Case* selectedCase;
-    bool acceptOffer;
+    //bool acceptOffer;
 
 public:
     explicit Player(std::string  name = "Player")
-        : username(std::move(name)), selectedCase(nullptr), acceptOffer(false) {}
+        : username(std::move(name)), selectedCase(nullptr) /*, acceptOffer(false)*/ {}
 
     Player(const Player &other) = default;
     Player &operator=(const Player &other) = default;
@@ -243,7 +243,7 @@ class Game {
 
 public:
     Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Titlebar | sf::Style::Close)
-           , playButton("Play", window.getSize().x * 0.1, window.getSize().y * 0.9, 300, 50)
+           , playButton("Play", static_cast<float>(window.getSize().x * 0.1), static_cast<float>(window.getSize().y * 0.9), 300, 50)
            , round (0)
            , gameState (MENU)
     {
@@ -275,7 +275,7 @@ private:
 
         for (size_t i = 0; i < amounts.size(); ++i) {
             Case c(amounts[i]);
-            c.setPosition(100 + (i%5) * 150, 100 + (i/5) * 120);
+            c.setPosition(static_cast<float>(100 + (i%5) * 150), static_cast<float>(100 + static_cast<int>(i/5) * 120));
             cases.push_back(c);
         }
     }
