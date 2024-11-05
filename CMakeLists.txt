@@ -54,10 +54,28 @@ endif()
 
 ###############################################################################
 
-# NOTE: update executable name in .github/workflows/cmake.yml:25 when changing name here
-add_executable(${PROJECT_NAME}
+set(SOURCES
         main.cpp
+        sources/Game.h
+        sources/Game.cpp
+        sources/Player.h
+        sources/Player.cpp
+        sources/Button.h
+        sources/Button.cpp
+        sources/Case.h
+        sources/Case.cpp
+        sources/Banker.h
+        sources/Banker.cpp
 )
+
+# NOTE: update executable name in .github/workflows/cmake.yml:25 when changing name here
+if(MSVC)
+    # NOTE: update executable name in .github/workflows/cmake.yml:25 when changing name here
+    add_executable(${PROJECT_NAME} WIN32 ${SOURCES})
+else()
+    # NOTE: update executable name in .github/workflows/cmake.yml:25 when changing name here
+    add_executable(${PROJECT_NAME} ${SOURCES})
+endif()
 
 include(cmake/CompilerFlags.cmake)
 
