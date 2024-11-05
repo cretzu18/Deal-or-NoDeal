@@ -21,7 +21,7 @@ public:
     explicit Case(const double money = 0): amount(money), selected(false) {
         //caseNumber = ++totalCases;
 
-        if (!texture.loadFromFile("../images/case.png")) {
+        if (!texture.loadFromFile("../resources/case.png")) {
             std::cout << "Failed to load case" << std::endl;
             exit(1);
         }
@@ -161,7 +161,7 @@ class Button {
 
 public:
     explicit Button(const std::string& text = "", const float posX = 0, const float posY = 0, const float width = 100, const float height = 100) {
-        if (!font.loadFromFile("../font/OakleyRidge.ttf")) {
+        if (!font.loadFromFile("../resources/OakleyRidge.ttf")) {
             std::cerr << "Failed to load font." << std::endl;
             exit(1);
         }
@@ -281,7 +281,7 @@ private:
     }
 
     void backgroundCases() {
-        if (!backgroundTexture.loadFromFile("../images/background2.png")) {
+        if (!backgroundTexture.loadFromFile("../resources/background2.png")) {
             std::cerr << "Failed to load background.png." << std::endl;
             exit(1);
         }
@@ -289,7 +289,7 @@ private:
     }
 
     void backgroundMenu() {
-        if (!backgroundTexture.loadFromFile("../images/background.png")) {
+        if (!backgroundTexture.loadFromFile("../resources/background.png")) {
             std::cerr << "Failed to load background.png." << std::endl;
             exit(1);
         }

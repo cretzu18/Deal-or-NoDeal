@@ -10,25 +10,32 @@ project(oop)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-set(SFML_DIR "./sfml/lib/cmake/SFML")
 
 include(cmake/Options.cmake)
 
 ###############################################################################
 
 # external dependencies with FetchContent
-#include(FetchContent)
+include(FetchContent)
+
+set(FETCHCONTENT_QUIET OFF)
+set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
+
+set(WARNINGS_AS_ERRORS OFF)
 #
 ## NOTE: Also update env vars used for caching in
 ##         - .github/actions/configure-cmake/action.yml
 ##         - .github/workflows/cmake.yml
-#FetchContent_Declare(
-#         SFML
-#         GIT_REPOSITORY https://github.com/SFML/SFML.git
-#         GIT_TAG        2.6.0
-#)
+FetchContent_Declare(
+         SFML
+         GIT_REPOSITORY https://github.com/SFML/SFML.git
+         GIT_TAG        2.6.1
+         GIT_SHALLOW ON
+         EXCLUDE_FROM_ALL
+         SYSTEM
+)
 #
-#FetchContent_MakeAvailable(SFML)
+FetchContent_MakeAvailable(SFML)
 
 #set_custom_stdlib_and_sanitizers(sfml-system false)
 #set_custom_stdlib_and_sanitizers(sfml-window false)
@@ -37,12 +44,12 @@ include(cmake/Options.cmake)
 ###############################################################################
 
 # external dependencies with find_package
-find_package(SFML 2.6.1 COMPONENTS graphics window system REQUIRED)
+#(SFML 2.6.1 COMPONENTS graphics window system REQUIRED)
 
-#find_package(Threads REQUIRED)
-#if(NOT APPLE AND UNIX)
-#    find_package(X11)
-#endif()
+find_package(Threads REQUIRED)
+if(NOT APPLE AND UNIX)
+    find_package(X11)
+endif()
 
 ###############################################################################
 
@@ -57,9 +64,19 @@ include(cmake/CompilerFlags.cmake)
 
 # use SYSTEM so cppcheck and clang-tidy do not report warnings from these directories
 
-#target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE ${SFML_SOURCE_DIR}/include)
-#target_link_directories(${PROJECT_NAME} PRIVATE ${SFML_BINARY_DIR}/lib)
-target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
+target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE ${SFML_SOURCE_DIR}/include)
+target_link_directories(${PROJECT_NAME} PRIVATE ${SFML_BINARY_DIR}/lib)
+target_link_libraries(${PROJECT_NAME} PRIVATE sfml-graphics sfml-window sfml-system sfml-audio Threads::Threads)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
+
+if(WIN32)
+    add_custom_command(
+            TARGET ${PROJECT_NAME}
+            COMMENT "Copy OpenAL DLL"
+            PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${SFML_SOURCE_DIR}/extlibs/bin/$<IF:$<EQUAL:${CMAKE_SIZEOF_VOID_P},8>,x64,x86>/openal32.dll $<TARGET_FILE_DIR:${PROJECT_NAME}>
+            VERBATIM)
+endif()
+
 
 ###############################################################################
 
@@ -70,7 +87,7 @@ if(APPLE)
     install(FILES launcher.command DESTINATION ${DESTINATION_DIR})
 endif()
 
-# include(cmake/CopyHelper.cmake)
+include(cmake/CopyHelper.cmake)
 # copy_files(FILES tastatura.txt)
 # copy_files(FILES tastatura.txt config.json DIRECTORY images sounds)
-# copy_files(DIRECTORY images sounds)
+copy_files(DIRECTORY resources)
