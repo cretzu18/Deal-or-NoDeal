@@ -10,41 +10,45 @@ project(oop)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(SFML_DIR "./sfml/lib/cmake/SFML")
 
 include(cmake/Options.cmake)
 
 ###############################################################################
 
 # external dependencies with FetchContent
-# include(FetchContent)
+#include(FetchContent)
 #
-# set(FETCHCONTENT_QUIET OFF)
-# set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
+## NOTE: Also update env vars used for caching in
+##         - .github/actions/configure-cmake/action.yml
+##         - .github/workflows/cmake.yml
+#FetchContent_Declare(
+#         SFML
+#         GIT_REPOSITORY https://github.com/SFML/SFML.git
+#         GIT_TAG        2.6.0
+#)
 #
-# NOTE: Also update env vars used for caching in
-#         - .github/actions/configure-cmake/action.yml
-#         - .github/workflows/cmake.yml
-# FetchContent_Declare(
-#         SomeLib
-#         GIT_REPOSITORY https://github.com/<SomeUser>/<SomeLib>.git
-#         GIT_TAG        <some_git_hash> # <which tag/branch @ <some_date>>
-#         GIT_SHALLOW    1  # works only with branches or tags, not with arbitrary commit hashes
-# )
-#
-# FetchContent_MakeAvailable(SomeLib)
+#FetchContent_MakeAvailable(SFML)
+
+#set_custom_stdlib_and_sanitizers(sfml-system false)
+#set_custom_stdlib_and_sanitizers(sfml-window false)
+#set_custom_stdlib_and_sanitizers(sfml-graphics false)
 
 ###############################################################################
 
 # external dependencies with find_package
+find_package(SFML 2.6.1 COMPONENTS graphics window system REQUIRED)
 
-# find_package(Threads REQUIRED)
+#find_package(Threads REQUIRED)
+#if(NOT APPLE AND UNIX)
+#    find_package(X11)
+#endif()
 
 ###############################################################################
 
 # NOTE: update executable name in .github/workflows/cmake.yml:25 when changing name here
 add_executable(${PROJECT_NAME}
     main.cpp
-    generated/src/Helper.cpp
 )
 
 include(cmake/CompilerFlags.cmake)
@@ -52,11 +56,10 @@ include(cmake/CompilerFlags.cmake)
 ###############################################################################
 
 # use SYSTEM so cppcheck and clang-tidy do not report warnings from these directories
-target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE generated/include)
-# target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE ext/<SomeHppLib>/include)
-# target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE ${<SomeLib>_SOURCE_DIR}/include)
-# target_link_directories(${PROJECT_NAME} PRIVATE ${<SomeLib>_BINARY_DIR}/lib)
-# target_link_libraries(${PROJECT_NAME} <SomeLib>)
+
+#target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE ${SFML_SOURCE_DIR}/include)
+#target_link_directories(${PROJECT_NAME} PRIVATE ${SFML_BINARY_DIR}/lib)
+target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
 
 ###############################################################################
 
@@ -67,7 +70,7 @@ if(APPLE)
     install(FILES launcher.command DESTINATION ${DESTINATION_DIR})
 endif()
 
-include(cmake/CopyHelper.cmake)
-copy_files(FILES tastatura.txt)
+# include(cmake/CopyHelper.cmake)
+# copy_files(FILES tastatura.txt)
 # copy_files(FILES tastatura.txt config.json DIRECTORY images sounds)
 # copy_files(DIRECTORY images sounds)
