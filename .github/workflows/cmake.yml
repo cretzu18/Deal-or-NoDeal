@@ -183,11 +183,11 @@ jobs:
       - name: Install packages
         uses: ./.github/actions/install-packages
 
-      - name: Install OpenGL
+      - name: Install Dependencies
         if: matrix.os == 'ubuntu-22.04'
         run: |
           sudo apt-get update
-          sudo apt-get install libgl1-mesa-dev
+          sudo apt-get install libgl1-mesa-dev xorg-dev libudev-dev
 
       - name: Configure CMake
         uses: ./.github/actions/configure-cmake
