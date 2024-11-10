@@ -199,7 +199,8 @@ jobs:
             libvorbisenc2 \
             libvorbisfile3 \
             libopenal-dev \
-            libpthread-stubs0-dev
+            libpthread-stubs0-dev \
+            libxcursor-dev
 
       - name: Configure CMake
         uses: ./.github/actions/configure-cmake
