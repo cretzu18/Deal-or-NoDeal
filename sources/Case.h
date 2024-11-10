@@ -12,7 +12,7 @@ private:
     sf::Texture texture;
 
 public:
-    explicit Case(const double money = 0);
+    explicit Case(double money = 0);
     Case(const Case &other);
     Case& operator=(const Case &other);
     ~Case() = default;
@@ -21,7 +21,7 @@ public:
     double getAmount() const;
     void selectCase();
     void draw(sf::RenderWindow &window) const;
-    void setPosition(const float x, const float y);
+    void setPosition(float x, float y);
     bool isMouseOver(const sf::RenderWindow& window) const;
     bool isClicked(const sf::RenderWindow& window) const;
 };

@@ -8,13 +8,11 @@ Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Ti
     window.setFramerateLimit(60);
 }
 
-
-
 void Game::play() {
     const std::vector<double> amounts = { 0.1, 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750,
                                         1000, 5000, 10000, 25000, 50000, 75000, 100000, 200000,
                                         300000, 400000, 500000, 750000, 1000000};
-    createCases(amounts);
+    //createCases(amounts);
     while (window.isOpen()) {
         if (round == 1)
             createCases(amounts);
