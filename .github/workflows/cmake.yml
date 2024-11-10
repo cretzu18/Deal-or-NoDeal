@@ -187,7 +187,19 @@ jobs:
         if: matrix.os == 'ubuntu-22.04'
         run: |
           sudo apt-get update
-          sudo apt-get install libgl1-mesa-dev xorg-dev libudev-dev libopenal-dev libvorbis-dev libogg-dev libfreetype6-dev libjpeg-dev
+          sudo apt-get install -y \
+            libfreetype6-dev \
+            libx11-dev \
+            libxrandr-dev \
+            libudev-dev \
+            libgl1-mesa-dev \
+            libflac-dev \
+            libogg-dev \
+            libvorbis-dev \
+            libvorbisenc2 \
+            libvorbisfile3 \
+            libopenal-dev \
+            libpthread-stubs0-dev
 
       - name: Configure CMake
         uses: ./.github/actions/configure-cmake
