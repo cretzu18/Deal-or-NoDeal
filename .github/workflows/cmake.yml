@@ -217,14 +217,6 @@ jobs:
         run: |
           bash ./scripts/cmake.sh install -i artifacts -t ${{ env.BUILD_TYPE }}
 
-      - name: Install SFML Libraries
-        run: |
-          cmake --install build/_deps/sfml-build --prefix "${{ github.workspace }}/sfml_install"
-
-      - name: Set LD_LIBRARY_PATH
-        run: |
-          echo "${{ github.workspace }}/sfml_install/lib" >> $GITHUB_ENV
-
       - name: Run the application
         run: |
           export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${{ github.workspace }}/sfml_install/lib
