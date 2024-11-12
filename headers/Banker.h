@@ -18,7 +18,8 @@ public:
     ~Banker() = default;
 
     friend std::ostream& operator<<(std::ostream &os, const Banker &b);
-    void offer(const std::vector<Case>& remainingCases);
+    // momentan nu folosesc functia offer
+    // void offer(const std::vector<Case>& remainingCases);
 };
 
 #endif // BANKER_HPP

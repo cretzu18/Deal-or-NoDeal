@@ -82,7 +82,7 @@ void Game::render() {
         playButton.draw(window);
     }
     else if (gameState == CASES) {
-        for (Case& c : cases) {
+        for (const Case& c : cases) {
             c.draw(window);
         }
     }

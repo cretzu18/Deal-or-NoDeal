@@ -22,10 +22,7 @@ Button::Button(const std::string& text, const float posX, const float posY, cons
                            posY + height / 2 - textBounds.height / 2);
 }
 
-Button::Button(const Button& other) {
-    button = other.button;
-    buttonText = other.buttonText;
-    font = other.font;
+Button::Button(const Button& other) : button(other.button), buttonText(other.buttonText), font(other.font) {
     buttonText.setFont(font);
 }
 

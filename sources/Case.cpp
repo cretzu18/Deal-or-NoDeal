@@ -6,15 +6,11 @@ Case::Case(const double money) : amount(money), selected(false) {
         exit(1);
     }
     sprite.setTexture(texture);
-    sprite.scale(0.3, 0.3);
+    sprite.scale(static_cast<float>(0.3), static_cast<float>(0.3));
 }
 
-Case::Case(const Case &other) {
-    amount = other.amount;
-    selected = other.selected;
-    sprite = other.sprite;
-    texture = other.texture;
-    sprite.setTexture(texture);
+Case::Case(const Case &other): amount(other.amount), selected(other.selected), sprite(other.sprite), texture(other.texture) {
+    sprite.setTexture(other.texture);
 }
 
 Case& Case::operator=(const Case &other) {

@@ -7,6 +7,6 @@ std::ostream& operator<<(std::ostream &os, const Player &p) {
     return os;
 }
 
-void Player::selectCase(Case* selectedCase) {
-    this->selectedCase = selectedCase;
+void Player::selectCase(Case* selected) {
+    selectedCase = selected;
 }
