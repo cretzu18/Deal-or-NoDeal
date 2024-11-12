@@ -1,4 +1,4 @@
-#include "Case.h"
+#include "../headers/Case.h"
 
 Case::Case(const double money) : amount(money), selected(false) {
     if (!texture.loadFromFile("../resources/case.png")) {

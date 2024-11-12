@@ -1,4 +1,4 @@
-#include "Game.h"
+#include "../headers/Game.h"
 
 Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Titlebar | sf::Style::Close)
            , playButton("Play", static_cast<float>(window.getSize().x * 0.1), static_cast<float>(window.getSize().y * 0.9), 300, 50)

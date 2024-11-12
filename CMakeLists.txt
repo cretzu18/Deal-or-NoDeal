@@ -55,15 +55,15 @@ endif()
 
 set(SOURCES
         main.cpp
-        sources/Game.h
+        headers/Game.h
         sources/Game.cpp
-        sources/Player.h
+        headers/Player.h
         sources/Player.cpp
-        sources/Button.h
+        headers/Button.h
         sources/Button.cpp
-        sources/Case.h
+        headers/Case.h
         sources/Case.cpp
-        sources/Banker.h
+        headers/Banker.h
         sources/Banker.cpp
 )
 

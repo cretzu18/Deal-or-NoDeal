@@ -1,4 +1,4 @@
-#include "Button.h"
+#include "../headers/Button.h"
 
 Button::Button(const std::string& text, const float posX, const float posY, const float width, const float height) {
     if (!font.loadFromFile("../resources/OakleyRidge.ttf")) {

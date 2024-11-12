@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "../headers/Player.h"
 
 Player::Player(std::string name) : username(std::move(name)), selectedCase(nullptr) {}
 

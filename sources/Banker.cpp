@@ -1,4 +1,4 @@
-#include "Banker.h"
+#include "../headers/Banker.h"
 
 Banker::Banker() : currentOffer(0) {}
 
