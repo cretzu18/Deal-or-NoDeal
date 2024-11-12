@@ -18,7 +18,6 @@ public:
     ~Case() = default;
 
     friend std::ostream &operator<<(std::ostream &os, const Case &c);
-    double getAmount() const;
     void selectCase();
     void draw(sf::RenderWindow &window) const;
     void setPosition(float x, float y);

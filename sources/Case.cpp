@@ -29,10 +29,6 @@ std::ostream &operator<<(std::ostream &os, const Case &c) {
     return os;
 }
 
-double Case::getAmount() const {
-    return amount;
-}
-
 void Case::selectCase() {
     selected = true;
     sprite.setColor(sf::Color::Red);
