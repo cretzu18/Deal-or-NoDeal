@@ -10,7 +10,7 @@ Case::Case(const double money) : amount(money), selected(false) {
 }
 
 Case::Case(const Case &other): amount(other.amount), selected(other.selected), sprite(other.sprite), texture(other.texture) {
-    sprite.setTexture(other.texture);
+    sprite.setTexture(texture);
 }
 
 Case& Case::operator=(const Case &other) {

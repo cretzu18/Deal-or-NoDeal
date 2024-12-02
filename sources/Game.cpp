@@ -1,10 +1,16 @@
 #include "../headers/Game.h"
 
-Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Titlebar | sf::Style::Close)
-           , playButton("Play", static_cast<float>(window.getSize().x * 0.1), static_cast<float>(window.getSize().y * 0.9), 300, 50)
-           , round (0)
-           , gameState (MENU)
+Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Titlebar)
+               , round (0)
+               , gameState(MENU)
 {
+    createButtons();
+    if(!menuMusic.openFromFile("../resources/menu.ogg"))
+        exit(1);
+    menuMusic.setLoop(true);
+    if(!gameMusic.openFromFile("../resources/game.ogg"))
+        exit(1);
+    gameMusic.setLoop(true);
     window.setFramerateLimit(60);
 }
 
@@ -12,29 +18,41 @@ void Game::play() {
     const std::vector<double> amounts = { 0.1, 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750,
                                         1000, 5000, 10000, 25000, 50000, 75000, 100000, 200000,
                                         300000, 400000, 500000, 750000, 1000000};
-    //createCases(amounts);
+    std::vector<int> casesPerRound = {6, 5, 4, 3, 2, 1, 1, 1, 1};
+
     while (window.isOpen()) {
         if (round == 1)
             createCases(amounts);
         handleEvents();
         render();
     }
+
+    menuMusic.stop();
+    gameMusic.stop();
 }
 
 void Game::handleEvents() {
     sf::Event event{};
     while (window.pollEvent(event)) {
-        if (event.type == sf::Event::Closed) {
-            window.close();
-        }
+         if (gameState == MENU) {
+             playMenuMusic();
+             for (const auto & button : menuButtons) {
+                 if (button->isClicked(window)) {
+                     button->action(window, gameState, round);
+                     break;
+                 }
+             }
+         }
 
-        if (gameState == MENU && playButton.isClicked(window)) {
-            round = 1;
-            std::cout << playButton;
-            gameState = CASES;
+
+        if(gameState == SETTINGS) {
+            settings.update(window, event, gameState);
+            menuMusic.setVolume(settings.getMenuVolumeLevel());
+            gameMusic.setVolume(settings.getGameVolumeLevel());
         }
 
         if (gameState == CASES) {
+            playGameMusic();
             if (round == 1)
                 for (auto & it : cases) {
                     if (it.isClicked(window)) {
@@ -72,19 +90,23 @@ void Game::render() {
     if (gameState == CASES) {
         backgroundCases();
     }
-    else if (gameState == MENU) {
+    else if (gameState == MENU || gameState == SETTINGS) {
         backgroundMenu();
     }
 
     window.draw(background);
 
     if (gameState == MENU) {
-        playButton.draw(window);
+        for (const auto & button : menuButtons)
+                button->draw(window);
     }
     else if (gameState == CASES) {
         for (const Case& c : cases) {
             c.draw(window);
         }
+    }
+    else {
+        settings.draw(window);
     }
 
     window.display();
@@ -106,6 +128,20 @@ void Game::backgroundMenu() {
     background.setTexture(backgroundTexture);
 }
 
+void Game::playMenuMusic() {
+    if (menuMusic.getStatus() != sf::Music::Playing) {
+        gameMusic.stop();
+        menuMusic.play();
+    }
+}
+
+void Game::playGameMusic() {
+    if (gameMusic.getStatus() != sf::Music::Playing) {
+        menuMusic.stop();
+        gameMusic.play();
+    }
+}
+
 void Game::createCases(std::vector<double> amounts) {
     cases.clear();
     std::random_device rd;
@@ -113,9 +149,18 @@ void Game::createCases(std::vector<double> amounts) {
 
     std::ranges::shuffle(amounts, gen);
 
+    const sf::Vector2u windowSize = window.getSize();
     for (size_t i = 0; i < amounts.size(); ++i) {
         Case c(amounts[i]);
-        c.setPosition(static_cast<float>(100 + (i%5) * 150), static_cast<float>(100 + static_cast<int>(i/5) * 120));
+        const float x = static_cast<float>(windowSize.x) * 0.03f + (i % 5) * (static_cast<float>(windowSize.x) * 0.09f);
+        const float y = static_cast<float>(windowSize.y) * 0.03f + (i / 5)  * (static_cast<float>(windowSize.x) * 0.09f);
+        c.setPosition(x, y);
         cases.push_back(c);
     }
+}
+
+void Game::createButtons() {
+    menuButtons.push_back(std::make_shared<PlayButton>("PLAY", 50, 750, 300, 100));
+    menuButtons.push_back(std::make_shared<SettingsButton>("SETTINGS", 650, 750, 300, 100));
+    menuButtons.push_back(std::make_shared<ExitButton>("EXIT", 1250, 750, 300, 100));
 }
