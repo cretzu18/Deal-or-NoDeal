@@ -46,7 +46,7 @@ public:
 
 class GreedyBanker final : public Banker {
 public:
-    GreedyBanker* clone() override { return new GreedyBanker(*this); }
+    [[maybe_unused]] GreedyBanker* clone() override { return new GreedyBanker(*this); }
     [[nodiscard]] double offer(const std::vector<Case>& cases, int round) override;
     [[nodiscard]] std::string getType() const override { return "Greedy Banker"; };
 };
@@ -55,14 +55,14 @@ class LuckyBanker final : public Banker {
     double multiplier;
 public:
     LuckyBanker() : multiplier(1) {}
-    LuckyBanker* clone() override { return new LuckyBanker(*this); }
+    [[maybe_unused]] LuckyBanker* clone() override { return new LuckyBanker(*this); }
     [[nodiscard]] double offer(const std::vector<Case>& cases, int round) override;
     [[nodiscard]] std::string getType() const override { return "Lucky Banker"; }
 };
 
 class SadisticBanker final : public Banker {
 public:
-    SadisticBanker* clone() override { return new SadisticBanker(*this); }
+    [[maybe_unused]] SadisticBanker* clone() override { return new SadisticBanker(*this); }
     [[nodiscard]] double offer(const std::vector<Case>& cases, int round) override;
     [[nodiscard]] std::string getType() const override { return "Sadistic Banker"; }
 };
@@ -71,7 +71,7 @@ class HelperBanker final : public Banker {
     double multiplier;
 public:
     HelperBanker() : multiplier(1) {};
-    HelperBanker* clone() override { return new HelperBanker(*this); }
+    [[maybe_unused]] HelperBanker* clone() override { return new HelperBanker(*this); }
     [[nodiscard]] double offer(const std::vector<Case>& cases, int round) override;
     [[nodiscard]] std::string getType() const override { return "Helper Banker"; }
 };

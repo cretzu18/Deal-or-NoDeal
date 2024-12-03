@@ -1,9 +1,9 @@
 #include "../headers/Banker.h"
 
-Banker::Banker() {
-    acceptButton = std::make_shared<ExitButton>("ACCEPT", 1100, 200, 100, 50);
-    rejectButton = std::make_shared<ExitButton>("REJECT", 1300, 200, 100, 50);
-
+Banker::Banker()
+    : rejectButton (std::make_shared<ExitButton>("REJECT", 1300, 200, 100, 50))
+    , acceptButton (std::make_shared<ExitButton>("ACCEPT", 1100, 200, 100, 50))
+{
     if (!font.loadFromFile("../resources/arial.ttf"))
         throw FontError("The font could not be loaded!");
 }
