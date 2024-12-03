@@ -31,7 +31,7 @@ public:
     void setPosition(float x, float y);
     bool isMouseOver(const sf::RenderWindow& window) const;
     bool isClicked(const sf::RenderWindow& window) const;
-    double getAmount() const;
+    [[nodiscard]] double getAmount() const;
 };
 
 #endif // CASE_HPP

@@ -121,7 +121,7 @@ double LuckyBanker::offer(const std::vector<Case>& cases, const int round) {
             cnt++;
         }
 
-    double currentOffer;
+    double currentOffer = 0;
     if (round >= 2) {
         multiplier = RandomUtil::getRandomDouble(0.25, 1.5);
         currentOffer = (totalAmount / static_cast<double>(cnt)) * multiplier;
@@ -137,7 +137,7 @@ double SadisticBanker::offer(const std::vector<Case> &cases, const int round) {
     double minAmount = cases[0].getAmount(), totalAmount = 0;
     for (const Case& c : cases)
         if (!c.isEliminated()) {
-            if (minAmount < c.getAmount())
+            if (minAmount > c.getAmount())
                 minAmount = c.getAmount();
             totalAmount += c.getAmount();
         }

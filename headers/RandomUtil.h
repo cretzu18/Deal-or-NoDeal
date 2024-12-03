@@ -5,8 +5,8 @@
 
 class RandomUtil {
 public:
-    static int getRandomInt(int min, int max);
-    static double getRandomDouble(double min, double max);
+    [[nodiscard]] static int getRandomInt(int min, int max);
+    [[nodiscard]] static double getRandomDouble(double min, double max);
 };
 
 #endif //RANDOMUTIL_H

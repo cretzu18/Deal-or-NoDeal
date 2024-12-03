@@ -34,40 +34,46 @@ public:
     bool isAcceptButtonClicked(const sf::RenderWindow& window) const;
     bool isRejectButtonClicked(const sf::RenderWindow &window) const;
     virtual std::string getType() const = 0;
+    virtual Banker* clone() = 0;
 };
 
 class GenerousBanker final : public Banker {
 public:
-    double offer(const std::vector<Case>& cases, int round) override;
-    std::string getType() const override { return "Generous Banker"; };
+    GenerousBanker* clone() override { return new GenerousBanker(*this); }
+    [[nodiscard]] double offer(const std::vector<Case>& cases, int round) override;
+    [[nodiscard]] std::string getType() const override { return "Generous Banker"; };
 };
 
 class GreedyBanker final : public Banker {
 public:
-    double offer(const std::vector<Case>& cases, int round) override;
-    std::string getType() const override { return "Greedy Banker"; };
+    GreedyBanker* clone() override { return new GreedyBanker(*this); }
+    [[nodiscard]] double offer(const std::vector<Case>& cases, int round) override;
+    [[nodiscard]] std::string getType() const override { return "Greedy Banker"; };
 };
 
 class LuckyBanker final : public Banker {
     double multiplier;
 public:
-    LuckyBanker() : multiplier(1) {};
-    double offer(const std::vector<Case>& cases, int round) override;
-    std::string getType() const override { return "Lucky Banker"; };
+    LuckyBanker() : multiplier(1) {}
+    LuckyBanker* clone() override { return new LuckyBanker(*this); }
+    [[nodiscard]] double offer(const std::vector<Case>& cases, int round) override;
+    [[nodiscard]] std::string getType() const override { return "Lucky Banker"; }
 };
 
 class SadisticBanker final : public Banker {
 public:
-    double offer(const std::vector<Case>& cases, int round) override;
-    std::string getType() const override { return "Sadistic Banker"; };
+    SadisticBanker* clone() override { return new SadisticBanker(*this); }
+    [[nodiscard]] double offer(const std::vector<Case>& cases, int round) override;
+    [[nodiscard]] std::string getType() const override { return "Sadistic Banker"; }
 };
 
 class HelperBanker final : public Banker {
     double multiplier;
 public:
     HelperBanker() : multiplier(1) {};
-    double offer(const std::vector<Case>& cases, int round) override;
-    std::string getType() const override { return "Helper Banker"; };
+    HelperBanker* clone() override { return new HelperBanker(*this); }
+    [[nodiscard]] double offer(const std::vector<Case>& cases, int round) override;
+    [[nodiscard]] std::string getType() const override { return "Helper Banker"; }
 };
 
 #endif // BANKER_HPP

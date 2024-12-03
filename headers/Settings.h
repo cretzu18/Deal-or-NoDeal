@@ -17,8 +17,8 @@ class Settings {
 public:
   Settings();
   ~Settings() = default;
-  float getMenuVolumeLevel() const { return menuSlider.getVolumeLevel(); }
-  float getGameVolumeLevel() const { return gameSlider.getVolumeLevel(); }
+  [[nodiscard]] float getMenuVolumeLevel() const { return menuSlider.getVolumeLevel(); }
+  [[nodiscard]] float getGameVolumeLevel() const { return gameSlider.getVolumeLevel(); }
   void draw(sf::RenderWindow& window);
   void update(const sf::RenderWindow& window, const sf::Event& event, GameState& gameState);
 };

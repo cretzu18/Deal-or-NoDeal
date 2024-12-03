@@ -11,7 +11,7 @@ class VolumeSlider {
 public:
     VolumeSlider(float x, float y);
     ~VolumeSlider() = default;
-    float getVolumeLevel() const { return volumeLevel; }
+    [[nodiscard]] float getVolumeLevel() const { return volumeLevel; }
     void draw(sf::RenderWindow &window) const;
     void update(const sf::RenderWindow& window, const sf::Event& event);
 };

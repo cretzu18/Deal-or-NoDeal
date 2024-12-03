@@ -28,6 +28,7 @@ public:
     void draw(sf::RenderWindow& window) const;
     bool isMouseOver(const sf::RenderWindow& window) const;
     bool isClicked(const sf::RenderWindow& window) const;
+    virtual Button* clone() = 0;
 };
 
 
@@ -36,6 +37,7 @@ public:
     explicit PlayButton(const std::string& text = "Play", const float posX = 0, const float posY = 0, const float width = 100, const float height = 100)
     : Button(text, posX, posY, width, height) {};
 
+    PlayButton* clone() override { return new PlayButton(*this); }
     void action(sf::RenderWindow& window, GameState& gameState, int& round) override { window.clear(); gameState = CASES; round = 1; }
 };
 
@@ -44,6 +46,7 @@ public:
     explicit ExitButton(const std::string& text = "Exit", const float posX = 0, const float posY = 0, const float width = 100, const float height = 100)
     : Button(text, posX, posY, width, height) {};
 
+    ExitButton* clone() override { return new ExitButton(*this); }
     void action (sf::RenderWindow& window, GameState& gameState, int& round) override { window.close(); gameState = MENU; round = 0; }
 };
 
@@ -52,6 +55,7 @@ public:
     explicit SettingsButton(const std::string& text = "Settings", const float posX = 0, const float posY = 0, const float width = 100, const float height = 100)
     : Button(text, posX, posY, width, height) {};
 
+    SettingsButton* clone() override { return new SettingsButton(*this); }
     void action(sf::RenderWindow& window, GameState& gameState, int& round) override { window.clear(); gameState = SETTINGS; round = 0; }
 };
 
@@ -60,6 +64,7 @@ public:
     explicit BackButton(const std::string& text = "Back", const float posX = 0, const float posY = 0, const float width = 100, const float height = 100)
     : Button(text, posX, posY, width, height) {};
 
+    BackButton* clone() override { return new BackButton(*this); }
     void action(sf::RenderWindow& window, GameState& gameState, int& round) override { window.clear(); gameState = MENU; round = 0; }
 };
 
