@@ -59,7 +59,7 @@ bool Case::isSelected() const {
     return (sprite.getColor() == sf::Color::Green);
 }
 
-void Case::eliminateCase(sf::RenderWindow &window) {
+void Case::eliminateCase() {
     selected = true;
     sprite.setColor(sf::Color::Red);
 

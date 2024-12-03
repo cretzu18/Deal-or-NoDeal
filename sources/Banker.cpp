@@ -27,8 +27,8 @@ double Banker::offer(const std::vector<Case>& remainingCases) {
         }
 
     const double average = totalAmount / static_cast<double>(cnt);
-    const double minAmount = average * 0.25;
-    const double maxAmount = average * 0.35;
+    const double minAmount = average * 0.4;
+    const double maxAmount = average * 0.6;
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -40,8 +40,7 @@ double Banker::offer(const std::vector<Case>& remainingCases) {
 }
 
 void Banker::clearOffers() {
-    for (const auto& offer : offersHistory)
-        offersHistory.clear();
+    offersHistory.clear();
 }
 
 void Banker::draw(sf::RenderWindow &window) {
@@ -59,7 +58,7 @@ void Banker::drawOffers(sf::RenderWindow &window) {
     window.draw(text);
 
     std::vector<sf::Text> offersText;
-    for (int i = 0; i < offersHistory.size(); i++) {
+    for (unsigned long i = 0; i < offersHistory.size(); i++) {
         sf::Text tmp;
         tmp.setString("$" + std::to_string(static_cast<int>(offersHistory[i])));
         offersText.push_back(tmp);

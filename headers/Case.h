@@ -23,7 +23,7 @@ public:
     void selectCase();
     void deselectCase();
     bool isSelected() const;
-    void eliminateCase(sf::RenderWindow &window);
+    void eliminateCase();
     bool isEliminated() const;
     void setPositionText();
     void draw(sf::RenderWindow &window) const;

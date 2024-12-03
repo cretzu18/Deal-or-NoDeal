@@ -90,13 +90,13 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
                 const int casesToEliminate = casesPerRound[round - 2];
                 if (offered == false) {
                     if (casesToEliminate - eliminatedCases == 1)
-                        gameText.setString("Choose " + std::to_string(casesToEliminate - eliminatedCases) + " case!");
+                        gameText.setString("Eliminate " + std::to_string(casesToEliminate - eliminatedCases) + " case!");
                     else
-                        gameText.setString("Choose " + std::to_string(casesToEliminate - eliminatedCases) + " cases!");
+                        gameText.setString("Eliminate " + std::to_string(casesToEliminate - eliminatedCases) + " cases!");
 
                     for (auto &it : cases) {
                         if (it.isClicked(window)) {
-                            it.eliminateCase(window);
+                            it.eliminateCase();
                             eliminatedCases++;
                         }
                         if (eliminatedCases == casesToEliminate) {
@@ -141,7 +141,7 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
                         it.selectCase();
                         for (auto &case_ : cases)
                             if (!case_.isEliminated() && !case_.isSelected())
-                                case_.eliminateCase(window);
+                                case_.eliminateCase();
                         banker.clearOffers();
                         gameText.setString("You won: $" + std::to_string(static_cast<int>(it.getAmount())) + " !");
                         gameState = GAME_OVER;
