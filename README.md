@@ -1,7 +1,17 @@
 # Deal or No Deal
 
-## Descriere proiect
-Un joc bazat pe reality show-ul american Deal or No Deal (https://en.wikipedia.org/wiki/Deal_or_No_Deal_(American_game_show)). Jocul porneste cu 26 de valize ce contin diferite sume de bani de la 0.1$ pana la 1000000$. Jucatorul isi alege la inceput o valiza pe care nu o mai poate elimina ulterior. Apoi pe parcursul jocului acesta trebuie sa elimine un numar specific de valize. Dupa ce elimina acel numar de valize, va primi o oferta de la bancher. Jucatorul poate accepta oferta si paraseste jocul sau poate continua pana la valiza pe care a ales-o inital.
+## Game description
+Deal or No Deal is a simple game adaptation of the popular TV game show where players test their luck and decision-making skills to win the highest cash prize posibile. 
+
+## Game Objective
+The goal of the game is to maximize your winnings by chossing cases and deciding whether to accept or reject the Banker's offer.
+
+## Gameplay Features
+1. Case selection: The player begin by selecting their case, which will remain closed until the end of the game. This case could contain the player's final prize.
+2. Rounds of eliminations: In each round, the player eliminates a specific number of cases, discarding their values. The tension builds as the remaining cases hold the potential prizes.
+3. Banker's offer: After every round, the Banker calculates an offer based on the remaining cases' values. This offer is presented as an alternative to continuing the game.
+4. Player's decision: The player can choose to accept or reject the offer. If they accept it, the game ends and the player wins the money of the offer. If they reject it, the game continues by advancing one round.
+5. Final decision: If the player refused all the offers, they can choose to keep their selected case or swap it with the last remaining case. The player wins the money from the final case.
 
 ## Milestone #0
 
