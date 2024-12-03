@@ -1,17 +1,14 @@
 #include "../headers/Case.h"
 
 Case::Case(const double money) : amount(money), selected(false) {
-    if (!texture.loadFromFile("../resources/case.png")) {
-        std::cout << "Failed to load case" << std::endl;
-        exit(1);
-    }
+    if (!texture.loadFromFile("../resources/case.png"))
+        throw TextureError("The case texture could not be loaded!");
+
     sprite.setTexture(texture);
     sprite.scale(static_cast<float>(0.35), static_cast<float>(0.35));
 
-    if (!font.loadFromFile("../resources/arial.ttf")) {
-        std::cerr << "Failed to load font." << std::endl;
-        exit(1);
-    }
+    if (!font.loadFromFile("../resources/arial.ttf"))
+        throw FontError("The font could not be loaded!");
 
     text.setFont(font);
     text.setCharacterSize(20);

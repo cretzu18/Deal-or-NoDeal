@@ -10,7 +10,7 @@ VolumeSlider::VolumeSlider(const float x, const float y): volumeLevel(100) {
     volumeKnob.setPosition(x + (volumeLevel / 100) * 300, y - 10);
 }
 
-void VolumeSlider::draw(sf::RenderWindow &window) {
+void VolumeSlider::draw(sf::RenderWindow &window) const {
     window.draw(volumeSlider);
     window.draw(volumeKnob);
 }

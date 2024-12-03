@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Errors.h"
 
 enum GameState {
     MENU,
@@ -43,7 +44,7 @@ public:
     explicit ExitButton(const std::string& text = "Exit", const float posX = 0, const float posY = 0, const float width = 100, const float height = 100)
     : Button(text, posX, posY, width, height) {};
 
-    void action(sf::RenderWindow& window, GameState& gameState, int& round) override { window.close(); gameState = MENU; round = 0; }
+    void action (sf::RenderWindow& window, GameState& gameState, int& round) override { window.close(); gameState = MENU; round = 0; }
 };
 
 class SettingsButton final : public Button {

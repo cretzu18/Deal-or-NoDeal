@@ -5,30 +5,69 @@
 #include <random>
 #include <iostream>
 #include <memory>
+#include <functional>
 
 #include "Button.h"
 #include "Case.h"
+#include "RandomUtil.h"
 
 class Banker {
 private:
-    std::vector<double> offersHistory;
     std::shared_ptr<Button> rejectButton;
     std::shared_ptr<Button> acceptButton;
     sf::Font font;
+
+protected:
+    std::vector<double> offersHistory;
 
 public:
     Banker();
     Banker(const Banker &other) = default;
     Banker &operator=(const Banker &other) = default;
-    ~Banker() = default;
+    virtual ~Banker() = default;
 
     friend std::ostream& operator<<(std::ostream &os, const Banker &b);
-    double offer(const std::vector<Case>& remainingCases);
+    virtual double offer(const std::vector<Case>& cases, int round) = 0;
     void clearOffers();
-    void draw(sf::RenderWindow &window);
-    void drawOffers(sf::RenderWindow &window);
+    void draw(sf::RenderWindow &window) const;
+    void drawOffers(sf::RenderWindow &window) const;
     bool isAcceptButtonClicked(const sf::RenderWindow& window) const;
     bool isRejectButtonClicked(const sf::RenderWindow &window) const;
+    virtual std::string getType() const = 0;
+};
+
+class GenerousBanker final : public Banker {
+public:
+    double offer(const std::vector<Case>& cases, int round) override;
+    std::string getType() const override { return "Generous Banker"; };
+};
+
+class GreedyBanker final : public Banker {
+public:
+    double offer(const std::vector<Case>& cases, int round) override;
+    std::string getType() const override { return "Greedy Banker"; };
+};
+
+class LuckyBanker final : public Banker {
+    double multiplier;
+public:
+    LuckyBanker() : multiplier(1) {};
+    double offer(const std::vector<Case>& cases, int round) override;
+    std::string getType() const override { return "Lucky Banker"; };
+};
+
+class SadisticBanker final : public Banker {
+public:
+    double offer(const std::vector<Case>& cases, int round) override;
+    std::string getType() const override { return "Sadistic Banker"; };
+};
+
+class HelperBanker final : public Banker {
+    double multiplier;
+public:
+    HelperBanker() : multiplier(1) {};
+    double offer(const std::vector<Case>& cases, int round) override;
+    std::string getType() const override { return "Helper Banker"; };
 };
 
 #endif // BANKER_HPP

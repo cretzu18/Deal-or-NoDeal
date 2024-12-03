@@ -1,10 +1,8 @@
 #include "../headers/Button.h"
 
 Button::Button(const std::string& text, const float posX, const float posY, const float width, const float height) {
-    if (!font.loadFromFile("../resources/OakleyRidge.ttf")) {
-        std::cerr << "Failed to load font." << std::endl;
-        exit(1);
-    }
+    if (!font.loadFromFile("../resources/OakleyRidge.ttf"))
+        throw FontError("The font could not be loaded!");
 
     button.setSize(sf::Vector2f(width, height));
     button.setPosition(posX, posY);

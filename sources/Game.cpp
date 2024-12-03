@@ -5,18 +5,18 @@ Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Ti
                , gameState(MENU)
 {
     createButtons();
+    randomizeBanker();
+
     if(!menuMusic.openFromFile("../resources/menu.ogg"))
-        exit(1);
+        throw MusicError("No menu music found!");
     menuMusic.setLoop(true);
     if(!gameMusic.openFromFile("../resources/game.ogg"))
-        exit(1);
+        throw MusicError("No game music found!");
     gameMusic.setLoop(true);
     window.setFramerateLimit(60);
 
-    if (!font.loadFromFile("../resources/arial.ttf")) {
-        std::cerr << "Failed to load font." << std::endl;
-        exit(1);
-    }
+    if (!font.loadFromFile("../resources/arial.ttf"))
+        throw FontError("The font could not be loaded!");
 
     gameText.setFont(font);
     gameText.setString("");
@@ -33,10 +33,16 @@ void Game::play() {
     int eliminatedCases = 0;
     bool offered = false;
     int lastOffer = 0;
+    bool create = false;
 
     while (window.isOpen()) {
-        if (round == 1) {
+        if (round == 0)
+            create = false;
+
+        if (round == 1 && !create) {
+            create = true;
             createCases(amounts);
+            randomizeBanker();
             eliminatedCases = 0;
             offered = false;
             lastOffer = 0;
@@ -65,7 +71,6 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
                  }
              }
          }
-
 
         if(gameState == SETTINGS) {
             settings.update(window, event, gameState);
@@ -100,26 +105,26 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
                             eliminatedCases++;
                         }
                         if (eliminatedCases == casesToEliminate) {
-                            lastOffer = static_cast<int>(banker.offer(cases));
+                            lastOffer = static_cast<int>(banker->offer(cases, round));
                             break;
                         }
                     }
                 }
 
                 if (eliminatedCases == casesToEliminate) {
-                    gameText.setString("The Banker offers: $" + std::to_string(static_cast<int>(lastOffer)) + "!");
+                    gameText.setString("The " + banker->getType() + " offers: $" + std::to_string(static_cast<int>(lastOffer)) + "!");
                     offered = true;
 
-                    if (banker.isRejectButtonClicked(window)) {
+                    if (banker->isRejectButtonClicked(window)) {
                         eliminatedCases = 0;
                         offered = false;
                         round++;
                     }
 
-                    if (banker.isAcceptButtonClicked(window)) {
+                    if (banker->isAcceptButtonClicked(window)) {
                         gameText.setString("You won: $ " + std::to_string(static_cast<int>(lastOffer)) + "!");
                         offered = false;
-                        banker.clearOffers();
+                        banker->clearOffers();
                         gameState = GAME_OVER;
                     }
                 }
@@ -142,7 +147,7 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
                         for (auto &case_ : cases)
                             if (!case_.isEliminated() && !case_.isSelected())
                                 case_.eliminateCase();
-                        banker.clearOffers();
+                        banker->clearOffers();
                         gameText.setString("You won: $" + std::to_string(static_cast<int>(it.getAmount())) + " !");
                         gameState = GAME_OVER;
                     }
@@ -160,7 +165,7 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
     }
 }
 
-void Game::render(bool offered) {
+void Game::render(const bool offered) {
     window.clear();
 
     if (gameState == CASES) {
@@ -182,9 +187,9 @@ void Game::render(bool offered) {
             c.draw(window);
         }
         window.draw(gameText);
-        banker.drawOffers(window);
+        banker->drawOffers(window);
         if (offered == true)
-            banker.draw(window);
+            banker->draw(window);
     }
     else if (gameState == SETTINGS) {
         settings.draw(window);
@@ -205,16 +210,14 @@ void Game::render(bool offered) {
 
 void Game::backgroundCases() {
     if (!backgroundTexture.loadFromFile("../resources/background2.png")) {
-        std::cerr << "Failed to load background.png." << std::endl;
-        exit(1);
+        throw BackgroundError("The background could not be loaded!");
     }
     background.setTexture(backgroundTexture);
 }
 
 void Game::backgroundMenu() {
     if (!backgroundTexture.loadFromFile("../resources/background.png")) {
-        std::cerr << "Failed to load background.png." << std::endl;
-        exit(1);
+        throw BackgroundError("The background could not be loaded!");
     }
     background.setTexture(backgroundTexture);
 }
@@ -251,8 +254,20 @@ void Game::createCases(std::vector<double> amounts) {
 }
 
 void Game::createButtons() {
-    menuButtons.push_back(std::make_shared<PlayButton>("PLAY", 50, 750, 300, 100));
-    menuButtons.push_back(std::make_shared<SettingsButton>("SETTINGS", 650, 750, 300, 100));
-    menuButtons.push_back(std::make_shared<ExitButton>("EXIT", 1250, 750, 300, 100));
+    menuButtons.push_back(std::make_shared<PlayButton>("PLAY", 50, 840, 300, 50));
+    menuButtons.push_back(std::make_shared<SettingsButton>("SETTINGS", 650, 840, 300, 50));
+    menuButtons.push_back(std::make_shared<ExitButton>("EXIT", 1250, 840, 300, 50));
     menuButtons.push_back(std::make_shared<BackButton>("BACK", 1250, 750, 300, 100));
+}
+
+void Game::randomizeBanker() {
+    const std::vector<std::function<std::unique_ptr<Banker>()>> allBankers = {
+     []() { return std::make_unique<GenerousBanker>(); },
+     []() { return std::make_unique<GreedyBanker>(); },
+     []() { return std::make_unique<LuckyBanker>(); },
+     []() { return std::make_unique<SadisticBanker>(); },
+     []() { return std::make_unique<HelperBanker>(); }
+    };
+
+    banker = allBankers[RandomUtil::getRandomInt(0, static_cast<int>(allBankers.size()) - 1)]();
 }

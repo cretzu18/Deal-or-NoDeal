@@ -5,7 +5,9 @@
 #include <SFML/Audio.hpp>
 #include "Button.h"
 #include "VolumeSlider.h"
+#include "Errors.h"
 #include <memory>
+
 
 class Settings {
   std::shared_ptr<Button> backButton;

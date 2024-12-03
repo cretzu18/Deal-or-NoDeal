@@ -10,10 +10,8 @@ void Settings::draw(sf::RenderWindow& window) {
   gameSlider.draw(window);
 
   sf::Font font;
-  if (!font.loadFromFile("../resources/OakleyRidge.ttf")) {
-    std::cerr << "Failed to load font." << std::endl;
-    exit(1);
-  }
+  if (!font.loadFromFile("../resources/OakleyRidge.ttf"))
+    throw FontError("The font could not be loaded!");
 
   sf::Text menuText;
   menuText.setFont(font);

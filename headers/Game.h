@@ -3,12 +3,11 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio/Music.hpp>
-#include <vector>
 #include "Case.h"
 #include "Player.h"
 #include "Banker.h"
 #include "Settings.h"
-#include <memory>
+
 
 class Game {
 private:
@@ -22,7 +21,7 @@ private:
     Settings settings;
 
     Player player;
-    Banker banker;
+    std::unique_ptr<Banker> banker;
     std::vector<Case> cases;
     std::vector<std::shared_ptr<Button>> menuButtons;
     int round;
@@ -43,6 +42,7 @@ private:
     void playGameMusic();
     void handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCases, bool& offered, int& lastOffer);
     void render(bool offered);
+    void randomizeBanker();
 };
 
 #endif // GAME_HPP

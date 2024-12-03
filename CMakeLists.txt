@@ -66,7 +66,11 @@ add_executable(${PROJECT_NAME}
         sources/Settings.cpp
         headers/VolumeSlider.h
         sources/VolumeSlider.cpp
+        headers/RandomUtil.h
+        sources/RandomUtil.cpp
         env_fixes.h
+        headers/Errors.h
+        sources/Errors.cpp
 )
 
 include(cmake/CompilerFlags.cmake)
