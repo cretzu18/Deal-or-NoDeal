@@ -45,4 +45,4 @@ runs:
     - name: Cppcheck
       shell: bash
       run: |
-        bash ./scripts/run_cppcheck.sh --suppress=unusedFunction
+        bash ./scripts/run_cppcheck.sh
