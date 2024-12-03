@@ -41,8 +41,8 @@ private:
     void backgroundCases();
     void playMenuMusic();
     void playGameMusic();
-    void handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCases);
-    void render();
+    void handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCases, bool& offered, int& lastOffer);
+    void render(bool offered);
 };
 
 #endif // GAME_HPP

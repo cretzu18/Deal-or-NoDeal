@@ -20,7 +20,7 @@ Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Ti
 
     gameText.setFont(font);
     gameText.setString("");
-    gameText.setCharacterSize(50);
+    gameText.setCharacterSize(30);
     gameText.setFillColor(sf::Color::Red);
     gameText.setPosition(1050, 150);
 }
@@ -31,19 +31,25 @@ void Game::play() {
                                         300000, 400000, 500000, 750000, 1000000};
     const std::vector<int> casesPerRound = {6, 5, 4, 3, 2, 1, 1, 1};
     int eliminatedCases = 0;
+    bool offered = false;
+    int lastOffer = 0;
 
     while (window.isOpen()) {
-        if (round == 1)
+        if (round == 1) {
             createCases(amounts);
-        handleEvents(casesPerRound, eliminatedCases);
-        render();
+            eliminatedCases = 0;
+            offered = false;
+            lastOffer = 0;
+        }
+        handleEvents(casesPerRound, eliminatedCases, offered, lastOffer);
+        render(offered);
     }
 
     menuMusic.stop();
     gameMusic.stop();
 }
 
-void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCases) {
+void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCases, bool& offered, int& lastOffer) {
     sf::Event event{};
 
     while (window.pollEvent(event)) {
@@ -53,7 +59,7 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
          if (gameState == MENU) {
              playMenuMusic();
              for (const auto & button : menuButtons) {
-                 if (button->isClicked(window)) {
+                 if (!std::dynamic_pointer_cast<BackButton>(button) && button->isClicked(window)) {
                      button->action(window, gameState, round);
                      break;
                  }
@@ -82,24 +88,40 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
             }
             else if (round >= 2 && round <= 9) {
                 const int casesToEliminate = casesPerRound[round - 2];
-                if (casesToEliminate - eliminatedCases == 1)
-                    gameText.setString("Choose " + std::to_string(casesToEliminate - eliminatedCases) + " case!");
-                else
-                    gameText.setString("Choose " + std::to_string(casesToEliminate - eliminatedCases) + " cases!");
+                if (offered == false) {
+                    if (casesToEliminate - eliminatedCases == 1)
+                        gameText.setString("Choose " + std::to_string(casesToEliminate - eliminatedCases) + " case!");
+                    else
+                        gameText.setString("Choose " + std::to_string(casesToEliminate - eliminatedCases) + " cases!");
 
-                for (auto &it : cases) {
-                    if (it.isClicked(window)) {
-                        it.eliminateCase(window);
-                        eliminatedCases++;
-                    }
-                    if (eliminatedCases == casesToEliminate) {
-                        break;
+                    for (auto &it : cases) {
+                        if (it.isClicked(window)) {
+                            it.eliminateCase(window);
+                            eliminatedCases++;
+                        }
+                        if (eliminatedCases == casesToEliminate) {
+                            lastOffer = static_cast<int>(banker.offer(cases));
+                            break;
+                        }
                     }
                 }
 
                 if (eliminatedCases == casesToEliminate) {
-                    eliminatedCases = 0;
-                    round++;
+                    gameText.setString("The Banker offers: $" + std::to_string(static_cast<int>(lastOffer)) + "!");
+                    offered = true;
+
+                    if (banker.isRejectButtonClicked(window)) {
+                        eliminatedCases = 0;
+                        offered = false;
+                        round++;
+                    }
+
+                    if (banker.isAcceptButtonClicked(window)) {
+                        gameText.setString("You won: $ " + std::to_string(static_cast<int>(lastOffer)) + "!");
+                        offered = false;
+                        banker.clearOffers();
+                        gameState = GAME_OVER;
+                    }
                 }
             }
             else if (round == 10) {
@@ -120,13 +142,25 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
                         for (auto &case_ : cases)
                             if (!case_.isEliminated() && !case_.isSelected())
                                 case_.eliminateCase(window);
+                        banker.clearOffers();
+                        gameText.setString("You won: $" + std::to_string(static_cast<int>(it.getAmount())) + " !");
+                        gameState = GAME_OVER;
                     }
+            }
+        }
+
+        if (gameState == GAME_OVER) {
+            for (const auto & button : menuButtons) {
+                if (std::dynamic_pointer_cast<BackButton>(button) && button->isClicked(window)) {
+                    button->action(window, gameState, round);
+                    break;
+                }
             }
         }
     }
 }
 
-void Game::render() {
+void Game::render(bool offered) {
     window.clear();
 
     if (gameState == CASES) {
@@ -140,6 +174,7 @@ void Game::render() {
 
     if (gameState == MENU) {
         for (const auto & button : menuButtons)
+            if (!std::dynamic_pointer_cast<BackButton>(button))
                 button->draw(window);
     }
     else if (gameState == CASES) {
@@ -147,9 +182,22 @@ void Game::render() {
             c.draw(window);
         }
         window.draw(gameText);
+        banker.drawOffers(window);
+        if (offered == true)
+            banker.draw(window);
     }
-    else {
+    else if (gameState == SETTINGS) {
         settings.draw(window);
+    }
+    else if (gameState == GAME_OVER) {
+        for (const Case& c : cases) {
+            c.draw(window);
+        }
+        for (const auto & button : menuButtons)
+            if (std::dynamic_pointer_cast<BackButton>(button))
+                button->draw(window);
+        window.draw(gameText);
+
     }
 
     window.display();
@@ -206,4 +254,5 @@ void Game::createButtons() {
     menuButtons.push_back(std::make_shared<PlayButton>("PLAY", 50, 750, 300, 100));
     menuButtons.push_back(std::make_shared<SettingsButton>("SETTINGS", 650, 750, 300, 100));
     menuButtons.push_back(std::make_shared<ExitButton>("EXIT", 1250, 750, 300, 100));
+    menuButtons.push_back(std::make_shared<BackButton>("BACK", 1250, 750, 300, 100));
 }

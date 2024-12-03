@@ -8,6 +8,7 @@ enum GameState {
     MENU,
     SETTINGS,
     CASES,
+    GAME_OVER
 };
 
 class Button {
@@ -53,5 +54,12 @@ public:
     void action(sf::RenderWindow& window, GameState& gameState, int& round) override { window.clear(); gameState = SETTINGS; round = 0; }
 };
 
+class BackButton final : public Button {
+public:
+    explicit BackButton(const std::string& text = "Back", const float posX = 0, const float posY = 0, const float width = 100, const float height = 100)
+    : Button(text, posX, posY, width, height) {};
+
+    void action(sf::RenderWindow& window, GameState& gameState, int& round) override { window.clear(); gameState = MENU; round = 0; }
+};
 
 #endif // BUTTON_HPP
