@@ -19,7 +19,7 @@ runs:
       shell: bash
       if: steps.cache-cppcheck.outputs.cache-hit != 'true'
       run: |
-        bash ./scripts/build_cppcheck.sh -v ${CPPCHECK_VER} --suppress=unusedFunction
+        bash ./scripts/build_cppcheck.sh -v ${CPPCHECK_VER}
 
     - name: Save cppcheck cache
       uses: actions/cache/save@v4
@@ -45,4 +45,4 @@ runs:
     - name: Cppcheck
       shell: bash
       run: |
-        bash ./scripts/run_cppcheck.sh
+        bash ./scripts/run_cppcheck.sh --suppress=unusedFunction
