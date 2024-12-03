@@ -5,9 +5,3 @@ FontError::FontError(const std::string &message) : GameError(std::string("Font e
 MusicError::MusicError(const std::string &message) : GameError(std::string("Music error: ") + message) {};
 BackgroundError::BackgroundError(const std::string &message) : GameError(std::string("Background error: ") + message) {};
 TextureError::TextureError(const std::string &message) : GameError(std::string("Texture error: ") + message) {};
-
-
-
-
-
-
