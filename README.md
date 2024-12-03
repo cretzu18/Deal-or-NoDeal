@@ -60,4 +60,4 @@ Un joc bazat pe reality show-ul american Deal or No Deal (https://en.wikipedia.o
 - [ ] tag de `git`: de exemplu `v0.3` sau `v1.0`
 
 ## Resurse
-[SFML] (https://www.sfml-dev.org/index.php)
+[SFML](https://www.sfml-dev.org/index.php)
