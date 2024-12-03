@@ -71,3 +71,4 @@ The goal of the game is to maximize your winnings by chossing cases and deciding
 
 ## Resurse
 [SFML](https://www.sfml-dev.org/index.php)
+[doxygen](https://www.doxygen.nl/)
