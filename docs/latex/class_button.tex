@@ -1,0 +1,47 @@
+\doxysection{Button Class Reference}
+\hypertarget{class_button}{}\label{class_button}\index{Button@{Button}}
+Inheritance diagram for Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_button}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_button_ae4c907cbfa6d11ba0d95a72d6f85033c}\label{class_button_ae4c907cbfa6d11ba0d95a72d6f85033c} 
+{\bfseries Button} (const std\+::string \&text="{}"{}, float posX=0, float posY=0, float width=100, float height=100)
+\item 
+\Hypertarget{class_button_a8e8beabd9ee3ea48b1e5819517f05cd0}\label{class_button_a8e8beabd9ee3ea48b1e5819517f05cd0} 
+{\bfseries Button} (const \mbox{\hyperlink{class_button}{Button}} \&other)
+\item 
+\Hypertarget{class_button_a23f4691c5684ebacc5d30b6855b941e3}\label{class_button_a23f4691c5684ebacc5d30b6855b941e3} 
+\mbox{\hyperlink{class_button}{Button}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_button}{Button}} \&other)
+\item 
+\Hypertarget{class_button_a6f469d05751775c702784e87217e470f}\label{class_button_a6f469d05751775c702784e87217e470f} 
+virtual void {\bfseries action} (sf\+::\+Render\+Window \&window, Game\+State \&game\+State, int \&round)=0
+\item 
+\Hypertarget{class_button_a95773eb0a0b33ac29517eac844d23dd9}\label{class_button_a95773eb0a0b33ac29517eac844d23dd9} 
+void {\bfseries draw} (sf\+::\+Render\+Window \&window) const
+\item 
+\Hypertarget{class_button_af7093489ef901bfe7e13f5308647789a}\label{class_button_af7093489ef901bfe7e13f5308647789a} 
+bool {\bfseries is\+Mouse\+Over} (const sf\+::\+Render\+Window \&window) const
+\item 
+\Hypertarget{class_button_af140dd001b92c62c8dd8235f8dbf2669}\label{class_button_af140dd001b92c62c8dd8235f8dbf2669} 
+bool {\bfseries is\+Clicked} (const sf\+::\+Render\+Window \&window) const
+\item 
+\Hypertarget{class_button_a5b5655160041cd0bcc2d0034029d9f40}\label{class_button_a5b5655160041cd0bcc2d0034029d9f40} 
+virtual \mbox{\hyperlink{class_button}{Button}} \texorpdfstring{$\ast$}{*} {\bfseries clone} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_button_a140560656134d8147332547fd3d54f4c}\label{class_button_a140560656134d8147332547fd3d54f4c} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{class_button}{Button}} \&button)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/Button.\+h\item 
+sources/Button.\+cpp\end{DoxyCompactItemize}

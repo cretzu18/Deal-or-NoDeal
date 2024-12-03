@@ -1,0 +1,61 @@
+\doxysection{Play\+Button Class Reference}
+\hypertarget{class_play_button}{}\label{class_play_button}\index{PlayButton@{PlayButton}}
+Inheritance diagram for Play\+Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_play_button}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_play_button_ab7b046f774a3083f21cbb31de668bcd1}\label{class_play_button_ab7b046f774a3083f21cbb31de668bcd1} 
+{\bfseries Play\+Button} (const std\+::string \&text="{}Play"{}, const float posX=0, const float posY=0, const float width=100, const float height=100)
+\item 
+\mbox{\hyperlink{class_play_button}{Play\+Button}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_play_button_acb78ec8e035ab3af75039c5f06c7c223}{clone}} () override
+\item 
+void \mbox{\hyperlink{class_play_button_a69205a88a37dc270e92b0f2a0b1872d3}{action}} (sf\+::\+Render\+Window \&window, Game\+State \&game\+State, int \&round) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_button}{Button}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Button} (const std\+::string \&text="{}"{}, float posX=0, float posY=0, float width=100, float height=100)
+\item 
+{\bfseries Button} (const \mbox{\hyperlink{class_button}{Button}} \&other)
+\item 
+\mbox{\hyperlink{class_button}{Button}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_button}{Button}} \&other)
+\item 
+void {\bfseries draw} (sf\+::\+Render\+Window \&window) const
+\item 
+bool {\bfseries is\+Mouse\+Over} (const sf\+::\+Render\+Window \&window) const
+\item 
+bool {\bfseries is\+Clicked} (const sf\+::\+Render\+Window \&window) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_play_button_a69205a88a37dc270e92b0f2a0b1872d3}\index{PlayButton@{PlayButton}!action@{action}}
+\index{action@{action}!PlayButton@{PlayButton}}
+\doxysubsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily \label{class_play_button_a69205a88a37dc270e92b0f2a0b1872d3} 
+void Play\+Button\+::action (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{, }\item[{Game\+State \&}]{game\+State}{, }\item[{int \&}]{round}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_button}{Button}}.
+
+\Hypertarget{class_play_button_acb78ec8e035ab3af75039c5f06c7c223}\index{PlayButton@{PlayButton}!clone@{clone}}
+\index{clone@{clone}!PlayButton@{PlayButton}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_play_button_acb78ec8e035ab3af75039c5f06c7c223} 
+\mbox{\hyperlink{class_play_button}{Play\+Button}} \texorpdfstring{$\ast$}{*} Play\+Button\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_button}{Button}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/Button.\+h\end{DoxyCompactItemize}

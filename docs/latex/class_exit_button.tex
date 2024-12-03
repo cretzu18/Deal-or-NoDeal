@@ -1,0 +1,61 @@
+\doxysection{Exit\+Button Class Reference}
+\hypertarget{class_exit_button}{}\label{class_exit_button}\index{ExitButton@{ExitButton}}
+Inheritance diagram for Exit\+Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_exit_button}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_exit_button_a5b350a6f0183b66b83957b785c45b917}\label{class_exit_button_a5b350a6f0183b66b83957b785c45b917} 
+{\bfseries Exit\+Button} (const std\+::string \&text="{}Exit"{}, const float posX=0, const float posY=0, const float width=100, const float height=100)
+\item 
+\mbox{\hyperlink{class_exit_button}{Exit\+Button}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_exit_button_ae71f0e2343cd9cd07053783d40673225}{clone}} () override
+\item 
+void \mbox{\hyperlink{class_exit_button_a2b8620a3a09206a79eb4e88f26430283}{action}} (sf\+::\+Render\+Window \&window, Game\+State \&game\+State, int \&round) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_button}{Button}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Button} (const std\+::string \&text="{}"{}, float posX=0, float posY=0, float width=100, float height=100)
+\item 
+{\bfseries Button} (const \mbox{\hyperlink{class_button}{Button}} \&other)
+\item 
+\mbox{\hyperlink{class_button}{Button}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_button}{Button}} \&other)
+\item 
+void {\bfseries draw} (sf\+::\+Render\+Window \&window) const
+\item 
+bool {\bfseries is\+Mouse\+Over} (const sf\+::\+Render\+Window \&window) const
+\item 
+bool {\bfseries is\+Clicked} (const sf\+::\+Render\+Window \&window) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_exit_button_a2b8620a3a09206a79eb4e88f26430283}\index{ExitButton@{ExitButton}!action@{action}}
+\index{action@{action}!ExitButton@{ExitButton}}
+\doxysubsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily \label{class_exit_button_a2b8620a3a09206a79eb4e88f26430283} 
+void Exit\+Button\+::action (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{, }\item[{Game\+State \&}]{game\+State}{, }\item[{int \&}]{round}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_button}{Button}}.
+
+\Hypertarget{class_exit_button_ae71f0e2343cd9cd07053783d40673225}\index{ExitButton@{ExitButton}!clone@{clone}}
+\index{clone@{clone}!ExitButton@{ExitButton}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_exit_button_ae71f0e2343cd9cd07053783d40673225} 
+\mbox{\hyperlink{class_exit_button}{Exit\+Button}} \texorpdfstring{$\ast$}{*} Exit\+Button\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_button}{Button}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/Button.\+h\end{DoxyCompactItemize}

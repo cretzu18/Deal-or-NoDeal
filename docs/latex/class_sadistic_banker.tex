@@ -1,0 +1,79 @@
+\doxysection{Sadistic\+Banker Class Reference}
+\hypertarget{class_sadistic_banker}{}\label{class_sadistic_banker}\index{SadisticBanker@{SadisticBanker}}
+Inheritance diagram for Sadistic\+Banker\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sadistic_banker}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sadistic_banker}{Sadistic\+Banker}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_sadistic_banker_ae956e900950b1537acf2e2192f195f88}{clone}} () override
+\item 
+double \mbox{\hyperlink{class_sadistic_banker_a135be944953f1dcaf85ced4b1cbf704e}{offer}} (const std\+::vector$<$ \mbox{\hyperlink{class_case}{Case}} $>$ \&cases, int round) override
+\item 
+std\+::string \mbox{\hyperlink{class_sadistic_banker_a6e9bea0a2ea9879e29e9de6c7f504664}{get\+Type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_banker}{Banker}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Banker} (const \mbox{\hyperlink{class_banker}{Banker}} \&other)=default
+\item 
+\mbox{\hyperlink{class_banker}{Banker}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_banker}{Banker}} \&other)=default
+\item 
+void {\bfseries clear\+Offers} ()
+\item 
+void {\bfseries draw} (sf\+::\+Render\+Window \&window) const
+\item 
+void {\bfseries draw\+Offers} (sf\+::\+Render\+Window \&window) const
+\item 
+bool {\bfseries is\+Accept\+Button\+Clicked} (const sf\+::\+Render\+Window \&window) const
+\item 
+bool {\bfseries is\+Reject\+Button\+Clicked} (const sf\+::\+Render\+Window \&window) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_banker}{Banker}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ {\bfseries offers\+History}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sadistic_banker_ae956e900950b1537acf2e2192f195f88}\index{SadisticBanker@{SadisticBanker}!clone@{clone}}
+\index{clone@{clone}!SadisticBanker@{SadisticBanker}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_sadistic_banker_ae956e900950b1537acf2e2192f195f88} 
+\mbox{\hyperlink{class_sadistic_banker}{Sadistic\+Banker}} \texorpdfstring{$\ast$}{*} Sadistic\+Banker\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_banker}{Banker}}.
+
+\Hypertarget{class_sadistic_banker_a6e9bea0a2ea9879e29e9de6c7f504664}\index{SadisticBanker@{SadisticBanker}!getType@{getType}}
+\index{getType@{getType}!SadisticBanker@{SadisticBanker}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_sadistic_banker_a6e9bea0a2ea9879e29e9de6c7f504664} 
+std\+::string Sadistic\+Banker\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_banker}{Banker}}.
+
+\Hypertarget{class_sadistic_banker_a135be944953f1dcaf85ced4b1cbf704e}\index{SadisticBanker@{SadisticBanker}!offer@{offer}}
+\index{offer@{offer}!SadisticBanker@{SadisticBanker}}
+\doxysubsubsection{\texorpdfstring{offer()}{offer()}}
+{\footnotesize\ttfamily \label{class_sadistic_banker_a135be944953f1dcaf85ced4b1cbf704e} 
+double Sadistic\+Banker\+::offer (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_case}{Case}} $>$ \&}]{cases}{, }\item[{int}]{round}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_banker}{Banker}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/Banker.\+h\item 
+sources/Banker.\+cpp\end{DoxyCompactItemize}

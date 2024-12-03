@@ -1,0 +1,54 @@
+\doxysection{Game.\+h}
+\hypertarget{_game_8h_source}{}\label{_game_8h_source}\index{headers/Game.h@{headers/Game.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GAME\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GAME\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SFML/Audio/Music.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Case.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Player.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Banker.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Settings.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game}{Game}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ sf::RenderWindow\ window;}
+\DoxyCodeLine{00015\ \ \ \ \ sf::Texture\ backgroundTexture;}
+\DoxyCodeLine{00016\ \ \ \ \ sf::Sprite\ background;}
+\DoxyCodeLine{00017\ \ \ \ \ sf::Text\ gameText;}
+\DoxyCodeLine{00018\ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00019\ \ \ \ \ sf::Music\ menuMusic;}
+\DoxyCodeLine{00020\ \ \ \ \ sf::Music\ gameMusic;}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_settings}{Settings}}\ settings;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ player;}
+\DoxyCodeLine{00024\ \ \ \ \ std::unique\_ptr<Banker>\ banker;}
+\DoxyCodeLine{00025\ \ \ \ \ std::vector<Case>\ cases;}
+\DoxyCodeLine{00026\ \ \ \ \ std::vector<std::shared\_ptr<Button>>\ menuButtons;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ round;}
+\DoxyCodeLine{00028\ \ \ \ \ GameState\ gameState;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_game}{\string~Game}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ play();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ createButtons();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ createCases(std::vector<double>\ amounts);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ backgroundMenu();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ backgroundCases();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ playMenuMusic();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ playGameMusic();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ handleEvents(\textcolor{keyword}{const}\ std::vector<int>\&\ casesPerRound,\ \textcolor{keywordtype}{int}\&\ eliminatedCases,\ \textcolor{keywordtype}{bool}\&\ offered,\ \textcolor{keywordtype}{int}\&\ lastOffer);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ render(\textcolor{keywordtype}{bool}\ offered);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ randomizeBanker();}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAME\_HPP}}
+
+\end{DoxyCode}

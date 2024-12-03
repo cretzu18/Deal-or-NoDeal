@@ -1,0 +1,79 @@
+\doxysection{Helper\+Banker Class Reference}
+\hypertarget{class_helper_banker}{}\label{class_helper_banker}\index{HelperBanker@{HelperBanker}}
+Inheritance diagram for Helper\+Banker\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_helper_banker}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_helper_banker}{Helper\+Banker}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_helper_banker_a27573291721f3ac67f395759ec1b98a7}{clone}} () override
+\item 
+double \mbox{\hyperlink{class_helper_banker_ab837aa892eb68588fb04ec94234bb94d}{offer}} (const std\+::vector$<$ \mbox{\hyperlink{class_case}{Case}} $>$ \&cases, int round) override
+\item 
+std\+::string \mbox{\hyperlink{class_helper_banker_aef354e32448f08bbd94dd1e6ce06f988}{get\+Type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_banker}{Banker}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Banker} (const \mbox{\hyperlink{class_banker}{Banker}} \&other)=default
+\item 
+\mbox{\hyperlink{class_banker}{Banker}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_banker}{Banker}} \&other)=default
+\item 
+void {\bfseries clear\+Offers} ()
+\item 
+void {\bfseries draw} (sf\+::\+Render\+Window \&window) const
+\item 
+void {\bfseries draw\+Offers} (sf\+::\+Render\+Window \&window) const
+\item 
+bool {\bfseries is\+Accept\+Button\+Clicked} (const sf\+::\+Render\+Window \&window) const
+\item 
+bool {\bfseries is\+Reject\+Button\+Clicked} (const sf\+::\+Render\+Window \&window) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_banker}{Banker}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ {\bfseries offers\+History}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_helper_banker_a27573291721f3ac67f395759ec1b98a7}\index{HelperBanker@{HelperBanker}!clone@{clone}}
+\index{clone@{clone}!HelperBanker@{HelperBanker}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_helper_banker_a27573291721f3ac67f395759ec1b98a7} 
+\mbox{\hyperlink{class_helper_banker}{Helper\+Banker}} \texorpdfstring{$\ast$}{*} Helper\+Banker\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_banker}{Banker}}.
+
+\Hypertarget{class_helper_banker_aef354e32448f08bbd94dd1e6ce06f988}\index{HelperBanker@{HelperBanker}!getType@{getType}}
+\index{getType@{getType}!HelperBanker@{HelperBanker}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_helper_banker_aef354e32448f08bbd94dd1e6ce06f988} 
+std\+::string Helper\+Banker\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_banker}{Banker}}.
+
+\Hypertarget{class_helper_banker_ab837aa892eb68588fb04ec94234bb94d}\index{HelperBanker@{HelperBanker}!offer@{offer}}
+\index{offer@{offer}!HelperBanker@{HelperBanker}}
+\doxysubsubsection{\texorpdfstring{offer()}{offer()}}
+{\footnotesize\ttfamily \label{class_helper_banker_ab837aa892eb68588fb04ec94234bb94d} 
+double Helper\+Banker\+::offer (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_case}{Case}} $>$ \&}]{cases}{, }\item[{int}]{round}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_banker}{Banker}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/Banker.\+h\item 
+sources/Banker.\+cpp\end{DoxyCompactItemize}

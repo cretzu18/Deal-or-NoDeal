@@ -1,0 +1,43 @@
+\doxysection{Case.\+h}
+\hypertarget{_case_8h_source}{}\label{_case_8h_source}\index{headers/Case.h@{headers/Case.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CASE\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CASE\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Errors.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_case}{Case}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{double}\ amount;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{bool}\ selected;}
+\DoxyCodeLine{00012\ \ \ \ \ sf::Sprite\ sprite;}
+\DoxyCodeLine{00013\ \ \ \ \ sf::Texture\ texture;}
+\DoxyCodeLine{00014\ \ \ \ \ sf::Text\ text;}
+\DoxyCodeLine{00015\ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_case}{Case}}(\textcolor{keywordtype}{double}\ money\ =\ 0);}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_case}{Case}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_case}{Case}}\ \&other);}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_case}{Case}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_case}{Case}}\ \&other);}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_case}{\string~Case}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&operator<<(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_case}{Case}}\ \&c);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ selectCase();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ deselectCase();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ isSelected()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ eliminateCase();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEliminated()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setPositionText();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(sf::RenderWindow\ \&window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ setPosition(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ isMouseOver(\textcolor{keyword}{const}\ sf::RenderWindow\&\ window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ isClicked(\textcolor{keyword}{const}\ sf::RenderWindow\&\ window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ getAmount()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CASE\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,101 @@
+\doxysection{Button.\+h}
+\hypertarget{_button_8h_source}{}\label{_button_8h_source}\index{headers/Button.h@{headers/Button.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BUTTON\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BUTTON\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Errors.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{enum}\ GameState\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ MENU,}
+\DoxyCodeLine{00010\ \ \ \ \ SETTINGS,}
+\DoxyCodeLine{00011\ \ \ \ \ CASES,}
+\DoxyCodeLine{00012\ \ \ \ \ GAME\_OVER}
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_button}{Button}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ sf::RectangleShape\ button;}
+\DoxyCodeLine{00017\ \ \ \ \ sf::Text\ buttonText;}
+\DoxyCodeLine{00018\ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_button}{Button}}(\textcolor{keyword}{const}\ std::string\&\ text\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keywordtype}{float}\ posX\ =\ 0,\ \textcolor{keywordtype}{float}\ posY\ =\ 0,\ \textcolor{keywordtype}{float}\ width\ =\ 100,\ \textcolor{keywordtype}{float}\ height\ =\ 100);}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_button}{Button}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_button}{Button}}\&\ other);}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_button}{Button}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_button}{Button}}\&\ other);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_button}{\string~Button}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_button}{Button}}\&\ button);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ action(sf::RenderWindow\&\ window,\ GameState\&\ gameState,\ \textcolor{keywordtype}{int}\&\ round)\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(sf::RenderWindow\&\ window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ isMouseOver(\textcolor{keyword}{const}\ sf::RenderWindow\&\ window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ isClicked(\textcolor{keyword}{const}\ sf::RenderWindow\&\ window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_button}{Button}}*\ clone()\ =\ 0;}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_play_button}{PlayButton}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_button}{Button}}\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_play_button}{PlayButton}}(\textcolor{keyword}{const}\ std::string\&\ text\ =\ \textcolor{stringliteral}{"{}Play"{}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ posX\ =\ 0,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ posY\ =\ 0,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ width\ =\ 100,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ height\ =\ 100)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_button}{Button}}(text,\ posX,\ posY,\ width,\ height)\ \{\};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ [[maybe\_unused]]\ \mbox{\hyperlink{class_play_button}{PlayButton}}*\ clone()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_play_button}{PlayButton}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ action(sf::RenderWindow\&\ window,\ GameState\&\ gameState,\ \textcolor{keywordtype}{int}\&\ round)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ window.clear();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ gameState\ =\ CASES;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ round\ =\ 1;}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_exit_button}{ExitButton}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_button}{Button}}\ \{}
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_exit_button}{ExitButton}}(\textcolor{keyword}{const}\ std::string\&\ text\ =\ \textcolor{stringliteral}{"{}Exit"{}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ posX\ =\ 0,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ posY\ =\ 0,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ width\ =\ 100,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ height\ =\ 100)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_button}{Button}}(text,\ posX,\ posY,\ width,\ height)\ \{\};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ [[maybe\_unused]]\ \mbox{\hyperlink{class_exit_button}{ExitButton}}*\ clone()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_exit_button}{ExitButton}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ action\ (sf::RenderWindow\&\ window,\ GameState\&\ gameState,\ \textcolor{keywordtype}{int}\&\ round)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ window.close();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ gameState\ =\ MENU;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ round\ =\ 0;}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_settings_button}{SettingsButton}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_button}{Button}}\ \{}
+\DoxyCodeLine{00066\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_settings_button}{SettingsButton}}(\textcolor{keyword}{const}\ std::string\&\ text\ =\ \textcolor{stringliteral}{"{}Settings"{}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ posX\ =\ 0,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ posY\ =\ 0,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ width\ =\ 100,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ height\ =\ 100)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_button}{Button}}(text,\ posX,\ posY,\ width,\ height)\ \{\};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ [[maybe\_unused]]\ \mbox{\hyperlink{class_settings_button}{SettingsButton}}*\ clone()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_settings_button}{SettingsButton}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ action(sf::RenderWindow\&\ window,\ GameState\&\ gameState,\ \textcolor{keywordtype}{int}\&\ round)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ window.clear();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ gameState\ =\ SETTINGS;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ round\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_back_button}{BackButton}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_button}{Button}}\ \{}
+\DoxyCodeLine{00081\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_back_button}{BackButton}}(\textcolor{keyword}{const}\ std::string\&\ text\ =\ \textcolor{stringliteral}{"{}Back"{}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ posX\ =\ 0,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ posY\ =\ 0,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ width\ =\ 100,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ height\ =\ 100)}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_button}{Button}}(text,\ posX,\ posY,\ width,\ height)\ \{\};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ [[maybe\_unused]]\ \mbox{\hyperlink{class_back_button}{BackButton}}*\ clone()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_back_button}{BackButton}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ action(sf::RenderWindow\&\ window,\ GameState\&\ gameState,\ \textcolor{keywordtype}{int}\&\ round)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ window.clear();}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ gameState\ =\ MENU;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ round\ =\ 0;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BUTTON\_HPP}}
+
+\end{DoxyCode}

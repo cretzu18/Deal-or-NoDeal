@@ -1,0 +1,105 @@
+\doxysection{Banker.\+h}
+\hypertarget{_banker_8h_source}{}\label{_banker_8h_source}\index{headers/Banker.h@{headers/Banker.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BANKER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BANKER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Case.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}RandomUtil.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_banker}{Banker}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ std::shared\_ptr<Button>\ rejectButton;}
+\DoxyCodeLine{00017\ \ \ \ \ std::shared\_ptr<Button>\ acceptButton;}
+\DoxyCodeLine{00018\ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00021\ \ \ \ \ std::vector<double>\ offersHistory;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_banker}{Banker}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_banker}{Banker}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_banker}{Banker}}\ \&other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_banker}{Banker}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_banker}{Banker}}\ \&other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_banker}{\string~Banker}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_banker}{Banker}}\ \&b);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ offer(\textcolor{keyword}{const}\ std::vector<Case>\&\ cases,\ \textcolor{keywordtype}{int}\ round)\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ clearOffers();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(sf::RenderWindow\ \&window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ drawOffers(sf::RenderWindow\ \&window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ isAcceptButtonClicked(\textcolor{keyword}{const}\ sf::RenderWindow\&\ window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ isRejectButtonClicked(\textcolor{keyword}{const}\ sf::RenderWindow\ \&window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ getType()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_banker}{Banker}}*\ clone()\ =\ 0;}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_generous_banker}{GenerousBanker}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_banker}{Banker}}\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_generous_banker}{GenerousBanker}}*\ clone()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_generous_banker}{GenerousBanker}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ offer(\textcolor{keyword}{const}\ std::vector<Case>\&\ cases,\ \textcolor{keywordtype}{int}\ round)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ \ \ \ \ [[nodiscard]]\ std::string\ getType()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Generous\ Banker"{}};}
+\DoxyCodeLine{00048\ \ \ \ \ \};}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_greedy_banker}{GreedyBanker}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_banker}{Banker}}\ \{}
+\DoxyCodeLine{00052\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ [[maybe\_unused]]\ \mbox{\hyperlink{class_greedy_banker}{GreedyBanker}}*\ clone()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_greedy_banker}{GreedyBanker}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ offer(\textcolor{keyword}{const}\ std::vector<Case>\&\ cases,\ \textcolor{keywordtype}{int}\ round)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00057\ \ \ \ \ [[nodiscard]]\ std::string\ getType()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Greedy\ Banker"{}};}
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lucky_banker}{LuckyBanker}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_banker}{Banker}}\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{double}\ multiplier;}
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_lucky_banker}{LuckyBanker}}()\ :\ multiplier(1)\ \{\}}
+\DoxyCodeLine{00066\ \ \ \ \ [[maybe\_unused]]\ \mbox{\hyperlink{class_lucky_banker}{LuckyBanker}}*\ clone()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_lucky_banker}{LuckyBanker}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ offer(\textcolor{keyword}{const}\ std::vector<Case>\&\ cases,\ \textcolor{keywordtype}{int}\ round)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00070\ \ \ \ \ [[nodiscard]]\ std::string\ getType()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Lucky\ Banker"{}};}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sadistic_banker}{SadisticBanker}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_banker}{Banker}}\ \{}
+\DoxyCodeLine{00076\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ [[maybe\_unused]]\ \mbox{\hyperlink{class_sadistic_banker}{SadisticBanker}}*\ clone()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_sadistic_banker}{SadisticBanker}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ offer(\textcolor{keyword}{const}\ std::vector<Case>\&\ cases,\ \textcolor{keywordtype}{int}\ round)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00081\ \ \ \ \ [[nodiscard]]\ std::string\ getType()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Sadistic\ Banker"{}};}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_helper_banker}{HelperBanker}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_banker}{Banker}}\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{double}\ multiplier;}
+\DoxyCodeLine{00088\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_helper_banker}{HelperBanker}}()\ :\ multiplier(1)\ \{\};}
+\DoxyCodeLine{00090\ \ \ \ \ [[maybe\_unused]]\ \mbox{\hyperlink{class_helper_banker}{HelperBanker}}*\ clone()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_helper_banker}{HelperBanker}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ offer(\textcolor{keyword}{const}\ std::vector<Case>\&\ cases,\ \textcolor{keywordtype}{int}\ round)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00094\ \ \ \ \ [[nodiscard]]\ std::string\ getType()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Helper\ Banker"{}};}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BANKER\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,59 @@
+\doxysection{Banker Class Reference}
+\hypertarget{class_banker}{}\label{class_banker}\index{Banker@{Banker}}
+Inheritance diagram for Banker\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.947826cm]{class_banker}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_banker_a2dd0dfd8110dfab35a5f91d34f5b44b2}\label{class_banker_a2dd0dfd8110dfab35a5f91d34f5b44b2} 
+{\bfseries Banker} (const \mbox{\hyperlink{class_banker}{Banker}} \&other)=default
+\item 
+\Hypertarget{class_banker_ac3e8d67425c0a77b4ae13c339772bd31}\label{class_banker_ac3e8d67425c0a77b4ae13c339772bd31} 
+\mbox{\hyperlink{class_banker}{Banker}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_banker}{Banker}} \&other)=default
+\item 
+\Hypertarget{class_banker_a80ac287c083887d297bb383a2a728856}\label{class_banker_a80ac287c083887d297bb383a2a728856} 
+virtual double {\bfseries offer} (const std\+::vector$<$ \mbox{\hyperlink{class_case}{Case}} $>$ \&cases, int round)=0
+\item 
+\Hypertarget{class_banker_ac71c2f36d57a5c6c95b0a7a63140ec0e}\label{class_banker_ac71c2f36d57a5c6c95b0a7a63140ec0e} 
+void {\bfseries clear\+Offers} ()
+\item 
+\Hypertarget{class_banker_a1671f20a2a59618aeb1f8a7345171af7}\label{class_banker_a1671f20a2a59618aeb1f8a7345171af7} 
+void {\bfseries draw} (sf\+::\+Render\+Window \&window) const
+\item 
+\Hypertarget{class_banker_a587e62c61ed15ede7d57ddb4c052f7c4}\label{class_banker_a587e62c61ed15ede7d57ddb4c052f7c4} 
+void {\bfseries draw\+Offers} (sf\+::\+Render\+Window \&window) const
+\item 
+\Hypertarget{class_banker_a97829e4d539ab2aa769d3e896bbacb9a}\label{class_banker_a97829e4d539ab2aa769d3e896bbacb9a} 
+bool {\bfseries is\+Accept\+Button\+Clicked} (const sf\+::\+Render\+Window \&window) const
+\item 
+\Hypertarget{class_banker_a4fc4abe440adc381d08c487f8ab070a1}\label{class_banker_a4fc4abe440adc381d08c487f8ab070a1} 
+bool {\bfseries is\+Reject\+Button\+Clicked} (const sf\+::\+Render\+Window \&window) const
+\item 
+\Hypertarget{class_banker_a9c6f9751f13045ddf54b587db974e34e}\label{class_banker_a9c6f9751f13045ddf54b587db974e34e} 
+virtual std\+::string {\bfseries get\+Type} () const =0
+\item 
+\Hypertarget{class_banker_a1ffe1e1f13db8a25c2187eeb9d72aaa6}\label{class_banker_a1ffe1e1f13db8a25c2187eeb9d72aaa6} 
+virtual \mbox{\hyperlink{class_banker}{Banker}} \texorpdfstring{$\ast$}{*} {\bfseries clone} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_banker_a1daba975f0671acb5bbacc2e372acef3}\label{class_banker_a1daba975f0671acb5bbacc2e372acef3} 
+std\+::vector$<$ double $>$ {\bfseries offers\+History}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_banker_a4fc892b10f288d1f2ddffeb84f718602}\label{class_banker_a4fc892b10f288d1f2ddffeb84f718602} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{class_banker}{Banker}} \&b)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+headers/Banker.\+h\item 
+sources/Banker.\+cpp\end{DoxyCompactItemize}

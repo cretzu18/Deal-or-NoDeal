@@ -1,0 +1,32 @@
+\doxysection{Settings.\+h}
+\hypertarget{_settings_8h_source}{}\label{_settings_8h_source}\index{headers/Settings.h@{headers/Settings.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SETTINGS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SETTINGS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SFML/Audio.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}VolumeSlider.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Errors.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_settings}{Settings}}\ \{}
+\DoxyCodeLine{00013\ \ \ std::shared\_ptr<Button>\ backButton;}
+\DoxyCodeLine{00014\ \ \ \mbox{\hyperlink{class_volume_slider}{VolumeSlider}}\ menuSlider;}
+\DoxyCodeLine{00015\ \ \ \mbox{\hyperlink{class_volume_slider}{VolumeSlider}}\ gameSlider;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \mbox{\hyperlink{class_settings}{Settings}}();}
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{class_settings}{\string~Settings}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ getMenuVolumeLevel()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ menuSlider.getVolumeLevel();\ \}}
+\DoxyCodeLine{00021\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ getGameVolumeLevel()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ gameSlider.getVolumeLevel();\ \}}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{void}\ draw(sf::RenderWindow\&\ window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{void}\ update(\textcolor{keyword}{const}\ sf::RenderWindow\&\ window,\ \textcolor{keyword}{const}\ sf::Event\&\ event,\ GameState\&\ gameState);}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SETTINGS\_H}}
+
+\end{DoxyCode}
