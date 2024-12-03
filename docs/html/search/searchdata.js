@@ -1,21 +1,30 @@
 var indexSectionsWithContent =
 {
-  0: "0123bcdefghlmnoprstv",
+  0: "0123abcdefghilmnoprstuv~",
   1: "bcefghlmprstv",
-  2: "dno"
+  2: "abcdefghilmopstuv~",
+  3: "o",
+  4: "o",
+  5: "dno"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "pages"
+  2: "functions",
+  3: "variables",
+  4: "related",
+  5: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Pages"
+  2: "Functions",
+  3: "Variables",
+  4: "Friends",
+  5: "Pages"
 };
 

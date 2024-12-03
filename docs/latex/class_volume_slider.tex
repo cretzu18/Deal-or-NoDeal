@@ -1,20 +1,116 @@
 \doxysection{Volume\+Slider Class Reference}
 \hypertarget{class_volume_slider}{}\label{class_volume_slider}\index{VolumeSlider@{VolumeSlider}}
+
+
+A class that represents a volume slider for adjusting the volume level.  
+
+
+
+
+{\ttfamily \#include $<$Volume\+Slider.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_volume_slider_ae36732dda002291f9f9fb9e8d15e7aa7}\label{class_volume_slider_ae36732dda002291f9f9fb9e8d15e7aa7} 
-{\bfseries Volume\+Slider} (float x, float y)
-\item 
-\Hypertarget{class_volume_slider_a57d577f2f80eda182313b30289866363}\label{class_volume_slider_a57d577f2f80eda182313b30289866363} 
-float {\bfseries get\+Volume\+Level} () const
-\item 
-\Hypertarget{class_volume_slider_a3c66f42e83556b3bc13676cd498f2692}\label{class_volume_slider_a3c66f42e83556b3bc13676cd498f2692} 
-void {\bfseries draw} (sf\+::\+Render\+Window \&window) const
-\item 
-\Hypertarget{class_volume_slider_a8db0f680d641dea145f593bff15e631f}\label{class_volume_slider_a8db0f680d641dea145f593bff15e631f} 
-void {\bfseries update} (const sf\+::\+Render\+Window \&window, const sf\+::\+Event \&event)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_volume_slider_ae36732dda002291f9f9fb9e8d15e7aa7}{Volume\+Slider}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_volume_slider}{Volume\+Slider} at the specified position. \end{DoxyCompactList}\item 
+\Hypertarget{class_volume_slider_a8a990bd34e2a078031784cb200f05866}\label{class_volume_slider_a8a990bd34e2a078031784cb200f05866} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Volume\+Slider} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_volume_slider}{Volume\+Slider}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_volume_slider_a57d577f2f80eda182313b30289866363}{get\+Volume\+Level}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current volume level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_volume_slider_a3c66f42e83556b3bc13676cd498f2692}{draw}} (sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Draws the volume slider and knob onto the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_volume_slider_a8db0f680d641dea145f593bff15e631f}{update}} (const sf\+::\+Render\+Window \&window, const sf\+::\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Updates the volume slider based on user interaction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that represents a volume slider for adjusting the volume level. 
+
+The {\ttfamily \doxylink{class_volume_slider}{Volume\+Slider}} class is used to create and manage a slider component that allows the user to adjust a value between a minimum and maximum range, in this case, controlling the volume level. The slider consists of a track (represented as a rectangle) and a knob that the user can drag horizontally to adjust the volume level. The class provides methods to draw the slider on the screen and update the position of the knob based on user input.
+
+The volume level is expressed as a float value between 0 and 100, and the position of the knob on the slider represents this value.
+
+\begin{DoxySeeAlso}{See also}
+SFML for window and graphics handling. 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_volume_slider_ae36732dda002291f9f9fb9e8d15e7aa7}\index{VolumeSlider@{VolumeSlider}!VolumeSlider@{VolumeSlider}}
+\index{VolumeSlider@{VolumeSlider}!VolumeSlider@{VolumeSlider}}
+\doxysubsubsection{\texorpdfstring{VolumeSlider()}{VolumeSlider()}}
+{\footnotesize\ttfamily \label{class_volume_slider_ae36732dda002291f9f9fb9e8d15e7aa7} 
+Volume\+Slider\+::\+Volume\+Slider (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_volume_slider}{Volume\+Slider} at the specified position. 
+
+This constructor initializes the volume slider with a knob at the given position. It sets the initial volume level to 0.\+5 (50\%).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The X-\/coordinate of the slider. \\
+\hline
+{\em y} & The Y-\/coordinate of the slider. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_volume_slider_a3c66f42e83556b3bc13676cd498f2692}\index{VolumeSlider@{VolumeSlider}!draw@{draw}}
+\index{draw@{draw}!VolumeSlider@{VolumeSlider}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_volume_slider_a3c66f42e83556b3bc13676cd498f2692} 
+void Volume\+Slider\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption}) const}
+
+
+
+Draws the volume slider and knob onto the window. 
+
+This method renders the slider and its knob to the specified window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The render window where the volume slider is drawn. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_volume_slider_a57d577f2f80eda182313b30289866363}\index{VolumeSlider@{VolumeSlider}!getVolumeLevel@{getVolumeLevel}}
+\index{getVolumeLevel@{getVolumeLevel}!VolumeSlider@{VolumeSlider}}
+\doxysubsubsection{\texorpdfstring{getVolumeLevel()}{getVolumeLevel()}}
+{\footnotesize\ttfamily \label{class_volume_slider_a57d577f2f80eda182313b30289866363} 
+float Volume\+Slider\+::get\+Volume\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Gets the current volume level. 
+
+This method returns the current volume level as a float, where 0.\+0 represents no volume, and 1.\+0 represents maximum volume.
+
+\begin{DoxyReturn}{Returns}
+The current volume level. 
+\end{DoxyReturn}
+\Hypertarget{class_volume_slider_a8db0f680d641dea145f593bff15e631f}\index{VolumeSlider@{VolumeSlider}!update@{update}}
+\index{update@{update}!VolumeSlider@{VolumeSlider}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_volume_slider_a8db0f680d641dea145f593bff15e631f} 
+void Volume\+Slider\+::update (\begin{DoxyParamCaption}\item[{const sf\+::\+Render\+Window \&}]{window}{, }\item[{const sf\+::\+Event \&}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Updates the volume slider based on user interaction. 
+
+This method checks for user input, such as dragging the knob or clicking on the slider, and updates the volume level accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The render window where the event is being processed. \\
+\hline
+{\em event} & The event to be processed, which may include user input on the slider. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

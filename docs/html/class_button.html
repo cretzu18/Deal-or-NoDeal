@@ -91,52 +91,435 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Button Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract base class representing a generic button in the game.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_button_8h_source.html">Button.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Button:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_button.png" usemap="#Button_map" alt=""/>
   <map id="Button_map" name="Button_map">
-<area href="class_back_button.html" alt="BackButton" shape="rect" coords="0,56,91,80"/>
-<area href="class_exit_button.html" alt="ExitButton" shape="rect" coords="101,56,192,80"/>
-<area href="class_play_button.html" alt="PlayButton" shape="rect" coords="202,56,293,80"/>
-<area href="class_settings_button.html" alt="SettingsButton" shape="rect" coords="303,56,394,80"/>
+<area href="class_back_button.html" title="A Button to return to the main menu." alt="BackButton" shape="rect" coords="0,56,91,80"/>
+<area href="class_exit_button.html" title="A Button to exit the game." alt="ExitButton" shape="rect" coords="101,56,192,80"/>
+<area href="class_play_button.html" title="A Button to start the game." alt="PlayButton" shape="rect" coords="202,56,293,80"/>
+<area href="class_settings_button.html" title="A Button to open the settings menu." alt="SettingsButton" shape="rect" coords="303,56,394,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae4c907cbfa6d11ba0d95a72d6f85033c" id="r_ae4c907cbfa6d11ba0d95a72d6f85033c"><td class="memItemLeft" align="right" valign="top"><a id="ae4c907cbfa6d11ba0d95a72d6f85033c" name="ae4c907cbfa6d11ba0d95a72d6f85033c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Button</b> (const std::string &amp;text=&quot;&quot;, float posX=0, float posY=0, float width=100, float height=100)</td></tr>
+<tr class="memitem:ae4c907cbfa6d11ba0d95a72d6f85033c" id="r_ae4c907cbfa6d11ba0d95a72d6f85033c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4c907cbfa6d11ba0d95a72d6f85033c">Button</a> (const std::string &amp;text=&quot;&quot;, float posX=0, float posY=0, float width=100, float height=100)</td></tr>
+<tr class="memdesc:ae4c907cbfa6d11ba0d95a72d6f85033c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to initialize a <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> with text, position, and size.  <br /></td></tr>
 <tr class="separator:ae4c907cbfa6d11ba0d95a72d6f85033c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e8beabd9ee3ea48b1e5819517f05cd0" id="r_a8e8beabd9ee3ea48b1e5819517f05cd0"><td class="memItemLeft" align="right" valign="top"><a id="a8e8beabd9ee3ea48b1e5819517f05cd0" name="a8e8beabd9ee3ea48b1e5819517f05cd0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Button</b> (const <a class="el" href="class_button.html">Button</a> &amp;other)</td></tr>
+<tr class="memitem:a8e8beabd9ee3ea48b1e5819517f05cd0" id="r_a8e8beabd9ee3ea48b1e5819517f05cd0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e8beabd9ee3ea48b1e5819517f05cd0">Button</a> (const <a class="el" href="class_button.html">Button</a> &amp;other)</td></tr>
+<tr class="memdesc:a8e8beabd9ee3ea48b1e5819517f05cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for the <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> class.  <br /></td></tr>
 <tr class="separator:a8e8beabd9ee3ea48b1e5819517f05cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23f4691c5684ebacc5d30b6855b941e3" id="r_a23f4691c5684ebacc5d30b6855b941e3"><td class="memItemLeft" align="right" valign="top"><a id="a23f4691c5684ebacc5d30b6855b941e3" name="a23f4691c5684ebacc5d30b6855b941e3"></a>
-<a class="el" href="class_button.html">Button</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_button.html">Button</a> &amp;other)</td></tr>
+<tr class="memitem:a23f4691c5684ebacc5d30b6855b941e3" id="r_a23f4691c5684ebacc5d30b6855b941e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_button.html">Button</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23f4691c5684ebacc5d30b6855b941e3">operator=</a> (const <a class="el" href="class_button.html">Button</a> &amp;other)</td></tr>
+<tr class="memdesc:a23f4691c5684ebacc5d30b6855b941e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator for the <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> class.  <br /></td></tr>
 <tr class="separator:a23f4691c5684ebacc5d30b6855b941e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f469d05751775c702784e87217e470f" id="r_a6f469d05751775c702784e87217e470f"><td class="memItemLeft" align="right" valign="top"><a id="a6f469d05751775c702784e87217e470f" name="a6f469d05751775c702784e87217e470f"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>action</b> (sf::RenderWindow &amp;window, GameState &amp;gameState, int &amp;round)=0</td></tr>
+<tr class="memitem:afb6a5e927ef20e4017939af3524eed69" id="r_afb6a5e927ef20e4017939af3524eed69"><td class="memItemLeft" align="right" valign="top"><a id="afb6a5e927ef20e4017939af3524eed69" name="afb6a5e927ef20e4017939af3524eed69"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Button</b> ()=default</td></tr>
+<tr class="memdesc:afb6a5e927ef20e4017939af3524eed69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for the <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> class. <br /></td></tr>
+<tr class="separator:afb6a5e927ef20e4017939af3524eed69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f469d05751775c702784e87217e470f" id="r_a6f469d05751775c702784e87217e470f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f469d05751775c702784e87217e470f">action</a> (sf::RenderWindow &amp;window, GameState &amp;gameState, int &amp;round)=0</td></tr>
+<tr class="memdesc:a6f469d05751775c702784e87217e470f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method defining the button's action when clicked.  <br /></td></tr>
 <tr class="separator:a6f469d05751775c702784e87217e470f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95773eb0a0b33ac29517eac844d23dd9" id="r_a95773eb0a0b33ac29517eac844d23dd9"><td class="memItemLeft" align="right" valign="top"><a id="a95773eb0a0b33ac29517eac844d23dd9" name="a95773eb0a0b33ac29517eac844d23dd9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memitem:a95773eb0a0b33ac29517eac844d23dd9" id="r_a95773eb0a0b33ac29517eac844d23dd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95773eb0a0b33ac29517eac844d23dd9">draw</a> (sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memdesc:a95773eb0a0b33ac29517eac844d23dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the button on the given SFML render window.  <br /></td></tr>
 <tr class="separator:a95773eb0a0b33ac29517eac844d23dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7093489ef901bfe7e13f5308647789a" id="r_af7093489ef901bfe7e13f5308647789a"><td class="memItemLeft" align="right" valign="top"><a id="af7093489ef901bfe7e13f5308647789a" name="af7093489ef901bfe7e13f5308647789a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isMouseOver</b> (const sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memitem:af7093489ef901bfe7e13f5308647789a" id="r_af7093489ef901bfe7e13f5308647789a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7093489ef901bfe7e13f5308647789a">isMouseOver</a> (const sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memdesc:af7093489ef901bfe7e13f5308647789a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the mouse is hovering over the button.  <br /></td></tr>
 <tr class="separator:af7093489ef901bfe7e13f5308647789a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af140dd001b92c62c8dd8235f8dbf2669" id="r_af140dd001b92c62c8dd8235f8dbf2669"><td class="memItemLeft" align="right" valign="top"><a id="af140dd001b92c62c8dd8235f8dbf2669" name="af140dd001b92c62c8dd8235f8dbf2669"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isClicked</b> (const sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memitem:af140dd001b92c62c8dd8235f8dbf2669" id="r_af140dd001b92c62c8dd8235f8dbf2669"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af140dd001b92c62c8dd8235f8dbf2669">isClicked</a> (const sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memdesc:af140dd001b92c62c8dd8235f8dbf2669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the button has been clicked.  <br /></td></tr>
 <tr class="separator:af140dd001b92c62c8dd8235f8dbf2669"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b5655160041cd0bcc2d0034029d9f40" id="r_a5b5655160041cd0bcc2d0034029d9f40"><td class="memItemLeft" align="right" valign="top"><a id="a5b5655160041cd0bcc2d0034029d9f40" name="a5b5655160041cd0bcc2d0034029d9f40"></a>
-virtual <a class="el" href="class_button.html">Button</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>clone</b> ()=0</td></tr>
+<tr class="memitem:a5b5655160041cd0bcc2d0034029d9f40" id="r_a5b5655160041cd0bcc2d0034029d9f40"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_button.html">Button</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b5655160041cd0bcc2d0034029d9f40">clone</a> ()=0</td></tr>
+<tr class="memdesc:a5b5655160041cd0bcc2d0034029d9f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method for cloning the button.  <br /></td></tr>
 <tr class="separator:a5b5655160041cd0bcc2d0034029d9f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a140560656134d8147332547fd3d54f4c" id="r_a140560656134d8147332547fd3d54f4c"><td class="memItemLeft" align="right" valign="top"><a id="a140560656134d8147332547fd3d54f4c" name="a140560656134d8147332547fd3d54f4c"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="class_button.html">Button</a> &amp;button)</td></tr>
+<tr class="memitem:a140560656134d8147332547fd3d54f4c" id="r_a140560656134d8147332547fd3d54f4c"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a140560656134d8147332547fd3d54f4c">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="class_button.html">Button</a> &amp;button)</td></tr>
+<tr class="memdesc:a140560656134d8147332547fd3d54f4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream insertion operator for displaying button details.  <br /></td></tr>
 <tr class="separator:a140560656134d8147332547fd3d54f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract base class representing a generic button in the game. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae4c907cbfa6d11ba0d95a72d6f85033c" name="ae4c907cbfa6d11ba0d95a72d6f85033c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4c907cbfa6d11ba0d95a72d6f85033c">&#9670;&#160;</a></span>Button() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button::Button </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>posX</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>posY</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>width</em></span><span class="paramdefsep"> = </span><span class="paramdefval">100</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>height</em></span><span class="paramdefsep"> = </span><span class="paramdefval">100</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor to initialize a <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> with text, position, and size. </p>
+<p>Constructs a <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> with the specified text, position, size, and appearance.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>The text displayed on the button. </td></tr>
+    <tr><td class="paramname">posX</td><td>X-coordinate of the button's position. </td></tr>
+    <tr><td class="paramname">posY</td><td>Y-coordinate of the button's position. </td></tr>
+    <tr><td class="paramname">width</td><td>Width of the button. </td></tr>
+    <tr><td class="paramname">height</td><td>Height of the button.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This constructor initializes the button with a specified text label, position, size, and font. It also sets the button's color and outlines.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>The text to display on the button. </td></tr>
+    <tr><td class="paramname">posX</td><td>The x-coordinate of the button's position. </td></tr>
+    <tr><td class="paramname">posY</td><td>The y-coordinate of the button's position. </td></tr>
+    <tr><td class="paramname">width</td><td>The width of the button. </td></tr>
+    <tr><td class="paramname">height</td><td>The height of the button. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_font_error.html" title="A custom exception class for font-related errors.">FontError</a></td><td>If the font file could not be loaded. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8e8beabd9ee3ea48b1e5819517f05cd0" name="a8e8beabd9ee3ea48b1e5819517f05cd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e8beabd9ee3ea48b1e5819517f05cd0">&#9670;&#160;</a></span>Button() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button::Button </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_button.html">Button</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy constructor for the <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object to copy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Initializes a new <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> as a copy of the given <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6f469d05751775c702784e87217e470f" name="a6f469d05751775c702784e87217e470f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f469d05751775c702784e87217e470f">&#9670;&#160;</a></span>action()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Button::action </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GameState &amp;</td>          <td class="paramname"><span class="paramname"><em>gameState</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>round</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pure virtual method defining the button's action when clicked. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
+    <tr><td class="paramname">gameState</td><td>The current game state to be modified. </td></tr>
+    <tr><td class="paramname">round</td><td>The current game round to be modified. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_back_button.html#a88938319442bfe44e3a8c3e751a2d777">BackButton</a>, <a class="el" href="class_exit_button.html#a2b8620a3a09206a79eb4e88f26430283">ExitButton</a>, <a class="el" href="class_play_button.html#a69205a88a37dc270e92b0f2a0b1872d3">PlayButton</a>, and <a class="el" href="class_settings_button.html#a680186ddeacf25d0057ea0460b4711b8">SettingsButton</a>.</p>
+
+</div>
+</div>
+<a id="a5b5655160041cd0bcc2d0034029d9f40" name="a5b5655160041cd0bcc2d0034029d9f40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b5655160041cd0bcc2d0034029d9f40">&#9670;&#160;</a></span>clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_button.html">Button</a> * Button::clone </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pure virtual method for cloning the button. </p>
+<p>Used for creating a copy of the button dynamically.</p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the cloned <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_back_button.html#af67439777e89bbce236fc5646075ea4b">BackButton</a>, <a class="el" href="class_exit_button.html#ae71f0e2343cd9cd07053783d40673225">ExitButton</a>, <a class="el" href="class_play_button.html#acb78ec8e035ab3af75039c5f06c7c223">PlayButton</a>, and <a class="el" href="class_settings_button.html#a75e048328e1123c35881a2d24aa3f69b">SettingsButton</a>.</p>
+
+</div>
+</div>
+<a id="a95773eb0a0b33ac29517eac844d23dd9" name="a95773eb0a0b33ac29517eac844d23dd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95773eb0a0b33ac29517eac844d23dd9">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Button::draw </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws the button on the given SFML render window. </p>
+<p>Draws the <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> to the specified window.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The SFML render window.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function draws both the button shape and the text to the given render window.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The SFML render window to draw the button on. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af140dd001b92c62c8dd8235f8dbf2669" name="af140dd001b92c62c8dd8235f8dbf2669"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af140dd001b92c62c8dd8235f8dbf2669">&#9670;&#160;</a></span>isClicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Button::isClicked </td>
+          <td>(</td>
+          <td class="paramtype">const sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the button has been clicked. </p>
+<p>Checks if the button is clicked.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the button is clicked, otherwise false.</dd></dl>
+<p>This function checks whether the mouse pointer is over the button and if the left mouse button is pressed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The SFML render window used to get the mouse position and button state. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the mouse is over the button and clicked, otherwise false. </dd></dl>
+
+</div>
+</div>
+<a id="af7093489ef901bfe7e13f5308647789a" name="af7093489ef901bfe7e13f5308647789a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7093489ef901bfe7e13f5308647789a">&#9670;&#160;</a></span>isMouseOver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Button::isMouseOver </td>
+          <td>(</td>
+          <td class="paramtype">const sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the mouse is hovering over the button. </p>
+<p>Checks if the mouse cursor is hovering over the button.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the mouse is over the button, otherwise false.</dd></dl>
+<p>This function checks whether the mouse pointer is currently over the button's area.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The SFML render window used to get the mouse position. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the mouse is over the button, otherwise false. </dd></dl>
+
+</div>
+</div>
+<a id="a23f4691c5684ebacc5d30b6855b941e3" name="a23f4691c5684ebacc5d30b6855b941e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23f4691c5684ebacc5d30b6855b941e3">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_button.html">Button</a> &amp; Button::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_button.html">Button</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy assignment operator for the <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> class. </p>
+<p>Assigns one <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object to another.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object to assign. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the current <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object.</dd></dl>
+<p>This operator allows for assigning the properties of one <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> to another, ensuring deep copies of the button and buttonText objects.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object to copy from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the current <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a140560656134d8147332547fd3d54f4c" name="a140560656134d8147332547fd3d54f4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a140560656134d8147332547fd3d54f4c">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_button.html">Button</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>button</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stream insertion operator for displaying button details. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>The output stream. </td></tr>
+    <tr><td class="paramname">button</td><td>The <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the output stream.</dd></dl>
+<p>This operator outputs a string indicating which button was pressed, using the button's label as part of the message.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>The output stream to write to. </td></tr>
+    <tr><td class="paramname">button</td><td>The <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object to output. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The output stream with the added description. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>headers/<a class="el" href="_button_8h_source.html">Button.h</a></li>
 <li>sources/<b>Button.cpp</b></li>

@@ -1,26 +1,168 @@
 \doxysection{Player Class Reference}
 \hypertarget{class_player}{}\label{class_player}\index{Player@{Player}}
+
+
+Represents a player in the game, including their username and the selected case.  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_player_ac6f239e98158f2324a0bf4cedcc921ba}\label{class_player_ac6f239e98158f2324a0bf4cedcc921ba} 
-{\bfseries Player} (std\+::string name="{}Player"{})
-\item 
-\Hypertarget{class_player_a93e83d153207eb4810ccd2d529ca0431}\label{class_player_a93e83d153207eb4810ccd2d529ca0431} 
-{\bfseries Player} (const \mbox{\hyperlink{class_player}{Player}} \&other)=default
-\item 
-\Hypertarget{class_player_aea427047474cd99c0ce3399d7884ec44}\label{class_player_aea427047474cd99c0ce3399d7884ec44} 
-\mbox{\hyperlink{class_player}{Player}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_player}{Player}} \&other)=default
-\item 
-\Hypertarget{class_player_a88a21046fab185b3d38b6684f61531ae}\label{class_player_a88a21046fab185b3d38b6684f61531ae} 
-void {\bfseries select\+Case} (\mbox{\hyperlink{class_case}{Case}} \texorpdfstring{$\ast$}{*}selected\+Case)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_player_ac6f239e98158f2324a0bf4cedcc921ba}{Player}} (std\+::string name="{}Player"{})
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_player}{Player} object with a given username. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player_a93e83d153207eb4810ccd2d529ca0431}{Player}} (const \mbox{\hyperlink{class_player}{Player}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor for \doxylink{class_player}{Player}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player}{Player}} \& \mbox{\hyperlink{class_player_aea427047474cd99c0ce3399d7884ec44}{operator=}} (const \mbox{\hyperlink{class_player}{Player}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy assignment operator for \doxylink{class_player}{Player}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player_a40d3c47b65e9652c363a8fde41f7bbf5}{\texorpdfstring{$\sim$}{\string~}\+Player}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{class_player}{Player}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a88a21046fab185b3d38b6684f61531ae}{select\+Case}} (\mbox{\hyperlink{class_case}{Case}} \texorpdfstring{$\ast$}{*}selected\+Case)
+\begin{DoxyCompactList}\small\item\em Selects a case for the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_player_a68d4ba1c9cf36c16ade913428d329b39}\label{class_player_a68d4ba1c9cf36c16ade913428d329b39} 
-std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{class_player}{Player}} \&p)
-\end{DoxyCompactItemize}
+std\+::ostream \& \mbox{\hyperlink{class_player_a68d4ba1c9cf36c16ade913428d329b39}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_player}{Player}} \&p)
+\begin{DoxyCompactList}\small\item\em Outputs the player\textquotesingle{}s information to a stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a player in the game, including their username and the selected case. 
+
+The \doxylink{class_player}{Player} class manages the player\textquotesingle{}s name and the case they have selected in the game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_player_ac6f239e98158f2324a0bf4cedcc921ba}\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_player_ac6f239e98158f2324a0bf4cedcc921ba} 
+Player\+::\+Player (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{ = {\ttfamily "{}Player"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_player}{Player} object with a given username. 
+
+If no username is provided, defaults to "{}\+Player"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The username of the player. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_a93e83d153207eb4810ccd2d529ca0431}\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_player_a93e83d153207eb4810ccd2d529ca0431} 
+Player\+::\+Player (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_player}{Player}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy constructor for \doxylink{class_player}{Player}. 
+
+Creates a copy of the given \doxylink{class_player}{Player} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{class_player}{Player} object to copy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_a40d3c47b65e9652c363a8fde41f7bbf5}\index{Player@{Player}!````~Player@{\texorpdfstring{$\sim$}{\string~}Player}}
+\index{````~Player@{\texorpdfstring{$\sim$}{\string~}Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Player()}{\string~Player()}}
+{\footnotesize\ttfamily \label{class_player_a40d3c47b65e9652c363a8fde41f7bbf5} 
+Player\+::\texorpdfstring{$\sim$}{\string~}\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor for \doxylink{class_player}{Player}. 
+
+Handles cleanup when a \doxylink{class_player}{Player} object is destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_aea427047474cd99c0ce3399d7884ec44}\index{Player@{Player}!operator=@{operator=}}
+\index{operator=@{operator=}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_player_aea427047474cd99c0ce3399d7884ec44} 
+\mbox{\hyperlink{class_player}{Player}} \& Player\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_player}{Player}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy assignment operator for \doxylink{class_player}{Player}. 
+
+Assigns the state of one \doxylink{class_player}{Player} object to another.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{class_player}{Player} object to copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the current \doxylink{class_player}{Player} object. 
+\end{DoxyReturn}
+\Hypertarget{class_player_a88a21046fab185b3d38b6684f61531ae}\index{Player@{Player}!selectCase@{selectCase}}
+\index{selectCase@{selectCase}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{selectCase()}{selectCase()}}
+{\footnotesize\ttfamily \label{class_player_a88a21046fab185b3d38b6684f61531ae} 
+void Player\+::select\+Case (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_case}{Case}} \texorpdfstring{$\ast$}{*}}]{selected}{}\end{DoxyParamCaption})}
+
+
+
+Selects a case for the player. 
+
+This function sets the player\textquotesingle{}s selected case.
+
+
+\begin{DoxyParams}{Parameters}
+{\em selected\+Case} & The \doxylink{class_case}{Case} object that the player selects.\\
+\hline
+\end{DoxyParams}
+This function assigns a selected case to the player. The selected case is set by the pointer {\ttfamily selected}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em selected} & The \doxylink{class_case}{Case} object that the player selects. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_player_a68d4ba1c9cf36c16ade913428d329b39}\index{Player@{Player}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_player_a68d4ba1c9cf36c16ade913428d329b39} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_player}{Player}} \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Outputs the player\textquotesingle{}s information to a stream. 
+
+This function displays the player\textquotesingle{}s username.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream. \\
+\hline
+{\em p} & The \doxylink{class_player}{Player} object to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output stream with the player\textquotesingle{}s information.
+\end{DoxyReturn}
+This function displays the player\textquotesingle{}s username along with a message indicating that the player has selected a case.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream. \\
+\hline
+{\em p} & The \doxylink{class_player}{Player} object to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output stream with the player\textquotesingle{}s information. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

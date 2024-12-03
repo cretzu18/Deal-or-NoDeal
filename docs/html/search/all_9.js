@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['game_0',['Game',['../class_game.html',1,'']]],
-  ['gameerror_1',['GameError',['../class_game_error.html',1,'']]],
-  ['generousbanker_2',['GenerousBanker',['../class_generous_banker.html',1,'']]],
-  ['greedybanker_3',['GreedyBanker',['../class_greedy_banker.html',1,'']]]
+  ['features_0',['Gameplay Features',['../index.html#autotoc_md3',1,'']]],
+  ['fonterror_1',['FontError',['../class_font_error.html',1,'FontError'],['../class_font_error.html#a39e13e20b23d47150ef23616b350c916',1,'FontError::FontError()']]]
 ];

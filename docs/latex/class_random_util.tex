@@ -1,14 +1,71 @@
 \doxysection{Random\+Util Class Reference}
 \hypertarget{class_random_util}{}\label{class_random_util}\index{RandomUtil@{RandomUtil}}
+
+
+A utility class for generating random numbers.  
+
+
+
+
+{\ttfamily \#include $<$Random\+Util.\+h$>$}
+
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_random_util_aea525916a7aa34af1d0dd3c53c456fcd}\label{class_random_util_aea525916a7aa34af1d0dd3c53c456fcd} 
-static int {\bfseries get\+Random\+Int} (int min, int max)
-\item 
-\Hypertarget{class_random_util_a9bde8a1f30c42586cabc55a9805f6e0f}\label{class_random_util_a9bde8a1f30c42586cabc55a9805f6e0f} 
-static double {\bfseries get\+Random\+Double} (double min, double max)
-\end{DoxyCompactItemize}
+static int \mbox{\hyperlink{class_random_util_aea525916a7aa34af1d0dd3c53c456fcd}{get\+Random\+Int}} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Generates a random integer within the specified range. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_random_util_a9bde8a1f30c42586cabc55a9805f6e0f}{get\+Random\+Double}} (double min, double max)
+\begin{DoxyCompactList}\small\item\em Generates a random double within the specified range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A utility class for generating random numbers. 
+
+This class provides static methods to generate random integers and floating-\/point numbers within a specified range. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_random_util_a9bde8a1f30c42586cabc55a9805f6e0f}\index{RandomUtil@{RandomUtil}!getRandomDouble@{getRandomDouble}}
+\index{getRandomDouble@{getRandomDouble}!RandomUtil@{RandomUtil}}
+\doxysubsubsection{\texorpdfstring{getRandomDouble()}{getRandomDouble()}}
+{\footnotesize\ttfamily \label{class_random_util_a9bde8a1f30c42586cabc55a9805f6e0f} 
+double Random\+Util\+::get\+Random\+Double (\begin{DoxyParamCaption}\item[{double}]{min}{, }\item[{double}]{max}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+
+
+Generates a random double within the specified range. 
+
+This method generates a random floating-\/point number in the range from {\ttfamily min} to {\ttfamily max}. It uses the random number generator to return a uniformly distributed double.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum possible value for the generated random double. \\
+\hline
+{\em max} & The maximum possible value for the generated random double. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A random double in the range \mbox{[}min, max\mbox{]}. 
+\end{DoxyReturn}
+\Hypertarget{class_random_util_aea525916a7aa34af1d0dd3c53c456fcd}\index{RandomUtil@{RandomUtil}!getRandomInt@{getRandomInt}}
+\index{getRandomInt@{getRandomInt}!RandomUtil@{RandomUtil}}
+\doxysubsubsection{\texorpdfstring{getRandomInt()}{getRandomInt()}}
+{\footnotesize\ttfamily \label{class_random_util_aea525916a7aa34af1d0dd3c53c456fcd} 
+int Random\+Util\+::get\+Random\+Int (\begin{DoxyParamCaption}\item[{int}]{min}{, }\item[{int}]{max}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [nodiscard]}}
+
+
+
+Generates a random integer within the specified range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum possible value for the generated random integer. \\
+\hline
+{\em max} & The maximum possible value for the generated random integer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A random integer in the range \mbox{[}min, max\mbox{]}. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

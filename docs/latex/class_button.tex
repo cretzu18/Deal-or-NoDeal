@@ -1,5 +1,14 @@
 \doxysection{Button Class Reference}
 \hypertarget{class_button}{}\label{class_button}\index{Button@{Button}}
+
+
+Abstract base class representing a generic button in the game.  
+
+
+
+
+{\ttfamily \#include $<$Button.\+h$>$}
+
 Inheritance diagram for Button\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,36 +18,297 @@ Inheritance diagram for Button\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_button_ae4c907cbfa6d11ba0d95a72d6f85033c}\label{class_button_ae4c907cbfa6d11ba0d95a72d6f85033c} 
-{\bfseries Button} (const std\+::string \&text="{}"{}, float posX=0, float posY=0, float width=100, float height=100)
-\item 
-\Hypertarget{class_button_a8e8beabd9ee3ea48b1e5819517f05cd0}\label{class_button_a8e8beabd9ee3ea48b1e5819517f05cd0} 
-{\bfseries Button} (const \mbox{\hyperlink{class_button}{Button}} \&other)
-\item 
-\Hypertarget{class_button_a23f4691c5684ebacc5d30b6855b941e3}\label{class_button_a23f4691c5684ebacc5d30b6855b941e3} 
-\mbox{\hyperlink{class_button}{Button}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_button}{Button}} \&other)
-\item 
-\Hypertarget{class_button_a6f469d05751775c702784e87217e470f}\label{class_button_a6f469d05751775c702784e87217e470f} 
-virtual void {\bfseries action} (sf\+::\+Render\+Window \&window, Game\+State \&game\+State, int \&round)=0
-\item 
-\Hypertarget{class_button_a95773eb0a0b33ac29517eac844d23dd9}\label{class_button_a95773eb0a0b33ac29517eac844d23dd9} 
-void {\bfseries draw} (sf\+::\+Render\+Window \&window) const
-\item 
-\Hypertarget{class_button_af7093489ef901bfe7e13f5308647789a}\label{class_button_af7093489ef901bfe7e13f5308647789a} 
-bool {\bfseries is\+Mouse\+Over} (const sf\+::\+Render\+Window \&window) const
-\item 
-\Hypertarget{class_button_af140dd001b92c62c8dd8235f8dbf2669}\label{class_button_af140dd001b92c62c8dd8235f8dbf2669} 
-bool {\bfseries is\+Clicked} (const sf\+::\+Render\+Window \&window) const
-\item 
-\Hypertarget{class_button_a5b5655160041cd0bcc2d0034029d9f40}\label{class_button_a5b5655160041cd0bcc2d0034029d9f40} 
-virtual \mbox{\hyperlink{class_button}{Button}} \texorpdfstring{$\ast$}{*} {\bfseries clone} ()=0
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_button_ae4c907cbfa6d11ba0d95a72d6f85033c}{Button}} (const std\+::string \&text="{}"{}, float posX=0, float posY=0, float width=100, float height=100)
+\begin{DoxyCompactList}\small\item\em Constructor to initialize a \doxylink{class_button}{Button} with text, position, and size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_button_a8e8beabd9ee3ea48b1e5819517f05cd0}{Button}} (const \mbox{\hyperlink{class_button}{Button}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for the \doxylink{class_button}{Button} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_button}{Button}} \& \mbox{\hyperlink{class_button_a23f4691c5684ebacc5d30b6855b941e3}{operator=}} (const \mbox{\hyperlink{class_button}{Button}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator for the \doxylink{class_button}{Button} class. \end{DoxyCompactList}\item 
+\Hypertarget{class_button_afb6a5e927ef20e4017939af3524eed69}\label{class_button_afb6a5e927ef20e4017939af3524eed69} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Button} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_button}{Button} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_button_a6f469d05751775c702784e87217e470f}{action}} (sf\+::\+Render\+Window \&window, Game\+State \&game\+State, int \&round)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method defining the button\textquotesingle{}s action when clicked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a95773eb0a0b33ac29517eac844d23dd9}{draw}} (sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Draws the button on the given SFML render window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_af7093489ef901bfe7e13f5308647789a}{is\+Mouse\+Over}} (const sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Checks if the mouse is hovering over the button. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_af140dd001b92c62c8dd8235f8dbf2669}{is\+Clicked}} (const sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Checks if the button has been clicked. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_button}{Button}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_button_a5b5655160041cd0bcc2d0034029d9f40}{clone}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method for cloning the button. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_button_a140560656134d8147332547fd3d54f4c}\label{class_button_a140560656134d8147332547fd3d54f4c} 
-std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{class_button}{Button}} \&button)
-\end{DoxyCompactItemize}
+std\+::ostream \& \mbox{\hyperlink{class_button_a140560656134d8147332547fd3d54f4c}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_button}{Button}} \&button)
+\begin{DoxyCompactList}\small\item\em Stream insertion operator for displaying button details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a generic button in the game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_button_ae4c907cbfa6d11ba0d95a72d6f85033c}\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_button_ae4c907cbfa6d11ba0d95a72d6f85033c} 
+Button\+::\+Button (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text}{ = {\ttfamily "{}"{}}, }\item[{float}]{posX}{ = {\ttfamily 0}, }\item[{float}]{posY}{ = {\ttfamily 0}, }\item[{float}]{width}{ = {\ttfamily 100}, }\item[{float}]{height}{ = {\ttfamily 100}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor to initialize a \doxylink{class_button}{Button} with text, position, and size. 
+
+Constructs a \doxylink{class_button}{Button} with the specified text, position, size, and appearance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text displayed on the button. \\
+\hline
+{\em posX} & X-\/coordinate of the button\textquotesingle{}s position. \\
+\hline
+{\em posY} & Y-\/coordinate of the button\textquotesingle{}s position. \\
+\hline
+{\em width} & Width of the button. \\
+\hline
+{\em height} & Height of the button.\\
+\hline
+\end{DoxyParams}
+This constructor initializes the button with a specified text label, position, size, and font. It also sets the button\textquotesingle{}s color and outlines.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text to display on the button. \\
+\hline
+{\em posX} & The x-\/coordinate of the button\textquotesingle{}s position. \\
+\hline
+{\em posY} & The y-\/coordinate of the button\textquotesingle{}s position. \\
+\hline
+{\em width} & The width of the button. \\
+\hline
+{\em height} & The height of the button. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_font_error}{Font\+Error}} & If the font file could not be loaded. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_button_a8e8beabd9ee3ea48b1e5819517f05cd0}\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_button_a8e8beabd9ee3ea48b1e5819517f05cd0} 
+Button\+::\+Button (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_button}{Button}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor for the \doxylink{class_button}{Button} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{class_button}{Button} object to copy.\\
+\hline
+\end{DoxyParams}
+Initializes a new \doxylink{class_button}{Button} as a copy of the given \doxylink{class_button}{Button} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{class_button}{Button} object to copy. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_button_a6f469d05751775c702784e87217e470f}\index{Button@{Button}!action@{action}}
+\index{action@{action}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily \label{class_button_a6f469d05751775c702784e87217e470f} 
+virtual void Button\+::action (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{, }\item[{Game\+State \&}]{game\+State}{, }\item[{int \&}]{round}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method defining the button\textquotesingle{}s action when clicked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window. \\
+\hline
+{\em game\+State} & The current game state to be modified. \\
+\hline
+{\em round} & The current game round to be modified. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_back_button_a88938319442bfe44e3a8c3e751a2d777}{Back\+Button}}, \mbox{\hyperlink{class_exit_button_a2b8620a3a09206a79eb4e88f26430283}{Exit\+Button}}, \mbox{\hyperlink{class_play_button_a69205a88a37dc270e92b0f2a0b1872d3}{Play\+Button}}, and \mbox{\hyperlink{class_settings_button_a680186ddeacf25d0057ea0460b4711b8}{Settings\+Button}}.
+
+\Hypertarget{class_button_a5b5655160041cd0bcc2d0034029d9f40}\index{Button@{Button}!clone@{clone}}
+\index{clone@{clone}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_button_a5b5655160041cd0bcc2d0034029d9f40} 
+virtual \mbox{\hyperlink{class_button}{Button}} \texorpdfstring{$\ast$}{*} Button\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method for cloning the button. 
+
+Used for creating a copy of the button dynamically.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the cloned \doxylink{class_button}{Button} object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_back_button_af67439777e89bbce236fc5646075ea4b}{Back\+Button}}, \mbox{\hyperlink{class_exit_button_ae71f0e2343cd9cd07053783d40673225}{Exit\+Button}}, \mbox{\hyperlink{class_play_button_acb78ec8e035ab3af75039c5f06c7c223}{Play\+Button}}, and \mbox{\hyperlink{class_settings_button_a75e048328e1123c35881a2d24aa3f69b}{Settings\+Button}}.
+
+\Hypertarget{class_button_a95773eb0a0b33ac29517eac844d23dd9}\index{Button@{Button}!draw@{draw}}
+\index{draw@{draw}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_button_a95773eb0a0b33ac29517eac844d23dd9} 
+void Button\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption}) const}
+
+
+
+Draws the button on the given SFML render window. 
+
+Draws the \doxylink{class_button}{Button} to the specified window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window.\\
+\hline
+\end{DoxyParams}
+This function draws both the button shape and the text to the given render window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window to draw the button on. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_button_af140dd001b92c62c8dd8235f8dbf2669}\index{Button@{Button}!isClicked@{isClicked}}
+\index{isClicked@{isClicked}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{isClicked()}{isClicked()}}
+{\footnotesize\ttfamily \label{class_button_af140dd001b92c62c8dd8235f8dbf2669} 
+bool Button\+::is\+Clicked (\begin{DoxyParamCaption}\item[{const sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the button has been clicked. 
+
+Checks if the button is clicked.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the button is clicked, otherwise false.
+\end{DoxyReturn}
+This function checks whether the mouse pointer is over the button and if the left mouse button is pressed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window used to get the mouse position and button state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mouse is over the button and clicked, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{class_button_af7093489ef901bfe7e13f5308647789a}\index{Button@{Button}!isMouseOver@{isMouseOver}}
+\index{isMouseOver@{isMouseOver}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{isMouseOver()}{isMouseOver()}}
+{\footnotesize\ttfamily \label{class_button_af7093489ef901bfe7e13f5308647789a} 
+bool Button\+::is\+Mouse\+Over (\begin{DoxyParamCaption}\item[{const sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the mouse is hovering over the button. 
+
+Checks if the mouse cursor is hovering over the button.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mouse is over the button, otherwise false.
+\end{DoxyReturn}
+This function checks whether the mouse pointer is currently over the button\textquotesingle{}s area.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window used to get the mouse position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mouse is over the button, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{class_button_a23f4691c5684ebacc5d30b6855b941e3}\index{Button@{Button}!operator=@{operator=}}
+\index{operator=@{operator=}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_button_a23f4691c5684ebacc5d30b6855b941e3} 
+\mbox{\hyperlink{class_button}{Button}} \& Button\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_button}{Button}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator for the \doxylink{class_button}{Button} class. 
+
+Assigns one \doxylink{class_button}{Button} object to another.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{class_button}{Button} object to assign. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the current \doxylink{class_button}{Button} object.
+\end{DoxyReturn}
+This operator allows for assigning the properties of one \doxylink{class_button}{Button} to another, ensuring deep copies of the button and button\+Text objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{class_button}{Button} object to copy from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the current \doxylink{class_button}{Button} object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_button_a140560656134d8147332547fd3d54f4c}\index{Button@{Button}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_button_a140560656134d8147332547fd3d54f4c} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_button}{Button}} \&}]{button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Stream insertion operator for displaying button details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream. \\
+\hline
+{\em button} & The \doxylink{class_button}{Button} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the output stream.
+\end{DoxyReturn}
+This operator outputs a string indicating which button was pressed, using the button\textquotesingle{}s label as part of the message.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream to write to. \\
+\hline
+{\em button} & The \doxylink{class_button}{Button} object to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output stream with the added description. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

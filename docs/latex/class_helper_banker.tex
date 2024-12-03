@@ -1,5 +1,14 @@
 \doxysection{Helper\+Banker Class Reference}
 \hypertarget{class_helper_banker}{}\label{class_helper_banker}\index{HelperBanker@{HelperBanker}}
+
+
+Represents a \doxylink{class_banker}{Banker} who supports the player with generous offers.  
+
+
+
+
+{\ttfamily \#include $<$Banker.\+h$>$}
+
 Inheritance diagram for Helper\+Banker\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,36 +18,48 @@ Inheritance diagram for Helper\+Banker\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\Hypertarget{class_helper_banker_abf918d13943672646e21d126424ec290}\label{class_helper_banker_abf918d13943672646e21d126424ec290} 
+{\bfseries Helper\+Banker} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_helper_banker}{Helper\+Banker} with a default multiplier of 1. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_helper_banker}{Helper\+Banker}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_helper_banker_a27573291721f3ac67f395759ec1b98a7}{clone}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Clones the \doxylink{class_helper_banker}{Helper\+Banker} object. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_helper_banker_ab837aa892eb68588fb04ec94234bb94d}{offer}} (const std\+::vector$<$ \mbox{\hyperlink{class_case}{Case}} $>$ \&cases, int round) override
-\item 
+\begin{DoxyCompactList}\small\item\em Calculates the offer based on a helpful formula. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_helper_banker_aef354e32448f08bbd94dd1e6ce06f988}{get\+Type}} () const override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the type of banker. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_banker}{Banker}}}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_banker_a2bf4bc9123112c0d77885d3b989ea798}{Banker}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_banker}{Banker}. Initializes the accept and reject buttons. \end{DoxyCompactList}\item 
 {\bfseries Banker} (const \mbox{\hyperlink{class_banker}{Banker}} \&other)=default
-\item 
+\begin{DoxyCompactList}\small\item\em Default copy constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_banker}{Banker}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_banker}{Banker}} \&other)=default
-\item 
-void {\bfseries clear\+Offers} ()
-\item 
-void {\bfseries draw} (sf\+::\+Render\+Window \&window) const
-\item 
-void {\bfseries draw\+Offers} (sf\+::\+Render\+Window \&window) const
-\item 
-bool {\bfseries is\+Accept\+Button\+Clicked} (const sf\+::\+Render\+Window \&window) const
-\item 
-bool {\bfseries is\+Reject\+Button\+Clicked} (const sf\+::\+Render\+Window \&window) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Default copy assignment operator. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Banker} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for polymorphism. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_banker_ac71c2f36d57a5c6c95b0a7a63140ec0e}{clear\+Offers}} ()
+\begin{DoxyCompactList}\small\item\em Clears the history of offers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_banker_a1671f20a2a59618aeb1f8a7345171af7}{draw}} (sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Draws the accept and reject buttons on the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_banker_a587e62c61ed15ede7d57ddb4c052f7c4}{draw\+Offers}} (sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Displays the history of offers made by the banker. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_banker_a97829e4d539ab2aa769d3e896bbacb9a}{is\+Accept\+Button\+Clicked}} (const sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Checks if the accept button was clicked. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_banker_a4fc4abe440adc381d08c487f8ab070a1}{is\+Reject\+Button\+Clicked}} (const sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Checks if the reject button was clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_banker}{Banker}}}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ double $>$ {\bfseries offers\+History}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Stores the history of all offers made by the banker. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Represents a \doxylink{class_banker}{Banker} who supports the player with generous offers. 
+
+The \doxylink{class_helper_banker}{Helper\+Banker} makes offers that scale positively with the remaining case amounts, often erring on the player\textquotesingle{}s side. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_helper_banker_a27573291721f3ac67f395759ec1b98a7}\index{HelperBanker@{HelperBanker}!clone@{clone}}
@@ -49,7 +70,14 @@ std\+::vector$<$ double $>$ {\bfseries offers\+History}
 
 
 
-Implements \mbox{\hyperlink{class_banker}{Banker}}.
+Clones the \doxylink{class_helper_banker}{Helper\+Banker} object. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the cloned \doxylink{class_helper_banker}{Helper\+Banker} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_banker_a1ffe1e1f13db8a25c2187eeb9d72aaa6}{Banker}}.
 
 \Hypertarget{class_helper_banker_aef354e32448f08bbd94dd1e6ce06f988}\index{HelperBanker@{HelperBanker}!getType@{getType}}
 \index{getType@{getType}!HelperBanker@{HelperBanker}}
@@ -59,7 +87,14 @@ std\+::string Helper\+Banker\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{Doxy
 
 
 
-Implements \mbox{\hyperlink{class_banker}{Banker}}.
+Gets the type of banker. 
+
+\begin{DoxyReturn}{Returns}
+The string "{}\+Helper Banker"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_banker_a9c6f9751f13045ddf54b587db974e34e}{Banker}}.
 
 \Hypertarget{class_helper_banker_ab837aa892eb68588fb04ec94234bb94d}\index{HelperBanker@{HelperBanker}!offer@{offer}}
 \index{offer@{offer}!HelperBanker@{HelperBanker}}
@@ -69,7 +104,41 @@ double Helper\+Banker\+::offer (\begin{DoxyParamCaption}\item[{const std\+::vect
 
 
 
-Implements \mbox{\hyperlink{class_banker}{Banker}}.
+Calculates the offer based on a helpful formula. 
+
+Calculates an offer that helps the player by being relatively generous.
+
+The \doxylink{class_helper_banker}{Helper\+Banker} multiplies the average of the remaining amounts by a favorable factor to create appealing offers for the player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cases} & The remaining cases in the game. \\
+\hline
+{\em round} & The current round of the game. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The offer amount.
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item In early rounds, the offer is 50\% of the average remaining amount.
+\item In later rounds, a random multiplier between 1.\+25 and 1.\+75 is applied to the offer.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em cases} & The remaining cases in the game. \\
+\hline
+{\em round} & The current round of the game. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated offer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_banker_a80ac287c083887d297bb383a2a728856}{Banker}}.
 
 
 

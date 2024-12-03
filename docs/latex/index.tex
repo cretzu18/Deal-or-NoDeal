@@ -2,40 +2,49 @@
 \hypertarget{index}{}\label{index}\index{Deal or No Deal@{Deal or No Deal}}
 \label{index_md__r_e_a_d_m_e}%
 \Hypertarget{index_md__r_e_a_d_m_e}%
-\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Descriere proiect}{Descriere proiect}}\label{index_autotoc_md1}
-Un joc bazat pe reality show-\/ul american Deal or No Deal (\href{https://en.wikipedia.org/wiki/Deal_or_No_Deal_(American_game_show)}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Deal\+\_\+or\+\_\+\+No\+\_\+\+Deal\+\_\+(\+American\+\_\+game\+\_\+show)}}). Jocul porneste cu 26 de valize ce contin diferite sume de bani de la 0.\+1\$ pana la 1000000\$. Jucatorul isi alege la inceput o valiza pe care nu o mai poate elimina ulterior. Apoi pe parcursul jocului acesta trebuie sa elimine un numar specific de valize. Dupa ce elimina acel numar de valize, va primi o oferta de la bancher. Jucatorul poate accepta oferta si paraseste jocul sau poate continua pana la valiza pe care a ales-\/o inital.\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Milestone \#0}{Milestone \#0}}\label{index_autotoc_md2}
+\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Game description}{Game description}}\label{index_autotoc_md1}
+Deal or No Deal is a simple game adaptation of the popular TV game show where players test their luck and decision-\/making skills to win the highest cash prize posibile.\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Game Objective}{Game Objective}}\label{index_autotoc_md2}
+The goal of the game is to maximize your winnings by chossing cases and deciding whether to accept or reject the \doxylink{class_banker}{Banker}\textquotesingle{}s offer.\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Gameplay Features}{Gameplay Features}}\label{index_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item \doxylink{class_case}{Case} selection\+: The player begin by selecting their case, which will remain closed until the end of the game. This case could contain the player\textquotesingle{}s final prize.
+\item Rounds of eliminations\+: In each round, the player eliminates a specific number of cases, discarding their values. The tension builds as the remaining cases hold the potential prizes.
+\item \doxylink{class_banker}{Banker}\textquotesingle{}s offer\+: After every round, the \doxylink{class_banker}{Banker} calculates an offer based on the remaining cases\textquotesingle{} values. This offer is presented as an alternative to continuing the game.
+\item \doxylink{class_player}{Player}\textquotesingle{}s decision\+: The player can choose to accept or reject the offer. If they accept it, the game ends and the player wins the money of the offer. If they reject it, the game continues by advancing one round.
+\item Final decision\+: If the player refused all the offers, they can choose to keep their selected case or swap it with the last remaining case. The player wins the money from the final case.
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Milestone \#0}{Milestone \#0}}\label{index_autotoc_md4}
 
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] Nume proiect (poate fi schimbat ulterior)
+\item[\DoxyChecked] Nume proiect (poate fi schimbat ulterior)
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] Scurtă descriere a temei alese, ce v-\/ați propus să implementați
-\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Milestone \#1}{Milestone \#1}}\label{index_autotoc_md3}
-\hypertarget{index_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{Cerințe}{Cerințe}}\label{index_autotoc_md4}
+\item[\DoxyChecked] Scurtă descriere a temei alese, ce v-\/ați propus să implementați
+\end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{Milestone \#1}{Milestone \#1}}\label{index_autotoc_md5}
+\hypertarget{index_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{Cerințe}{Cerințe}}\label{index_autotoc_md6}
 
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] definirea a minim {\bfseries{3-\/4 clase}} folosind compunere cu clasele definite de voi
+\item[\DoxyChecked] definirea a minim {\bfseries{3-\/4 clase}} folosind compunere cu clasele definite de voi
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] constructori de inițializare cu parametri
+\item[\DoxyChecked] constructori de inițializare cu parametri
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] pentru o aceeași (singură) clasă\+: constructor de copiere, {\ttfamily operator=} de copiere, destructor
+\item[\DoxyChecked] pentru o aceeași (singură) clasă\+: constructor de copiere, {\ttfamily operator=} de copiere, destructor
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] {\ttfamily operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} pentru toate clasele pentru afișare (std\+::ostream)
+\item[\DoxyChecked] {\ttfamily operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} pentru toate clasele pentru afișare (std\+::ostream)
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] cât mai multe {\ttfamily const} (unde este cazul)
+\item[\DoxyChecked] cât mai multe {\ttfamily const} (unde este cazul)
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] implementarea a minim 3 funcții membru publice pentru funcționalități specifice temei alese, dintre care cel puțin 1-\/2 funcții mai complexe
+\item[\DoxyChecked] implementarea a minim 3 funcții membru publice pentru funcționalități specifice temei alese, dintre care cel puțin 1-\/2 funcții mai complexe
 \begin{DoxyItemize}
 \item nu doar citiri/afișări sau adăugat/șters elemente într-\/un/dintr-\/un vector
 \end{DoxyItemize}
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] scenariu de utilizare a claselor definite\+:
+\item[\DoxyChecked] scenariu de utilizare a claselor definite\+:
 \begin{DoxyItemize}
 \item preferabil sub formă de teste unitare, mai ales dacă vorbim de aplicații consolă
 \item crearea de obiecte și apelarea tuturor funcțiilor membru publice în main
@@ -43,24 +52,24 @@ Un joc bazat pe reality show-\/ul american Deal or No Deal (\href{https://en.wik
 \end{DoxyItemize}
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] tag de {\ttfamily git}\+: de exemplu {\ttfamily v0.\+1}
+\item[\DoxyChecked] tag de {\ttfamily git}\+: de exemplu {\ttfamily v0.\+1}
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] serviciu de integrare continuă (CI); exemplu\+: Git\+Hub Actions
-\end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{Milestone \#2}{Milestone \#2}}\label{index_autotoc_md5}
-\hypertarget{index_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{Cerințe}{Cerințe}}\label{index_autotoc_md6}
+\item[\DoxyChecked] serviciu de integrare continuă (CI); exemplu\+: Git\+Hub Actions
+\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{Milestone \#2}{Milestone \#2}}\label{index_autotoc_md7}
+\hypertarget{index_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{Cerințe}{Cerințe}}\label{index_autotoc_md8}
 
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] separarea codului din clase în {\ttfamily .h} (sau {\ttfamily .hpp}) și {\ttfamily .cpp}
+\item[\DoxyChecked] separarea codului din clase în {\ttfamily .h} (sau {\ttfamily .hpp}) și {\ttfamily .cpp}
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] moșteniri\+:
+\item[\DoxyChecked] moșteniri\+:
 \begin{DoxyItemize}
 \item minim o clasă de bază și {\bfseries{3 clase derivate}} din aceeași ierarhie
 \item ierarhia trebuie să fie cu bază proprie, nu derivată dintr-\/o clasă predefinită
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] funcții virtuale (pure) apelate prin pointeri de bază din clasa care conține atributul de tip pointer de bază
+\item[\DoxyChecked] funcții virtuale (pure) apelate prin pointeri de bază din clasa care conține atributul de tip pointer de bază
 \begin{DoxyItemize}
 \item minim o funcție virtuală va fi {\bfseries{specifică temei}} (e.\+g. nu simple citiri/afișări)
 \item constructori virtuali (clone)\+: sunt necesari, dar nu se consideră funcții specifice temei
@@ -68,49 +77,49 @@ Un joc bazat pe reality show-\/ul american Deal or No Deal (\href{https://en.wik
 \end{DoxyItemize}
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] apelarea constructorului din clasa de bază din constructori din derivate
+\item[\DoxyChecked] apelarea constructorului din clasa de bază din constructori din derivate
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] clasă cu atribut de tip pointer la o clasă de bază cu derivate; aici apelați funcțiile virtuale prin pointer de bază, eventual prin interfața non-\/virtuală din bază
+\item[\DoxyChecked] clasă cu atribut de tip pointer la o clasă de bază cu derivate; aici apelați funcțiile virtuale prin pointer de bază, eventual prin interfața non-\/virtuală din bază
 \begin{DoxyItemize}
 \item[\DoxyUnchecked] suprascris cc/op= pentru copieri/atribuiri corecte, copy and swap
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] {\ttfamily dynamic\+\_\+cast}/{\ttfamily std\+::dynamic\+\_\+pointer\+\_\+cast} pentru downcast cu sens
+\item[\DoxyChecked] {\ttfamily dynamic\+\_\+cast}/{\ttfamily std\+::dynamic\+\_\+pointer\+\_\+cast} pentru downcast cu sens
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] smart pointers (recomandat, opțional)
+\item[\DoxyChecked] smart pointers (recomandat, opțional)
 \end{DoxyItemize}
 \end{DoxyItemize}
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] excepții
+\item[\DoxyChecked] excepții
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] ierarhie proprie cu baza {\ttfamily std\+::exception} sau derivată din {\ttfamily std\+::exception}; minim {\bfseries{3}} clase pentru erori specifice
+\item[\DoxyChecked] ierarhie proprie cu baza {\ttfamily std\+::exception} sau derivată din {\ttfamily std\+::exception}; minim {\bfseries{3}} clase pentru erori specifice
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] utilizare cu sens\+: de exemplu, {\ttfamily throw} în constructor (sau funcție care întoarce un obiect), {\ttfamily try}/{\ttfamily catch} în {\ttfamily main}
+\item[\DoxyChecked] utilizare cu sens\+: de exemplu, {\ttfamily throw} în constructor (sau funcție care întoarce un obiect), {\ttfamily try}/{\ttfamily catch} în {\ttfamily main}
 \end{DoxyItemize}
 \begin{DoxyItemize}
 \item această ierarhie va fi complet independentă de ierarhia cu funcții virtuale
 \end{DoxyItemize}
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] funcții și atribute {\ttfamily static}
+\item[\DoxyChecked] funcții și atribute {\ttfamily static}
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] STL
+\item[\DoxyChecked] STL
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] cât mai multe {\ttfamily const}
+\item[\DoxyChecked] cât mai multe {\ttfamily const}
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] funcții {\itshape de nivel înalt}, de eliminat cât mai mulți getters/setters/funcții low-\/level
+\item[\DoxyChecked] funcții {\itshape de nivel înalt}, de eliminat cât mai mulți getters/setters/funcții low-\/level
 \end{DoxyItemize}
 \begin{DoxyItemize}
-\item[\DoxyUnchecked] tag de {\ttfamily git}\+: de exemplu {\ttfamily v0.\+2}
-\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{Milestone \#3}{Milestone \#3}}\label{index_autotoc_md7}
-\hypertarget{index_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{Cerințe}{Cerințe}}\label{index_autotoc_md8}
+\item[\DoxyChecked] tag de {\ttfamily git}\+: de exemplu {\ttfamily v0.\+2}
+\end{DoxyItemize}\hypertarget{index_autotoc_md9}{}\doxysection{\texorpdfstring{Milestone \#3}{Milestone \#3}}\label{index_autotoc_md9}
+\hypertarget{index_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{Cerințe}{Cerințe}}\label{index_autotoc_md10}
 
 \begin{DoxyItemize}
 \item[\DoxyUnchecked] 2 șabloane de proiectare (design patterns)
@@ -123,8 +132,5 @@ Un joc bazat pe reality show-\/ul american Deal or No Deal (\href{https://en.wik
 \end{DoxyItemize}
 \begin{DoxyItemize}
 \item[\DoxyUnchecked] tag de {\ttfamily git}\+: de exemplu {\ttfamily v0.\+3} sau {\ttfamily v1.\+0}
-\end{DoxyItemize}\hypertarget{index_autotoc_md9}{}\doxysection{\texorpdfstring{Resurse}{Resurse}}\label{index_autotoc_md9}
-
-\begin{DoxyItemize}
-\item adăugați trimiteri către resursele externe care v-\/au ajutat sau pe care le-\/ați folosit 
-\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md11}{}\doxysection{\texorpdfstring{Resurse}{Resurse}}\label{index_autotoc_md11}
+\href{https://www.sfml-dev.org/index.php}{\texttt{ SFML}} \href{https://www.doxygen.nl/}{\texttt{ doxygen}} 

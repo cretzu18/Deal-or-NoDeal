@@ -9,35 +9,49 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Errors.h"{}}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_case}{Case}}\ \{}
-\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{double}\ amount;}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{bool}\ selected;}
-\DoxyCodeLine{00012\ \ \ \ \ sf::Sprite\ sprite;}
-\DoxyCodeLine{00013\ \ \ \ \ sf::Texture\ texture;}
-\DoxyCodeLine{00014\ \ \ \ \ sf::Text\ text;}
-\DoxyCodeLine{00015\ \ \ \ \ sf::Font\ font;}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_case}{Case}}(\textcolor{keywordtype}{double}\ money\ =\ 0);}
-\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_case}{Case}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_case}{Case}}\ \&other);}
-\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_case}{Case}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_case}{Case}}\ \&other);}
-\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_case}{\string~Case}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_case}{Case}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ amount;\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ selected;\ }
+\DoxyCodeLine{00018\ \ \ \ \ sf::Sprite\ sprite;\ }
+\DoxyCodeLine{00019\ \ \ \ \ sf::Texture\ texture;\ }
+\DoxyCodeLine{00020\ \ \ \ \ sf::Text\ text;\ }
+\DoxyCodeLine{00021\ \ \ \ \ sf::Font\ font;\ }
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&operator<<(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_case}{Case}}\ \&c);}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ selectCase();}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ deselectCase();}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ isSelected()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ eliminateCase();}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEliminated()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setPositionText();}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(sf::RenderWindow\ \&window)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ setPosition(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y);}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ isMouseOver(\textcolor{keyword}{const}\ sf::RenderWindow\&\ window)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ isClicked(\textcolor{keyword}{const}\ sf::RenderWindow\&\ window)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00034\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ getAmount()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00035\ \};}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CASE\_HPP}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_case_a9cf7f861b72f4ba880da836e82dd7c01}{Case}}(\textcolor{keywordtype}{double}\ money\ =\ 0);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_case_a9cf7f861b72f4ba880da836e82dd7c01}{Case}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_case}{Case}}\ \&other);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_case}{Case}}\&\ \mbox{\hyperlink{class_case_ae32d00298789e5be6314c6cdceb2f064}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_case}{Case}}\ \&other);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_case_a2280c798cd72c6c4d32b8fb7f9c3fbb6}{\string~Case}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{class_case_af6b3860f486cd1c254e9d45f1f826c62}{operator<<}}(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_case}{Case}}\ \&c);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_a1681c68a3a3717f900f63f07c314c797}{selectCase}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_a5077c7c53b25a426d6f85c618e4f67c3}{deselectCase}}();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_case_a41454f8a38b2f0d13c4b49428fe3e2e7}{isSelected}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_ae22762b7ddcd724334b32f54cff9ec59}{eliminateCase}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_case_aaafe7b09f247610a4e27640cba2f78e6}{isEliminated}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_a2561ff75224b319e0b9ebe64b55c336c}{setPositionText}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_a8c0d95ca15f82e684af7973de3a69cb7}{draw}}(sf::RenderWindow\ \&window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_a43fabebfb36336ea08b33c101b0bb55d}{setPosition}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_case_ad7cde8510b756969915bd0617e6ce252}{isMouseOver}}(\textcolor{keyword}{const}\ sf::RenderWindow\&\ window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_case_a3b6d76df79fb6d8eb71c2c276713a9e0}{isClicked}}(\textcolor{keyword}{const}\ sf::RenderWindow\&\ window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00160\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_case_a47f35550ce76e618c5a14dfb1253edcc}{getAmount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00161\ \};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CASE\_HPP}}
 
 \end{DoxyCode}

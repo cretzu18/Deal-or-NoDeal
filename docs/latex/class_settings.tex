@@ -1,20 +1,155 @@
 \doxysection{Settings Class Reference}
 \hypertarget{class_settings}{}\label{class_settings}\index{Settings@{Settings}}
+
+
+Handles the game settings such as volume levels and provides a menu interface.  
+
+
+
+
+{\ttfamily \#include $<$Settings.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_settings_acaff64f406e8ac6efdf6a3c28f93b660}\label{class_settings_acaff64f406e8ac6efdf6a3c28f93b660} 
-float {\bfseries get\+Menu\+Volume\+Level} () const
-\item 
-\Hypertarget{class_settings_a74c9d61dcc27503b857fc99ab201432f}\label{class_settings_a74c9d61dcc27503b857fc99ab201432f} 
-float {\bfseries get\+Game\+Volume\+Level} () const
-\item 
-\Hypertarget{class_settings_a2215e3139ae91a73decf17c58a1c1bba}\label{class_settings_a2215e3139ae91a73decf17c58a1c1bba} 
-void {\bfseries draw} (sf\+::\+Render\+Window \&window) const
-\item 
-\Hypertarget{class_settings_a112419cd8cea4ff8adbdbacd48afec50}\label{class_settings_a112419cd8cea4ff8adbdbacd48afec50} 
-void {\bfseries update} (const sf\+::\+Render\+Window \&window, const sf\+::\+Event \&event, Game\+State \&game\+State)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_settings_ab7169a6eefce79566dd07db3b1e5e967}{Settings}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_settings}{Settings} object and initializes the sliders and back button. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_settings_a85757af9157689d156bc1516380c76c9}{\texorpdfstring{$\sim$}{\string~}\+Settings}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_settings}{Settings} class. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_settings_acaff64f406e8ac6efdf6a3c28f93b660}{get\+Menu\+Volume\+Level}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current menu volume level. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_settings_a74c9d61dcc27503b857fc99ab201432f}{get\+Game\+Volume\+Level}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current game volume level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_settings_a2215e3139ae91a73decf17c58a1c1bba}{draw}} (sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Draws the settings menu to the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_settings_a112419cd8cea4ff8adbdbacd48afec50}{update}} (const sf\+::\+Render\+Window \&window, const sf\+::\+Event \&event, Game\+State \&game\+State)
+\begin{DoxyCompactList}\small\item\em Updates the settings menu based on user input and changes the game state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the game settings such as volume levels and provides a menu interface. 
+
+The {\ttfamily \doxylink{class_settings}{Settings}} class allows the user to adjust game settings such as menu and game volume levels. It provides methods to draw the settings menu, update the settings based on user input, and access the volume levels for the menu and the game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_settings_ab7169a6eefce79566dd07db3b1e5e967}\index{Settings@{Settings}!Settings@{Settings}}
+\index{Settings@{Settings}!Settings@{Settings}}
+\doxysubsubsection{\texorpdfstring{Settings()}{Settings()}}
+{\footnotesize\ttfamily \label{class_settings_ab7169a6eefce79566dd07db3b1e5e967} 
+Settings\+::\+Settings (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_settings}{Settings} object and initializes the sliders and back button. 
+
+The constructor sets up the back button and volume sliders for both the menu and the game. \Hypertarget{class_settings_a85757af9157689d156bc1516380c76c9}\index{Settings@{Settings}!````~Settings@{\texorpdfstring{$\sim$}{\string~}Settings}}
+\index{````~Settings@{\texorpdfstring{$\sim$}{\string~}Settings}!Settings@{Settings}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Settings()}{\string~Settings()}}
+{\footnotesize\ttfamily \label{class_settings_a85757af9157689d156bc1516380c76c9} 
+Settings\+::\texorpdfstring{$\sim$}{\string~}\+Settings (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor for the \doxylink{class_settings}{Settings} class. 
+
+Cleans up any resources used by the {\ttfamily \doxylink{class_settings}{Settings}} class (e.\+g., buttons, sliders). 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_settings_a2215e3139ae91a73decf17c58a1c1bba}\index{Settings@{Settings}!draw@{draw}}
+\index{draw@{draw}!Settings@{Settings}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_settings_a2215e3139ae91a73decf17c58a1c1bba} 
+void Settings\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption}) const}
+
+
+
+Draws the settings menu to the window. 
+
+Draws the settings screen including the volume sliders and text.
+
+This method renders the settings menu, including the sliders and the back button, to the given window. It updates the window display to show the settings interface.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window to draw the settings menu on.\\
+\hline
+\end{DoxyParams}
+This method renders the back button, the menu and game volume sliders, and the corresponding text labels for the volume settings onto the window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The render window where the settings are drawn. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_font_error}{Font\+Error}} & If the font could not be loaded. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_settings_a74c9d61dcc27503b857fc99ab201432f}\index{Settings@{Settings}!getGameVolumeLevel@{getGameVolumeLevel}}
+\index{getGameVolumeLevel@{getGameVolumeLevel}!Settings@{Settings}}
+\doxysubsubsection{\texorpdfstring{getGameVolumeLevel()}{getGameVolumeLevel()}}
+{\footnotesize\ttfamily \label{class_settings_a74c9d61dcc27503b857fc99ab201432f} 
+float Settings\+::get\+Game\+Volume\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Gets the current game volume level. 
+
+This method retrieves the current volume level of the game as set by the user.
+
+\begin{DoxyReturn}{Returns}
+The current volume level of the game. 
+\end{DoxyReturn}
+\Hypertarget{class_settings_acaff64f406e8ac6efdf6a3c28f93b660}\index{Settings@{Settings}!getMenuVolumeLevel@{getMenuVolumeLevel}}
+\index{getMenuVolumeLevel@{getMenuVolumeLevel}!Settings@{Settings}}
+\doxysubsubsection{\texorpdfstring{getMenuVolumeLevel()}{getMenuVolumeLevel()}}
+{\footnotesize\ttfamily \label{class_settings_acaff64f406e8ac6efdf6a3c28f93b660} 
+float Settings\+::get\+Menu\+Volume\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Gets the current menu volume level. 
+
+This method retrieves the current volume level of the menu as set by the user.
+
+\begin{DoxyReturn}{Returns}
+The current volume level of the menu. 
+\end{DoxyReturn}
+\Hypertarget{class_settings_a112419cd8cea4ff8adbdbacd48afec50}\index{Settings@{Settings}!update@{update}}
+\index{update@{update}!Settings@{Settings}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_settings_a112419cd8cea4ff8adbdbacd48afec50} 
+void Settings\+::update (\begin{DoxyParamCaption}\item[{const sf\+::\+Render\+Window \&}]{window}{, }\item[{const sf\+::\+Event \&}]{event}{, }\item[{Game\+State \&}]{game\+State}{}\end{DoxyParamCaption})}
+
+
+
+Updates the settings menu based on user input and changes the game state. 
+
+Updates the settings based on user input.
+
+This method handles user interactions with the settings menu. It listens for input events, such as slider adjustments or button clicks, and updates the game state accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window that receives the input events. \\
+\hline
+{\em event} & The event that occurred (e.\+g., button click or slider change). \\
+\hline
+{\em game\+State} & The current state of the game, which may be modified by the settings.\\
+\hline
+\end{DoxyParams}
+This method checks for events in the settings screen, such as the back button click and the adjustments made to the menu and game volume sliders. If the back button is clicked, it changes the game state to MENU.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The render window where the settings are updated. \\
+\hline
+{\em event} & The event to be processed for the settings screen. \\
+\hline
+{\em game\+State} & The current game state, which can be updated to MENU if the back button is clicked. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

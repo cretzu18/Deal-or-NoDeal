@@ -90,25 +90,68 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">GameError Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A custom exception class for general game-related errors.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_errors_8h_source.html">Errors.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for GameError:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_game_error.png" usemap="#GameError_map" alt=""/>
   <map id="GameError_map" name="GameError_map">
-<area href="class_background_error.html" alt="BackgroundError" shape="rect" coords="0,112,111,136"/>
-<area href="class_font_error.html" alt="FontError" shape="rect" coords="121,112,232,136"/>
-<area href="class_music_error.html" alt="MusicError" shape="rect" coords="242,112,353,136"/>
-<area href="class_texture_error.html" alt="TextureError" shape="rect" coords="363,112,474,136"/>
+<area href="class_background_error.html" title="A custom exception class for background-related errors." alt="BackgroundError" shape="rect" coords="0,112,111,136"/>
+<area href="class_font_error.html" title="A custom exception class for font-related errors." alt="FontError" shape="rect" coords="121,112,232,136"/>
+<area href="class_music_error.html" title="A custom exception class for music-related errors." alt="MusicError" shape="rect" coords="242,112,353,136"/>
+<area href="class_texture_error.html" title="A custom exception class for texture-related errors." alt="TextureError" shape="rect" coords="363,112,474,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa5f9df2ab465545117320f45f1335969" id="r_aa5f9df2ab465545117320f45f1335969"><td class="memItemLeft" align="right" valign="top"><a id="aa5f9df2ab465545117320f45f1335969" name="aa5f9df2ab465545117320f45f1335969"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameError</b> (const std::string &amp;message)</td></tr>
+<tr class="memitem:aa5f9df2ab465545117320f45f1335969" id="r_aa5f9df2ab465545117320f45f1335969"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5f9df2ab465545117320f45f1335969">GameError</a> (const std::string &amp;message)</td></tr>
+<tr class="memdesc:aa5f9df2ab465545117320f45f1335969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_game_error.html" title="A custom exception class for general game-related errors.">GameError</a> with a message.  <br /></td></tr>
 <tr class="separator:aa5f9df2ab465545117320f45f1335969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A custom exception class for general game-related errors. </p>
+<p>This class extends the standard C++ runtime_error and is used for throwing and catching errors related to the game's functionality, providing a descriptive error message. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa5f9df2ab465545117320f45f1335969" name="aa5f9df2ab465545117320f45f1335969"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5f9df2ab465545117320f45f1335969">&#9670;&#160;</a></span>GameError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameError::GameError </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="class_game_error.html" title="A custom exception class for general game-related errors.">GameError</a> with a message. </p>
+<p>This constructor allows the creation of a <a class="el" href="class_game_error.html" title="A custom exception class for general game-related errors.">GameError</a> exception with a specific message describing the error.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The error message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>headers/<a class="el" href="_errors_8h_source.html">Errors.h</a></li>
 <li>sources/<b>Errors.cpp</b></li>

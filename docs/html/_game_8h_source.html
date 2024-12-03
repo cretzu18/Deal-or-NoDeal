@@ -101,49 +101,60 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;Banker.h&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Settings.h&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_game.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="class_game.html">Game</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    sf::RenderWindow window;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    sf::Texture backgroundTexture;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    sf::Sprite background;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    sf::Text gameText;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    sf::Font font;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    sf::Music menuMusic;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    sf::Music gameMusic;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="class_settings.html">Settings</a> settings;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_class" href="class_player.html">Player</a> player;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    std::unique_ptr&lt;Banker&gt; banker;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    std::vector&lt;Case&gt; cases;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    std::vector&lt;std::shared_ptr&lt;Button&gt;&gt; menuButtons;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">int</span> round;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    GameState gameState;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_class" href="class_game.html">Game</a>();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_class" href="class_game.html">~Game</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> play();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> createButtons();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> createCases(std::vector&lt;double&gt; amounts);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> backgroundMenu();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> backgroundCases();</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> playMenuMusic();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> playGameMusic();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> handleEvents(<span class="keyword">const</span> std::vector&lt;int&gt;&amp; casesPerRound, <span class="keywordtype">int</span>&amp; eliminatedCases, <span class="keywordtype">bool</span>&amp; offered, <span class="keywordtype">int</span>&amp; lastOffer);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> render(<span class="keywordtype">bool</span> offered);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> randomizeBanker();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_game.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_game.html">Game</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    sf::RenderWindow window; </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    sf::Texture backgroundTexture; </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    sf::Sprite background; </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    sf::Text gameText; </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    sf::Font font; </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    sf::Music menuMusic; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    sf::Music gameMusic; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_class" href="class_settings.html">Settings</a> settings; </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_class" href="class_player.html">Player</a> player; </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    std::unique_ptr&lt;Banker&gt; banker; </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::vector&lt;Case&gt; cases; </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::vector&lt;std::shared_ptr&lt;Button&gt;&gt; menuButtons; </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">int</span> round; </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    GameState gameState; </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_game.html#a3d09cd0b68ef69107d36360ca903e023">   42</a></span>    <a class="code hl_function" href="class_game.html#a3d09cd0b68ef69107d36360ca903e023">~Game</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#aa333825d0bca80e91e53c7e23f053405">play</a>();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> createButtons();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> createCases(std::vector&lt;double&gt; amounts);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> backgroundMenu();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">void</span> backgroundCases();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> playMenuMusic();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">void</span> playGameMusic();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> handleEvents(<span class="keyword">const</span> std::vector&lt;int&gt;&amp; casesPerRound, <span class="keywordtype">int</span>&amp; eliminatedCases, <span class="keywordtype">bool</span>&amp; offered, <span class="keywordtype">int</span>&amp; lastOffer);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">void</span> render(<span class="keywordtype">bool</span> offered);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">void</span> randomizeBanker();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>};</div>
 </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif </span><span class="comment">// GAME_HPP</span></div>
-<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdef"><b>Definition</b> Game.h:12</div></div>
-<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdef"><b>Definition</b> Player.h:8</div></div>
-<div class="ttc" id="aclass_settings_html"><div class="ttname"><a href="class_settings.html">Settings</a></div><div class="ttdef"><b>Definition</b> Settings.h:12</div></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#endif </span><span class="comment">// GAME_HPP</span></div>
+<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">Manages the core logic, rendering, and events of the Deal or No Deal game.</div><div class="ttdef"><b>Definition</b> Game.h:15</div></div>
+<div class="ttc" id="aclass_game_html_a3d09cd0b68ef69107d36360ca903e023"><div class="ttname"><a href="class_game.html#a3d09cd0b68ef69107d36360ca903e023">Game::~Game</a></div><div class="ttdeci">~Game()=default</div><div class="ttdoc">Default destructor.</div></div>
+<div class="ttc" id="aclass_game_html_aa333825d0bca80e91e53c7e23f053405"><div class="ttname"><a href="class_game.html#aa333825d0bca80e91e53c7e23f053405">Game::play</a></div><div class="ttdeci">void play()</div><div class="ttdoc">Main loop for running the game.</div><div class="ttdef"><b>Definition</b> Game.cpp:42</div></div>
+<div class="ttc" id="aclass_game_html_ad59df6562a58a614fda24622d3715b65"><div class="ttname"><a href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game::Game</a></div><div class="ttdeci">Game()</div><div class="ttdoc">Constructs a new Game object, initializing all resources and state.</div><div class="ttdef"><b>Definition</b> Game.cpp:12</div></div>
+<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdoc">Represents a player in the game, including their username and the selected case.</div><div class="ttdef"><b>Definition</b> Player.h:14</div></div>
+<div class="ttc" id="aclass_settings_html"><div class="ttname"><a href="class_settings.html">Settings</a></div><div class="ttdoc">Handles the game settings such as volume levels and provides a menu interface.</div><div class="ttdef"><b>Definition</b> Settings.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

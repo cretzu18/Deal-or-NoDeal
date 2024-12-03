@@ -1,5 +1,12 @@
 #include "../headers/Banker.h"
 
+/**
+ * @brief Default constructor for the Banker class.
+ *
+ * Initializes the accept and reject buttons and loads the font used for displaying offers.
+ *
+ * @throws FontError if the font file cannot be loaded.
+ */
 Banker::Banker()
 	: rejectButton (std::make_shared<ExitButton>("REJECT", 1300, 200, 100, 50))
 	, acceptButton (std::make_shared<ExitButton>("ACCEPT", 1100, 200, 100, 50))
@@ -8,20 +15,44 @@ Banker::Banker()
 		throw FontError("The font could not be loaded!");
 }
 
+/**
+ * @brief Stream insertion operator for the Banker class.
+ *
+ * Displays the latest offer made by the banker.
+ *
+ * @param os The output stream.
+ * @param b The banker object.
+ * @return A reference to the output stream.
+ */
 std::ostream& operator<<(std::ostream &os, const Banker &b) {
 	os << "The banker offered " << b.offersHistory[b.offersHistory.size() - 1] << "$.\n";
 	return os;
 }
 
+/**
+ * @brief Clears the history of offers made by the banker.
+ */
 void Banker::clearOffers() {
 	offersHistory.clear();
 }
 
+/**
+ * @brief Draws the accept and reject buttons on the provided window.
+ *
+ * @param window The SFML render window.
+ */
 void Banker::draw(sf::RenderWindow &window) const {
 	acceptButton->draw(window);
 	rejectButton->draw(window);
 }
 
+/**
+ * @brief Draws the history of offers made by the banker.
+ *
+ * Displays the list of offers at a specific position in the game window.
+ *
+ * @param window The SFML render window.
+ */
 void Banker::drawOffers(sf::RenderWindow &window) const {
 	sf::Text text;
 	text.setFont(font);
@@ -46,14 +77,36 @@ void Banker::drawOffers(sf::RenderWindow &window) const {
 		window.draw(txt);
 }
 
+/**
+ * @brief Checks if the accept button has been clicked.
+ *
+ * @param window The SFML render window.
+ * @return True if the accept button is clicked, otherwise false.
+ */
 bool Banker::isAcceptButtonClicked(const sf::RenderWindow& window) const {
 	return acceptButton->isClicked(window);
 }
 
+/**
+ * @brief Checks if the reject button has been clicked.
+ *
+ * @param window The SFML render window.
+ * @return True if the reject button is clicked, otherwise false.
+ */
 bool Banker::isRejectButtonClicked(const sf::RenderWindow& window) const {
 	return rejectButton->isClicked(window);
 }
 
+/**
+ * @brief Calculates an offer that is slightly higher than the average remaining case amounts.
+ *
+ * - In early rounds (<= 6), the offer is between 30% and 40% of the average.
+ * - In later rounds, the offer is between 60% and 75% of the average.
+ *
+ * @param cases The remaining cases in the game.
+ * @param round The current round of the game.
+ * @return The calculated offer.
+ */
 double GenerousBanker::offer(const std::vector<Case>& cases, const int round) {
 	if (cases.empty()) return 0;
 
@@ -82,6 +135,16 @@ double GenerousBanker::offer(const std::vector<Case>& cases, const int round) {
 	return currentOffer;
 }
 
+/**
+ * @brief Calculates a lowball offer to maximize the bank's profit.
+ *
+ * - In early rounds (<= 6), the offer is between 25% and 35% of the average.
+ * - In later rounds, the offer is between 25% and 50% of the average.
+ *
+ * @param cases The remaining cases in the game.
+ * @param round The current round of the game.
+ * @return The calculated offer.
+ */
 double GreedyBanker::offer(const std::vector<Case>& cases, const int round) {
 	if (cases.empty()) return 0;
 
@@ -110,6 +173,16 @@ double GreedyBanker::offer(const std::vector<Case>& cases, const int round) {
 	return currentOffer;
 }
 
+/**
+ * @brief Calculates an offer using a random multiplier for unpredictability.
+ *
+ * - In early rounds, the offer remains 0 to avoid randomness affecting the beginning.
+ * - In later rounds, a random multiplier between 0.25 and 1.5 is applied to the average remaining amount.
+ *
+ * @param cases The remaining cases in the game.
+ * @param round The current round of the game.
+ * @return The calculated offer.
+ */
 double LuckyBanker::offer(const std::vector<Case>& cases, const int round) {
 	if (cases.empty()) return 0;
 
@@ -131,6 +204,16 @@ double LuckyBanker::offer(const std::vector<Case>& cases, const int round) {
 	return currentOffer;
 }
 
+/**
+ * @brief Calculates an offer designed to frustrate the player by being as low as possible.
+ *
+ * - In early rounds (<= 6), the offer is half of the average of all remaining amounts.
+ * - In later rounds, the offer is the lowest remaining amount.
+ *
+ * @param cases The remaining cases in the game.
+ * @param round The current round of the game.
+ * @return The calculated offer.
+ */
 double SadisticBanker::offer(const std::vector<Case> &cases, const int round) {
 	if (cases.empty()) return 0;
 
@@ -144,7 +227,7 @@ double SadisticBanker::offer(const std::vector<Case> &cases, const int round) {
 
 	double currentOffer;
 	if (round <= 6) {
-		currentOffer = totalAmount / static_cast<double>(cases.size());
+		currentOffer = totalAmount / static_cast<double>(cases.size()) * 0.5;
 	}
 	else {
 		currentOffer = minAmount;
@@ -154,6 +237,16 @@ double SadisticBanker::offer(const std::vector<Case> &cases, const int round) {
 	return currentOffer;
 }
 
+/**
+ * @brief Calculates an offer that helps the player by being relatively generous.
+ *
+ * - In early rounds, the offer is 50% of the average remaining amount.
+ * - In later rounds, a random multiplier between 1.25 and 1.75 is applied to the offer.
+ *
+ * @param cases The remaining cases in the game.
+ * @param round The current round of the game.
+ * @return The calculated offer.
+ */
 double HelperBanker::offer(const std::vector<Case>& cases, const int round) {
 	if (cases.empty()) return 0;
 

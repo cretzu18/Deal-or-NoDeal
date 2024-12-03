@@ -89,43 +89,55 @@ $(function(){ initResizable(false); });
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Descriere proiect</h1>
-<p>Un joc bazat pe reality show-ul american Deal or No Deal (<a href="https://en.wikipedia.org/wiki/Deal_or_No_Deal_(American_game_show)">https://en.wikipedia.org/wiki/Deal_or_No_Deal_(American_game_show)</a>). Jocul porneste cu 26 de valize ce contin diferite sume de bani de la 0.1$ pana la 1000000$. Jucatorul isi alege la inceput o valiza pe care nu o mai poate elimina ulterior. Apoi pe parcursul jocului acesta trebuie sa elimine un numar specific de valize. Dupa ce elimina acel numar de valize, va primi o oferta de la bancher. Jucatorul poate accepta oferta si paraseste jocul sau poate continua pana la valiza pe care a ales-o inital.</p>
+Game description</h1>
+<p>Deal or No Deal is a simple game adaptation of the popular TV game show where players test their luck and decision-making skills to win the highest cash prize posibile.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
+Game Objective</h1>
+<p>The goal of the game is to maximize your winnings by chossing cases and deciding whether to accept or reject the <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a>'s offer.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Gameplay Features</h1>
+<ol type="1">
+<li><a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a> selection: The player begin by selecting their case, which will remain closed until the end of the game. This case could contain the player's final prize.</li>
+<li>Rounds of eliminations: In each round, the player eliminates a specific number of cases, discarding their values. The tension builds as the remaining cases hold the potential prizes.</li>
+<li><a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a>'s offer: After every round, the <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a> calculates an offer based on the remaining cases' values. This offer is presented as an alternative to continuing the game.</li>
+<li><a class="el" href="class_player.html" title="Represents a player in the game, including their username and the selected case.">Player</a>'s decision: The player can choose to accept or reject the offer. If they accept it, the game ends and the player wins the money of the offer. If they reject it, the game continues by advancing one round.</li>
+<li>Final decision: If the player refused all the offers, they can choose to keep their selected case or swap it with the last remaining case. The player wins the money from the final case.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Milestone #0</h1>
 <ul class="check">
-<li class="unchecked">Nume proiect (poate fi schimbat ulterior)</li>
+<li class="checked">Nume proiect (poate fi schimbat ulterior)</li>
 </ul>
 <ul class="check">
-<li class="unchecked">Scurtă descriere a temei alese, ce v-ați propus să implementați</li>
+<li class="checked">Scurtă descriere a temei alese, ce v-ați propus să implementați</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Milestone #1</h1>
-<h3><a class="anchor" id="autotoc_md4"></a>
+<h3><a class="anchor" id="autotoc_md6"></a>
 Cerințe</h3>
 <ul class="check">
-<li class="unchecked">definirea a minim <b>3-4 clase</b> folosind compunere cu clasele definite de voi</li>
+<li class="checked">definirea a minim <b>3-4 clase</b> folosind compunere cu clasele definite de voi</li>
 </ul>
 <ul class="check">
-<li class="unchecked">constructori de inițializare cu parametri</li>
+<li class="checked">constructori de inițializare cu parametri</li>
 </ul>
 <ul class="check">
-<li class="unchecked">pentru o aceeași (singură) clasă: constructor de copiere, <code>operator=</code> de copiere, destructor</li>
+<li class="checked">pentru o aceeași (singură) clasă: constructor de copiere, <code>operator=</code> de copiere, destructor</li>
 </ul>
 <ul class="check">
-<li class="unchecked"><code>operator&lt;&lt;</code> pentru toate clasele pentru afișare (std::ostream)</li>
+<li class="checked"><code>operator&lt;&lt;</code> pentru toate clasele pentru afișare (std::ostream)</li>
 </ul>
 <ul class="check">
-<li class="unchecked">cât mai multe <code>const</code> (unde este cazul)</li>
+<li class="checked">cât mai multe <code>const</code> (unde este cazul)</li>
 </ul>
 <ul class="check">
-<li class="unchecked">implementarea a minim 3 funcții membru publice pentru funcționalități specifice temei alese, dintre care cel puțin 1-2 funcții mai complexe<ul>
+<li class="checked">implementarea a minim 3 funcții membru publice pentru funcționalități specifice temei alese, dintre care cel puțin 1-2 funcții mai complexe<ul>
 <li>nu doar citiri/afișări sau adăugat/șters elemente într-un/dintr-un vector</li>
 </ul>
 </li>
 </ul>
 <ul class="check">
-<li class="unchecked">scenariu de utilizare a claselor definite:<ul>
+<li class="checked">scenariu de utilizare a claselor definite:<ul>
 <li>preferabil sub formă de teste unitare, mai ales dacă vorbim de aplicații consolă</li>
 <li>crearea de obiecte și apelarea tuturor funcțiilor membru publice în main</li>
 <li>vor fi adăugate în fișierul <code>tastatura.txt</code> DOAR exemple de date de intrare de la tastatură (dacă există); dacă aveți nevoie de date din fișiere, creați alte fișiere separat</li>
@@ -133,25 +145,25 @@ Cerințe</h3>
 </li>
 </ul>
 <ul class="check">
-<li class="unchecked">tag de <code>git</code>: de exemplu <code>v0.1</code></li>
+<li class="checked">tag de <code>git</code>: de exemplu <code>v0.1</code></li>
 </ul>
 <ul class="check">
-<li class="unchecked">serviciu de integrare continuă (CI); exemplu: GitHub Actions</li>
+<li class="checked">serviciu de integrare continuă (CI); exemplu: GitHub Actions</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 Milestone #2</h1>
-<h3><a class="anchor" id="autotoc_md6"></a>
+<h3><a class="anchor" id="autotoc_md8"></a>
 Cerințe</h3>
 <ul class="check">
-<li class="unchecked">separarea codului din clase în <code>.h</code> (sau <code>.hpp</code>) și <code>.cpp</code></li>
+<li class="checked">separarea codului din clase în <code>.h</code> (sau <code>.hpp</code>) și <code>.cpp</code></li>
 </ul>
 <ul class="check">
-<li class="unchecked">moșteniri:<ul>
+<li class="checked">moșteniri:<ul>
 <li>minim o clasă de bază și <b>3 clase derivate</b> din aceeași ierarhie</li>
 <li>ierarhia trebuie să fie cu bază proprie, nu derivată dintr-o clasă predefinită</li>
 </ul>
 <ul class="check">
-<li class="unchecked">funcții virtuale (pure) apelate prin pointeri de bază din clasa care conține atributul de tip pointer de bază<ul>
+<li class="checked">funcții virtuale (pure) apelate prin pointeri de bază din clasa care conține atributul de tip pointer de bază<ul>
 <li>minim o funcție virtuală va fi <b>specifică temei</b> (e.g. nu simple citiri/afișări)</li>
 <li>constructori virtuali (clone): sunt necesari, dar nu se consideră funcții specifice temei</li>
 <li>afișare virtuală, interfață non-virtuală</li>
@@ -159,28 +171,28 @@ Cerințe</h3>
 </li>
 </ul>
 <ul class="check">
-<li class="unchecked">apelarea constructorului din clasa de bază din constructori din derivate</li>
+<li class="checked">apelarea constructorului din clasa de bază din constructori din derivate</li>
 </ul>
 <ul class="check">
-<li class="unchecked">clasă cu atribut de tip pointer la o clasă de bază cu derivate; aici apelați funcțiile virtuale prin pointer de bază, eventual prin interfața non-virtuală din bază<ul class="check">
+<li class="checked">clasă cu atribut de tip pointer la o clasă de bază cu derivate; aici apelați funcțiile virtuale prin pointer de bază, eventual prin interfața non-virtuală din bază<ul class="check">
 <li class="unchecked">suprascris cc/op= pentru copieri/atribuiri corecte, copy and swap</li>
 </ul>
 <ul class="check">
-<li class="unchecked"><code>dynamic_cast</code>/<code>std::dynamic_pointer_cast</code> pentru downcast cu sens</li>
+<li class="checked"><code>dynamic_cast</code>/<code>std::dynamic_pointer_cast</code> pentru downcast cu sens</li>
 </ul>
 <ul class="check">
-<li class="unchecked">smart pointers (recomandat, opțional)</li>
+<li class="checked">smart pointers (recomandat, opțional)</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <ul class="check">
-<li class="unchecked">excepții<ul class="check">
-<li class="unchecked">ierarhie proprie cu baza <code>std::exception</code> sau derivată din <code>std::exception</code>; minim <b>3</b> clase pentru erori specifice</li>
+<li class="checked">excepții<ul class="check">
+<li class="checked">ierarhie proprie cu baza <code>std::exception</code> sau derivată din <code>std::exception</code>; minim <b>3</b> clase pentru erori specifice</li>
 </ul>
 <ul class="check">
-<li class="unchecked">utilizare cu sens: de exemplu, <code>throw</code> în constructor (sau funcție care întoarce un obiect), <code>try</code>/<code>catch</code> în <code>main</code></li>
+<li class="checked">utilizare cu sens: de exemplu, <code>throw</code> în constructor (sau funcție care întoarce un obiect), <code>try</code>/<code>catch</code> în <code>main</code></li>
 </ul>
 <ul>
 <li>această ierarhie va fi complet independentă de ierarhia cu funcții virtuale</li>
@@ -188,23 +200,23 @@ Cerințe</h3>
 </li>
 </ul>
 <ul class="check">
-<li class="unchecked">funcții și atribute <code>static</code></li>
+<li class="checked">funcții și atribute <code>static</code></li>
 </ul>
 <ul class="check">
-<li class="unchecked">STL</li>
+<li class="checked">STL</li>
 </ul>
 <ul class="check">
-<li class="unchecked">cât mai multe <code>const</code></li>
+<li class="checked">cât mai multe <code>const</code></li>
 </ul>
 <ul class="check">
-<li class="unchecked">funcții <em>de nivel înalt</em>, de eliminat cât mai mulți getters/setters/funcții low-level</li>
+<li class="checked">funcții <em>de nivel înalt</em>, de eliminat cât mai mulți getters/setters/funcții low-level</li>
 </ul>
 <ul class="check">
-<li class="unchecked">tag de <code>git</code>: de exemplu <code>v0.2</code></li>
+<li class="checked">tag de <code>git</code>: de exemplu <code>v0.2</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Milestone #3</h1>
-<h3><a class="anchor" id="autotoc_md8"></a>
+<h3><a class="anchor" id="autotoc_md10"></a>
 Cerințe</h3>
 <ul class="check">
 <li class="unchecked">2 șabloane de proiectare (design patterns)</li>
@@ -218,11 +230,9 @@ Cerințe</h3>
 <ul class="check">
 <li class="unchecked">tag de <code>git</code>: de exemplu <code>v0.3</code> sau <code>v1.0</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Resurse</h1>
-<ul>
-<li>adăugați trimiteri către resursele externe care v-au ajutat sau pe care le-ați folosit </li>
-</ul>
+<p><a href="https://www.sfml-dev.org/index.php">SFML</a> <a href="https://www.doxygen.nl/">doxygen</a> </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

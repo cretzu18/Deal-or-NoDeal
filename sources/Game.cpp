@@ -1,5 +1,14 @@
 #include "../headers/Game.h"
 
+/**
+ * @brief Constructs the Game object and initializes all resources and state.
+ *
+ * Initializes the game window, fonts, music, and other settings. It also creates menu buttons
+ * and randomizes the banker for the game.
+ *
+ * @throws MusicError If the menu or game music files cannot be loaded.
+ * @throws FontError If the font file cannot be loaded.
+ */
 Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Titlebar | sf::Style::Close)
 	, round (0)
 	, gameState(MENU)
@@ -25,6 +34,11 @@ Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Ti
 	gameText.setPosition(1050, 150);
 }
 
+/**
+ * @brief Main game loop handling gameplay, rendering, and events.
+ *
+ * This loop initializes cases, manages rounds, and handles game states.
+ */
 void Game::play() {
 	const std::vector<double> amounts = { 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750,
 	                                      1000, 5000, 10000, 25000, 50000, 75000, 100000, 200000,
@@ -56,6 +70,14 @@ void Game::play() {
 	gameMusic.stop();
 }
 
+/**
+ * @brief Handles user events, game logic, and transitions between game states.
+ *
+ * @param casesPerRound Number of cases to eliminate in each round.
+ * @param eliminatedCases The number of cases eliminated in the current round.
+ * @param offered Whether the banker has made an offer.
+ * @param lastOffer The last offer made by the banker.
+ */
 void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCases, bool& offered, int& lastOffer) {
 	sf::Event event{};
 
@@ -166,6 +188,11 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
 	}
 }
 
+/**
+ * @brief Renders all game elements depending on the current state.
+ *
+ * @param offered Indicates whether the banker has made an offer.
+ */
 void Game::render(const bool offered) {
 	window.clear();
 
@@ -209,6 +236,11 @@ void Game::render(const bool offered) {
 	window.display();
 }
 
+/**
+ * @brief Sets the background for the case selection and gameplay.
+ *
+ * @throws BackgroundError If the background texture file cannot be loaded.
+ */
 void Game::backgroundCases() {
 	if (!backgroundTexture.loadFromFile("../resources/background2.png")) {
 		throw BackgroundError("The background could not be loaded!");
@@ -216,6 +248,11 @@ void Game::backgroundCases() {
 	background.setTexture(backgroundTexture);
 }
 
+/**
+ * @brief Sets the background for the main menu.
+ *
+ * @throws BackgroundError If the background texture file cannot be loaded.
+ */
 void Game::backgroundMenu() {
 	if (!backgroundTexture.loadFromFile("../resources/background.png")) {
 		throw BackgroundError("The background could not be loaded!");
@@ -223,6 +260,9 @@ void Game::backgroundMenu() {
 	background.setTexture(backgroundTexture);
 }
 
+/**
+ * @brief Plays the menu music.
+ */
 void Game::playMenuMusic() {
 	if (menuMusic.getStatus() != sf::Music::Playing) {
 		gameMusic.stop();
@@ -230,6 +270,9 @@ void Game::playMenuMusic() {
 	}
 }
 
+/**
+ * @brief Plays the game music.
+ */
 void Game::playGameMusic() {
 	if (gameMusic.getStatus() != sf::Music::Playing) {
 		menuMusic.stop();
@@ -237,6 +280,11 @@ void Game::playGameMusic() {
 	}
 }
 
+/**
+ * @brief Creates and positions the cases with randomized amounts.
+ *
+ * @param amounts A vector of monetary amounts to assign to the cases.
+ */
 void Game::createCases(std::vector<double> amounts) {
 	cases.clear();
 	std::random_device rd;
@@ -254,6 +302,9 @@ void Game::createCases(std::vector<double> amounts) {
 	}
 }
 
+/**
+ * @brief Creates the main menu buttons.
+ */
 void Game::createButtons() {
 	menuButtons.push_back(std::make_shared<PlayButton>("PLAY", 50, 840, 300, 50));
 	menuButtons.push_back(std::make_shared<SettingsButton>("SETTINGS", 650, 840, 300, 50));
@@ -261,6 +312,9 @@ void Game::createButtons() {
 	menuButtons.push_back(std::make_shared<BackButton>("BACK", 1250, 750, 300, 100));
 }
 
+/**
+ * @brief Randomly assigns a Banker type to the game.
+ */
 void Game::randomizeBanker() {
 	const std::vector<std::function<std::unique_ptr<Banker>()>> allBankers = {
 		[]() { return std::make_unique<GenerousBanker>(); },

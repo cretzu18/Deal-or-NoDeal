@@ -92,65 +92,410 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Banker Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Base class representing a <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a> in the game.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_banker_8h_source.html">Banker.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Banker:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_banker.png" usemap="#Banker_map" alt=""/>
   <map id="Banker_map" name="Banker_map">
-<area href="class_generous_banker.html" alt="GenerousBanker" shape="rect" coords="0,56,107,80"/>
-<area href="class_greedy_banker.html" alt="GreedyBanker" shape="rect" coords="117,56,224,80"/>
-<area href="class_helper_banker.html" alt="HelperBanker" shape="rect" coords="234,56,341,80"/>
-<area href="class_lucky_banker.html" alt="LuckyBanker" shape="rect" coords="351,56,458,80"/>
-<area href="class_sadistic_banker.html" alt="SadisticBanker" shape="rect" coords="468,56,575,80"/>
+<area href="class_generous_banker.html" title="Represents a Banker who makes higher-than-average offers." alt="GenerousBanker" shape="rect" coords="0,56,107,80"/>
+<area href="class_greedy_banker.html" title="Represents a Banker who makes lowball offers." alt="GreedyBanker" shape="rect" coords="117,56,224,80"/>
+<area href="class_helper_banker.html" title="Represents a Banker who supports the player with generous offers." alt="HelperBanker" shape="rect" coords="234,56,341,80"/>
+<area href="class_lucky_banker.html" title="Represents a Banker whose offers are influenced by random chance." alt="LuckyBanker" shape="rect" coords="351,56,458,80"/>
+<area href="class_sadistic_banker.html" title="Represents a Banker who makes the worst possible offers." alt="SadisticBanker" shape="rect" coords="468,56,575,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a2bf4bc9123112c0d77885d3b989ea798" id="r_a2bf4bc9123112c0d77885d3b989ea798"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bf4bc9123112c0d77885d3b989ea798">Banker</a> ()</td></tr>
+<tr class="memdesc:a2bf4bc9123112c0d77885d3b989ea798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a>. Initializes the accept and reject buttons.  <br /></td></tr>
+<tr class="separator:a2bf4bc9123112c0d77885d3b989ea798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dd0dfd8110dfab35a5f91d34f5b44b2" id="r_a2dd0dfd8110dfab35a5f91d34f5b44b2"><td class="memItemLeft" align="right" valign="top"><a id="a2dd0dfd8110dfab35a5f91d34f5b44b2" name="a2dd0dfd8110dfab35a5f91d34f5b44b2"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Banker</b> (const <a class="el" href="class_banker.html">Banker</a> &amp;other)=default</td></tr>
+<tr class="memdesc:a2dd0dfd8110dfab35a5f91d34f5b44b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor. <br /></td></tr>
 <tr class="separator:a2dd0dfd8110dfab35a5f91d34f5b44b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3e8d67425c0a77b4ae13c339772bd31" id="r_ac3e8d67425c0a77b4ae13c339772bd31"><td class="memItemLeft" align="right" valign="top"><a id="ac3e8d67425c0a77b4ae13c339772bd31" name="ac3e8d67425c0a77b4ae13c339772bd31"></a>
 <a class="el" href="class_banker.html">Banker</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_banker.html">Banker</a> &amp;other)=default</td></tr>
+<tr class="memdesc:ac3e8d67425c0a77b4ae13c339772bd31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy assignment operator. <br /></td></tr>
 <tr class="separator:ac3e8d67425c0a77b4ae13c339772bd31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80ac287c083887d297bb383a2a728856" id="r_a80ac287c083887d297bb383a2a728856"><td class="memItemLeft" align="right" valign="top"><a id="a80ac287c083887d297bb383a2a728856" name="a80ac287c083887d297bb383a2a728856"></a>
-virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>offer</b> (const std::vector&lt; <a class="el" href="class_case.html">Case</a> &gt; &amp;cases, int round)=0</td></tr>
+<tr class="memitem:ad32621d3bd4c00efcde2694df46549d5" id="r_ad32621d3bd4c00efcde2694df46549d5"><td class="memItemLeft" align="right" valign="top"><a id="ad32621d3bd4c00efcde2694df46549d5" name="ad32621d3bd4c00efcde2694df46549d5"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Banker</b> ()=default</td></tr>
+<tr class="memdesc:ad32621d3bd4c00efcde2694df46549d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for polymorphism. <br /></td></tr>
+<tr class="separator:ad32621d3bd4c00efcde2694df46549d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80ac287c083887d297bb383a2a728856" id="r_a80ac287c083887d297bb383a2a728856"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80ac287c083887d297bb383a2a728856">offer</a> (const std::vector&lt; <a class="el" href="class_case.html">Case</a> &gt; &amp;cases, int round)=0</td></tr>
+<tr class="memdesc:a80ac287c083887d297bb383a2a728856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method to calculate the banker's offer.  <br /></td></tr>
 <tr class="separator:a80ac287c083887d297bb383a2a728856"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac71c2f36d57a5c6c95b0a7a63140ec0e" id="r_ac71c2f36d57a5c6c95b0a7a63140ec0e"><td class="memItemLeft" align="right" valign="top"><a id="ac71c2f36d57a5c6c95b0a7a63140ec0e" name="ac71c2f36d57a5c6c95b0a7a63140ec0e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clearOffers</b> ()</td></tr>
+<tr class="memitem:ac71c2f36d57a5c6c95b0a7a63140ec0e" id="r_ac71c2f36d57a5c6c95b0a7a63140ec0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac71c2f36d57a5c6c95b0a7a63140ec0e">clearOffers</a> ()</td></tr>
+<tr class="memdesc:ac71c2f36d57a5c6c95b0a7a63140ec0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the history of offers.  <br /></td></tr>
 <tr class="separator:ac71c2f36d57a5c6c95b0a7a63140ec0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1671f20a2a59618aeb1f8a7345171af7" id="r_a1671f20a2a59618aeb1f8a7345171af7"><td class="memItemLeft" align="right" valign="top"><a id="a1671f20a2a59618aeb1f8a7345171af7" name="a1671f20a2a59618aeb1f8a7345171af7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memitem:a1671f20a2a59618aeb1f8a7345171af7" id="r_a1671f20a2a59618aeb1f8a7345171af7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1671f20a2a59618aeb1f8a7345171af7">draw</a> (sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memdesc:a1671f20a2a59618aeb1f8a7345171af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the accept and reject buttons on the window.  <br /></td></tr>
 <tr class="separator:a1671f20a2a59618aeb1f8a7345171af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a587e62c61ed15ede7d57ddb4c052f7c4" id="r_a587e62c61ed15ede7d57ddb4c052f7c4"><td class="memItemLeft" align="right" valign="top"><a id="a587e62c61ed15ede7d57ddb4c052f7c4" name="a587e62c61ed15ede7d57ddb4c052f7c4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>drawOffers</b> (sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memitem:a587e62c61ed15ede7d57ddb4c052f7c4" id="r_a587e62c61ed15ede7d57ddb4c052f7c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a587e62c61ed15ede7d57ddb4c052f7c4">drawOffers</a> (sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memdesc:a587e62c61ed15ede7d57ddb4c052f7c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the history of offers made by the banker.  <br /></td></tr>
 <tr class="separator:a587e62c61ed15ede7d57ddb4c052f7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97829e4d539ab2aa769d3e896bbacb9a" id="r_a97829e4d539ab2aa769d3e896bbacb9a"><td class="memItemLeft" align="right" valign="top"><a id="a97829e4d539ab2aa769d3e896bbacb9a" name="a97829e4d539ab2aa769d3e896bbacb9a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isAcceptButtonClicked</b> (const sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memitem:a97829e4d539ab2aa769d3e896bbacb9a" id="r_a97829e4d539ab2aa769d3e896bbacb9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97829e4d539ab2aa769d3e896bbacb9a">isAcceptButtonClicked</a> (const sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memdesc:a97829e4d539ab2aa769d3e896bbacb9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the accept button was clicked.  <br /></td></tr>
 <tr class="separator:a97829e4d539ab2aa769d3e896bbacb9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fc4abe440adc381d08c487f8ab070a1" id="r_a4fc4abe440adc381d08c487f8ab070a1"><td class="memItemLeft" align="right" valign="top"><a id="a4fc4abe440adc381d08c487f8ab070a1" name="a4fc4abe440adc381d08c487f8ab070a1"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isRejectButtonClicked</b> (const sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memitem:a4fc4abe440adc381d08c487f8ab070a1" id="r_a4fc4abe440adc381d08c487f8ab070a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fc4abe440adc381d08c487f8ab070a1">isRejectButtonClicked</a> (const sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memdesc:a4fc4abe440adc381d08c487f8ab070a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the reject button was clicked.  <br /></td></tr>
 <tr class="separator:a4fc4abe440adc381d08c487f8ab070a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c6f9751f13045ddf54b587db974e34e" id="r_a9c6f9751f13045ddf54b587db974e34e"><td class="memItemLeft" align="right" valign="top"><a id="a9c6f9751f13045ddf54b587db974e34e" name="a9c6f9751f13045ddf54b587db974e34e"></a>
-virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getType</b> () const =0</td></tr>
+<tr class="memitem:a9c6f9751f13045ddf54b587db974e34e" id="r_a9c6f9751f13045ddf54b587db974e34e"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c6f9751f13045ddf54b587db974e34e">getType</a> () const =0</td></tr>
+<tr class="memdesc:a9c6f9751f13045ddf54b587db974e34e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method to get the type of banker as a string.  <br /></td></tr>
 <tr class="separator:a9c6f9751f13045ddf54b587db974e34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ffe1e1f13db8a25c2187eeb9d72aaa6" id="r_a1ffe1e1f13db8a25c2187eeb9d72aaa6"><td class="memItemLeft" align="right" valign="top"><a id="a1ffe1e1f13db8a25c2187eeb9d72aaa6" name="a1ffe1e1f13db8a25c2187eeb9d72aaa6"></a>
-virtual <a class="el" href="class_banker.html">Banker</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>clone</b> ()=0</td></tr>
+<tr class="memitem:a1ffe1e1f13db8a25c2187eeb9d72aaa6" id="r_a1ffe1e1f13db8a25c2187eeb9d72aaa6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_banker.html">Banker</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ffe1e1f13db8a25c2187eeb9d72aaa6">clone</a> ()=0</td></tr>
+<tr class="memdesc:a1ffe1e1f13db8a25c2187eeb9d72aaa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method to clone the banker object.  <br /></td></tr>
 <tr class="separator:a1ffe1e1f13db8a25c2187eeb9d72aaa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a1daba975f0671acb5bbacc2e372acef3" id="r_a1daba975f0671acb5bbacc2e372acef3"><td class="memItemLeft" align="right" valign="top"><a id="a1daba975f0671acb5bbacc2e372acef3" name="a1daba975f0671acb5bbacc2e372acef3"></a>
 std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>offersHistory</b></td></tr>
+<tr class="memdesc:a1daba975f0671acb5bbacc2e372acef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the history of all offers made by the banker. <br /></td></tr>
 <tr class="separator:a1daba975f0671acb5bbacc2e372acef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a4fc892b10f288d1f2ddffeb84f718602" id="r_a4fc892b10f288d1f2ddffeb84f718602"><td class="memItemLeft" align="right" valign="top"><a id="a4fc892b10f288d1f2ddffeb84f718602" name="a4fc892b10f288d1f2ddffeb84f718602"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="class_banker.html">Banker</a> &amp;b)</td></tr>
+<tr class="memitem:a4fc892b10f288d1f2ddffeb84f718602" id="r_a4fc892b10f288d1f2ddffeb84f718602"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fc892b10f288d1f2ddffeb84f718602">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="class_banker.html">Banker</a> &amp;b)</td></tr>
+<tr class="memdesc:a4fc892b10f288d1f2ddffeb84f718602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded output operator for displaying banker details.  <br /></td></tr>
 <tr class="separator:a4fc892b10f288d1f2ddffeb84f718602"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class representing a <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a> in the game. </p>
+<p>The <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a> class handles the calculation of offers, rendering of accept/reject buttons, and maintains the history of offers. It is designed to be extended by derived classes that provide specific offer calculation strategies. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2bf4bc9123112c0d77885d3b989ea798" name="a2bf4bc9123112c0d77885d3b989ea798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bf4bc9123112c0d77885d3b989ea798">&#9670;&#160;</a></span>Banker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Banker::Banker </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default constructor for <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a>. Initializes the accept and reject buttons. </p>
+<p>Default constructor for the <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a> class.</p>
+<p>Initializes the accept and reject buttons and loads the font used for displaying offers.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="class_font_error.html" title="A custom exception class for font-related errors.">FontError</a></td><td>if the font file cannot be loaded. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac71c2f36d57a5c6c95b0a7a63140ec0e" name="ac71c2f36d57a5c6c95b0a7a63140ec0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac71c2f36d57a5c6c95b0a7a63140ec0e">&#9670;&#160;</a></span>clearOffers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Banker::clearOffers </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clears the history of offers. </p>
+<p>Clears the history of offers made by the banker. </p>
+
+</div>
+</div>
+<a id="a1ffe1e1f13db8a25c2187eeb9d72aaa6" name="a1ffe1e1f13db8a25c2187eeb9d72aaa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ffe1e1f13db8a25c2187eeb9d72aaa6">&#9670;&#160;</a></span>clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_banker.html">Banker</a> * Banker::clone </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pure virtual method to clone the banker object. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the cloned banker object. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_generous_banker.html#ad938edc5904961c05b103e06e1c876da">GenerousBanker</a>, <a class="el" href="class_greedy_banker.html#ad46aa9982394091a1e2d8d2f56700853">GreedyBanker</a>, <a class="el" href="class_helper_banker.html#a27573291721f3ac67f395759ec1b98a7">HelperBanker</a>, <a class="el" href="class_lucky_banker.html#a35bda388c0079904495c1ebc6a7ea0e9">LuckyBanker</a>, and <a class="el" href="class_sadistic_banker.html#ae956e900950b1537acf2e2192f195f88">SadisticBanker</a>.</p>
+
+</div>
+</div>
+<a id="a1671f20a2a59618aeb1f8a7345171af7" name="a1671f20a2a59618aeb1f8a7345171af7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1671f20a2a59618aeb1f8a7345171af7">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Banker::draw </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws the accept and reject buttons on the window. </p>
+<p>Draws the accept and reject buttons on the provided window.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The render window.</td></tr>
+    <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a587e62c61ed15ede7d57ddb4c052f7c4" name="a587e62c61ed15ede7d57ddb4c052f7c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a587e62c61ed15ede7d57ddb4c052f7c4">&#9670;&#160;</a></span>drawOffers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Banker::drawOffers </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays the history of offers made by the banker. </p>
+<p>Draws the history of offers made by the banker.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The render window.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Displays the list of offers at a specific position in the game window.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9c6f9751f13045ddf54b587db974e34e" name="a9c6f9751f13045ddf54b587db974e34e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c6f9751f13045ddf54b587db974e34e">&#9670;&#160;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string Banker::getType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pure virtual method to get the type of banker as a string. </p>
+<dl class="section return"><dt>Returns</dt><dd>The type of the banker. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_generous_banker.html#a72559e5b35e53659e5f4f4bd6824912a">GenerousBanker</a>, <a class="el" href="class_greedy_banker.html#adef8b7f4a02bdb98c50acea8f90154ad">GreedyBanker</a>, <a class="el" href="class_helper_banker.html#aef354e32448f08bbd94dd1e6ce06f988">HelperBanker</a>, <a class="el" href="class_lucky_banker.html#af45858082fcd1da3de2b966db14908d6">LuckyBanker</a>, and <a class="el" href="class_sadistic_banker.html#a6e9bea0a2ea9879e29e9de6c7f504664">SadisticBanker</a>.</p>
+
+</div>
+</div>
+<a id="a97829e4d539ab2aa769d3e896bbacb9a" name="a97829e4d539ab2aa769d3e896bbacb9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97829e4d539ab2aa769d3e896bbacb9a">&#9670;&#160;</a></span>isAcceptButtonClicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Banker::isAcceptButtonClicked </td>
+          <td>(</td>
+          <td class="paramtype">const sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the accept button was clicked. </p>
+<p>Checks if the accept button has been clicked.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The render window. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the accept button was clicked, false otherwise.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the accept button is clicked, otherwise false. </dd></dl>
+
+</div>
+</div>
+<a id="a4fc4abe440adc381d08c487f8ab070a1" name="a4fc4abe440adc381d08c487f8ab070a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc4abe440adc381d08c487f8ab070a1">&#9670;&#160;</a></span>isRejectButtonClicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Banker::isRejectButtonClicked </td>
+          <td>(</td>
+          <td class="paramtype">const sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the reject button was clicked. </p>
+<p>Checks if the reject button has been clicked.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The render window. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the reject button was clicked, false otherwise.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the reject button is clicked, otherwise false. </dd></dl>
+
+</div>
+</div>
+<a id="a80ac287c083887d297bb383a2a728856" name="a80ac287c083887d297bb383a2a728856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80ac287c083887d297bb383a2a728856">&#9670;&#160;</a></span>offer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double Banker::offer </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="class_case.html">Case</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>cases</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>round</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pure virtual method to calculate the banker's offer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cases</td><td>The remaining cases in the game. </td></tr>
+    <tr><td class="paramname">round</td><td>The current round of the game. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The offer amount. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_generous_banker.html#a025f66f47a1cd3afef8447a5c000c34f">GenerousBanker</a>, <a class="el" href="class_greedy_banker.html#aeaff767c2edaab0c14ff9fd2d945ae85">GreedyBanker</a>, <a class="el" href="class_helper_banker.html#ab837aa892eb68588fb04ec94234bb94d">HelperBanker</a>, <a class="el" href="class_lucky_banker.html#a5838830547000c8f8495c12ebfff954b">LuckyBanker</a>, and <a class="el" href="class_sadistic_banker.html#a135be944953f1dcaf85ced4b1cbf704e">SadisticBanker</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a4fc892b10f288d1f2ddffeb84f718602" name="a4fc892b10f288d1f2ddffeb84f718602"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc892b10f288d1f2ddffeb84f718602">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_banker.html">Banker</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overloaded output operator for displaying banker details. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>The output stream. </td></tr>
+    <tr><td class="paramname">b</td><td>The banker object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The modified output stream.</dd></dl>
+<p>Displays the latest offer made by the banker.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>The output stream. </td></tr>
+    <tr><td class="paramname">b</td><td>The banker object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the output stream. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>headers/<a class="el" href="_banker_8h_source.html">Banker.h</a></li>
 <li>sources/<b>Banker.cpp</b></li>

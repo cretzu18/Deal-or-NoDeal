@@ -1,5 +1,14 @@
 \doxysection{Font\+Error Class Reference}
 \hypertarget{class_font_error}{}\label{class_font_error}\index{FontError@{FontError}}
+
+
+A custom exception class for font-\/related errors.  
+
+
+
+
+{\ttfamily \#include $<$Errors.\+h$>$}
+
 Inheritance diagram for Font\+Error\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,14 +18,47 @@ Inheritance diagram for Font\+Error\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_font_error_a39e13e20b23d47150ef23616b350c916}\label{class_font_error_a39e13e20b23d47150ef23616b350c916} 
-{\bfseries Font\+Error} (const std\+::string \&message)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_font_error_a39e13e20b23d47150ef23616b350c916}{Font\+Error}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_font_error}{Font\+Error} with a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_error}{Game\+Error}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Game\+Error} (const std\+::string \&message)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_game_error_aa5f9df2ab465545117320f45f1335969}{Game\+Error}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_game_error}{Game\+Error} with a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A custom exception class for font-\/related errors. 
+
+This class is derived from \doxylink{class_game_error}{Game\+Error} and specifically handles errors that occur when loading fonts. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_font_error_a39e13e20b23d47150ef23616b350c916}\index{FontError@{FontError}!FontError@{FontError}}
+\index{FontError@{FontError}!FontError@{FontError}}
+\doxysubsubsection{\texorpdfstring{FontError()}{FontError()}}
+{\footnotesize\ttfamily \label{class_font_error_a39e13e20b23d47150ef23616b350c916} 
+Font\+Error\+::\+Font\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_font_error}{Font\+Error} with a message. 
+
+Constructs a \doxylink{class_font_error}{Font\+Error} with a custom error message.
+
+This constructor allows the creation of a \doxylink{class_font_error}{Font\+Error} exception with a specific message describing the font error.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The error message.\\
+\hline
+\end{DoxyParams}
+This constructor prepends the string "{}\+Font error\+: "{} to the provided message and passes it to the base class \doxylink{class_game_error}{Game\+Error}, which creates a \doxylink{class_font_error}{Font\+Error} exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The error message specific to the font-\/related issue. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

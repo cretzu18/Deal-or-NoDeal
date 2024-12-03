@@ -90,22 +90,155 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">VolumeSlider Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class that represents a volume slider for adjusting the volume level.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_volume_slider_8h_source.html">VolumeSlider.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae36732dda002291f9f9fb9e8d15e7aa7" id="r_ae36732dda002291f9f9fb9e8d15e7aa7"><td class="memItemLeft" align="right" valign="top"><a id="ae36732dda002291f9f9fb9e8d15e7aa7" name="ae36732dda002291f9f9fb9e8d15e7aa7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>VolumeSlider</b> (float x, float y)</td></tr>
+<tr class="memitem:ae36732dda002291f9f9fb9e8d15e7aa7" id="r_ae36732dda002291f9f9fb9e8d15e7aa7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae36732dda002291f9f9fb9e8d15e7aa7">VolumeSlider</a> (float x, float y)</td></tr>
+<tr class="memdesc:ae36732dda002291f9f9fb9e8d15e7aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_volume_slider.html" title="A class that represents a volume slider for adjusting the volume level.">VolumeSlider</a> at the specified position.  <br /></td></tr>
 <tr class="separator:ae36732dda002291f9f9fb9e8d15e7aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57d577f2f80eda182313b30289866363" id="r_a57d577f2f80eda182313b30289866363"><td class="memItemLeft" align="right" valign="top"><a id="a57d577f2f80eda182313b30289866363" name="a57d577f2f80eda182313b30289866363"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getVolumeLevel</b> () const</td></tr>
+<tr class="memitem:a8a990bd34e2a078031784cb200f05866" id="r_a8a990bd34e2a078031784cb200f05866"><td class="memItemLeft" align="right" valign="top"><a id="a8a990bd34e2a078031784cb200f05866" name="a8a990bd34e2a078031784cb200f05866"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~VolumeSlider</b> ()=default</td></tr>
+<tr class="memdesc:a8a990bd34e2a078031784cb200f05866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the <a class="el" href="class_volume_slider.html" title="A class that represents a volume slider for adjusting the volume level.">VolumeSlider</a>. <br /></td></tr>
+<tr class="separator:a8a990bd34e2a078031784cb200f05866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d577f2f80eda182313b30289866363" id="r_a57d577f2f80eda182313b30289866363"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57d577f2f80eda182313b30289866363">getVolumeLevel</a> () const</td></tr>
+<tr class="memdesc:a57d577f2f80eda182313b30289866363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current volume level.  <br /></td></tr>
 <tr class="separator:a57d577f2f80eda182313b30289866363"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c66f42e83556b3bc13676cd498f2692" id="r_a3c66f42e83556b3bc13676cd498f2692"><td class="memItemLeft" align="right" valign="top"><a id="a3c66f42e83556b3bc13676cd498f2692" name="a3c66f42e83556b3bc13676cd498f2692"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memitem:a3c66f42e83556b3bc13676cd498f2692" id="r_a3c66f42e83556b3bc13676cd498f2692"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c66f42e83556b3bc13676cd498f2692">draw</a> (sf::RenderWindow &amp;window) const</td></tr>
+<tr class="memdesc:a3c66f42e83556b3bc13676cd498f2692"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the volume slider and knob onto the window.  <br /></td></tr>
 <tr class="separator:a3c66f42e83556b3bc13676cd498f2692"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8db0f680d641dea145f593bff15e631f" id="r_a8db0f680d641dea145f593bff15e631f"><td class="memItemLeft" align="right" valign="top"><a id="a8db0f680d641dea145f593bff15e631f" name="a8db0f680d641dea145f593bff15e631f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (const sf::RenderWindow &amp;window, const sf::Event &amp;event)</td></tr>
+<tr class="memitem:a8db0f680d641dea145f593bff15e631f" id="r_a8db0f680d641dea145f593bff15e631f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8db0f680d641dea145f593bff15e631f">update</a> (const sf::RenderWindow &amp;window, const sf::Event &amp;event)</td></tr>
+<tr class="memdesc:a8db0f680d641dea145f593bff15e631f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the volume slider based on user interaction.  <br /></td></tr>
 <tr class="separator:a8db0f680d641dea145f593bff15e631f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class that represents a volume slider for adjusting the volume level. </p>
+<p>The <code><a class="el" href="class_volume_slider.html" title="A class that represents a volume slider for adjusting the volume level.">VolumeSlider</a></code> class is used to create and manage a slider component that allows the user to adjust a value between a minimum and maximum range, in this case, controlling the volume level. The slider consists of a track (represented as a rectangle) and a knob that the user can drag horizontally to adjust the volume level. The class provides methods to draw the slider on the screen and update the position of the knob based on user input.</p>
+<p>The volume level is expressed as a float value between 0 and 100, and the position of the knob on the slider represents this value.</p>
+<dl class="section see"><dt>See also</dt><dd>SFML for window and graphics handling. </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae36732dda002291f9f9fb9e8d15e7aa7" name="ae36732dda002291f9f9fb9e8d15e7aa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae36732dda002291f9f9fb9e8d15e7aa7">&#9670;&#160;</a></span>VolumeSlider()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VolumeSlider::VolumeSlider </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="class_volume_slider.html" title="A class that represents a volume slider for adjusting the volume level.">VolumeSlider</a> at the specified position. </p>
+<p>This constructor initializes the volume slider with a knob at the given position. It sets the initial volume level to 0.5 (50%).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The X-coordinate of the slider. </td></tr>
+    <tr><td class="paramname">y</td><td>The Y-coordinate of the slider. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3c66f42e83556b3bc13676cd498f2692" name="a3c66f42e83556b3bc13676cd498f2692"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c66f42e83556b3bc13676cd498f2692">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VolumeSlider::draw </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws the volume slider and knob onto the window. </p>
+<p>This method renders the slider and its knob to the specified window.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The render window where the volume slider is drawn. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a57d577f2f80eda182313b30289866363" name="a57d577f2f80eda182313b30289866363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57d577f2f80eda182313b30289866363">&#9670;&#160;</a></span>getVolumeLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float VolumeSlider::getVolumeLevel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the current volume level. </p>
+<p>This method returns the current volume level as a float, where 0.0 represents no volume, and 1.0 represents maximum volume.</p>
+<dl class="section return"><dt>Returns</dt><dd>The current volume level. </dd></dl>
+
+</div>
+</div>
+<a id="a8db0f680d641dea145f593bff15e631f" name="a8db0f680d641dea145f593bff15e631f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8db0f680d641dea145f593bff15e631f">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VolumeSlider::update </td>
+          <td>(</td>
+          <td class="paramtype">const sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Event &amp;</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the volume slider based on user interaction. </p>
+<p>This method checks for user input, such as dragging the knob or clicking on the slider, and updates the volume level accordingly.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The render window where the event is being processed. </td></tr>
+    <tr><td class="paramname">event</td><td>The event to be processed, which may include user input on the slider. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>headers/<a class="el" href="_volume_slider_8h_source.html">VolumeSlider.h</a></li>
 <li>sources/<b>VolumeSlider.cpp</b></li>

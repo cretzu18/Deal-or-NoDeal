@@ -90,16 +90,104 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">RandomUtil Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A utility class for generating random numbers.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_random_util_8h_source.html">RandomUtil.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aea525916a7aa34af1d0dd3c53c456fcd" id="r_aea525916a7aa34af1d0dd3c53c456fcd"><td class="memItemLeft" align="right" valign="top"><a id="aea525916a7aa34af1d0dd3c53c456fcd" name="aea525916a7aa34af1d0dd3c53c456fcd"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>getRandomInt</b> (int min, int max)</td></tr>
+<tr class="memitem:aea525916a7aa34af1d0dd3c53c456fcd" id="r_aea525916a7aa34af1d0dd3c53c456fcd"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea525916a7aa34af1d0dd3c53c456fcd">getRandomInt</a> (int min, int max)</td></tr>
+<tr class="memdesc:aea525916a7aa34af1d0dd3c53c456fcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random integer within the specified range.  <br /></td></tr>
 <tr class="separator:aea525916a7aa34af1d0dd3c53c456fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bde8a1f30c42586cabc55a9805f6e0f" id="r_a9bde8a1f30c42586cabc55a9805f6e0f"><td class="memItemLeft" align="right" valign="top"><a id="a9bde8a1f30c42586cabc55a9805f6e0f" name="a9bde8a1f30c42586cabc55a9805f6e0f"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>getRandomDouble</b> (double min, double max)</td></tr>
+<tr class="memitem:a9bde8a1f30c42586cabc55a9805f6e0f" id="r_a9bde8a1f30c42586cabc55a9805f6e0f"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bde8a1f30c42586cabc55a9805f6e0f">getRandomDouble</a> (double min, double max)</td></tr>
+<tr class="memdesc:a9bde8a1f30c42586cabc55a9805f6e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random double within the specified range.  <br /></td></tr>
 <tr class="separator:a9bde8a1f30c42586cabc55a9805f6e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A utility class for generating random numbers. </p>
+<p>This class provides static methods to generate random integers and floating-point numbers within a specified range. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9bde8a1f30c42586cabc55a9805f6e0f" name="a9bde8a1f30c42586cabc55a9805f6e0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bde8a1f30c42586cabc55a9805f6e0f">&#9670;&#160;</a></span>getRandomDouble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RandomUtil::getRandomDouble </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a random double within the specified range. </p>
+<p>This method generates a random floating-point number in the range from <code>min</code> to <code>max</code>. It uses the random number generator to return a uniformly distributed double.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>The minimum possible value for the generated random double. </td></tr>
+    <tr><td class="paramname">max</td><td>The maximum possible value for the generated random double. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A random double in the range [min, max]. </dd></dl>
+
+</div>
+</div>
+<a id="aea525916a7aa34af1d0dd3c53c456fcd" name="aea525916a7aa34af1d0dd3c53c456fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea525916a7aa34af1d0dd3c53c456fcd">&#9670;&#160;</a></span>getRandomInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int RandomUtil::getRandomInt </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a random integer within the specified range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>The minimum possible value for the generated random integer. </td></tr>
+    <tr><td class="paramname">max</td><td>The maximum possible value for the generated random integer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A random integer in the range [min, max]. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>headers/<a class="el" href="_random_util_8h_source.html">RandomUtil.h</a></li>
 <li>sources/<b>RandomUtil.cpp</b></li>

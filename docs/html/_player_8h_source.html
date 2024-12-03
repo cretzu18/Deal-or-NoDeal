@@ -98,26 +98,36 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Case.h&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_player.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="class_player.html">Player</a> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    std::string username;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_class" href="class_case.html">Case</a>* selectedCase;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_player.html">Player</a>(std::string name = <span class="stringliteral">&quot;Player&quot;</span>);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_class" href="class_player.html">Player</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_player.html">Player</a> &amp;other) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_player.html">Player</a> &amp;operator=(<span class="keyword">const</span> <a class="code hl_class" href="class_player.html">Player</a> &amp;other) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="class_player.html">~Player</a>() = <span class="keywordflow">default</span>;</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_player.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="class_player.html">Player</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    std::string username; </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="class_case.html">Case</a>* selectedCase; </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">friend</span> std::ostream&amp; operator&lt;&lt;(std::ostream &amp;os, <span class="keyword">const</span> <a class="code hl_class" href="class_player.html">Player</a> &amp;p);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">void</span> selectCase(<a class="code hl_class" href="class_case.html">Case</a>* selectedCase);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_player.html#ac6f239e98158f2324a0bf4cedcc921ba">Player</a>(std::string name = <span class="stringliteral">&quot;Player&quot;</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_player.html#a93e83d153207eb4810ccd2d529ca0431">   36</a></span>    <a class="code hl_function" href="class_player.html#a93e83d153207eb4810ccd2d529ca0431">Player</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_player.html">Player</a> &amp;other) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_player.html#aea427047474cd99c0ce3399d7884ec44">   46</a></span>    <a class="code hl_class" href="class_player.html">Player</a> &amp;<a class="code hl_function" href="class_player.html#aea427047474cd99c0ce3399d7884ec44">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_player.html">Player</a> &amp;other) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_player.html#a40d3c47b65e9652c363a8fde41f7bbf5">   53</a></span>    <a class="code hl_function" href="class_player.html#a40d3c47b65e9652c363a8fde41f7bbf5">~Player</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">friend</span> std::ostream&amp; <a class="code hl_friend" href="class_player.html#a68d4ba1c9cf36c16ade913428d329b39">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code hl_class" href="class_player.html">Player</a> &amp;p);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_player.html#a88a21046fab185b3d38b6684f61531ae">selectCase</a>(<a class="code hl_class" href="class_case.html">Case</a>* selectedCase);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>};</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif </span><span class="comment">// PLAYER_HPP</span></div>
-<div class="ttc" id="aclass_case_html"><div class="ttname"><a href="class_case.html">Case</a></div><div class="ttdef"><b>Definition</b> Case.h:8</div></div>
-<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdef"><b>Definition</b> Player.h:8</div></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif </span><span class="comment">// PLAYER_HPP</span></div>
+<div class="ttc" id="aclass_case_html"><div class="ttname"><a href="class_case.html">Case</a></div><div class="ttdoc">Represents a case in the Deal or No Deal game.</div><div class="ttdef"><b>Definition</b> Case.h:14</div></div>
+<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdoc">Represents a player in the game, including their username and the selected case.</div><div class="ttdef"><b>Definition</b> Player.h:14</div></div>
+<div class="ttc" id="aclass_player_html_a40d3c47b65e9652c363a8fde41f7bbf5"><div class="ttname"><a href="class_player.html#a40d3c47b65e9652c363a8fde41f7bbf5">Player::~Player</a></div><div class="ttdeci">~Player()=default</div><div class="ttdoc">Destructor for Player.</div></div>
+<div class="ttc" id="aclass_player_html_a68d4ba1c9cf36c16ade913428d329b39"><div class="ttname"><a href="class_player.html#a68d4ba1c9cf36c16ade913428d329b39">Player::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Player &amp;p)</div><div class="ttdoc">Outputs the player's information to a stream.</div><div class="ttdef"><b>Definition</b> Player.cpp:15</div></div>
+<div class="ttc" id="aclass_player_html_a88a21046fab185b3d38b6684f61531ae"><div class="ttname"><a href="class_player.html#a88a21046fab185b3d38b6684f61531ae">Player::selectCase</a></div><div class="ttdeci">void selectCase(Case *selectedCase)</div><div class="ttdoc">Selects a case for the player.</div><div class="ttdef"><b>Definition</b> Player.cpp:28</div></div>
+<div class="ttc" id="aclass_player_html_a93e83d153207eb4810ccd2d529ca0431"><div class="ttname"><a href="class_player.html#a93e83d153207eb4810ccd2d529ca0431">Player::Player</a></div><div class="ttdeci">Player(const Player &amp;other)=default</div><div class="ttdoc">Copy constructor for Player.</div></div>
+<div class="ttc" id="aclass_player_html_ac6f239e98158f2324a0bf4cedcc921ba"><div class="ttname"><a href="class_player.html#ac6f239e98158f2324a0bf4cedcc921ba">Player::Player</a></div><div class="ttdeci">Player(std::string name=&quot;Player&quot;)</div><div class="ttdoc">Constructs a Player object with a given username.</div><div class="ttdef"><b>Definition</b> Player.cpp:3</div></div>
+<div class="ttc" id="aclass_player_html_aea427047474cd99c0ce3399d7884ec44"><div class="ttname"><a href="class_player.html#aea427047474cd99c0ce3399d7884ec44">Player::operator=</a></div><div class="ttdeci">Player &amp; operator=(const Player &amp;other)=default</div><div class="ttdoc">Copy assignment operator for Player.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

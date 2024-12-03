@@ -1,5 +1,14 @@
 \doxysection{Music\+Error Class Reference}
 \hypertarget{class_music_error}{}\label{class_music_error}\index{MusicError@{MusicError}}
+
+
+A custom exception class for music-\/related errors.  
+
+
+
+
+{\ttfamily \#include $<$Errors.\+h$>$}
+
 Inheritance diagram for Music\+Error\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,14 +18,47 @@ Inheritance diagram for Music\+Error\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_music_error_a8297a16ec0b562c07e92f16072562ce0}\label{class_music_error_a8297a16ec0b562c07e92f16072562ce0} 
-{\bfseries Music\+Error} (const std\+::string \&message)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_music_error_a8297a16ec0b562c07e92f16072562ce0}{Music\+Error}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_music_error}{Music\+Error} with a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_error}{Game\+Error}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Game\+Error} (const std\+::string \&message)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_game_error_aa5f9df2ab465545117320f45f1335969}{Game\+Error}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_game_error}{Game\+Error} with a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A custom exception class for music-\/related errors. 
+
+This class is derived from \doxylink{class_game_error}{Game\+Error} and specifically handles errors that occur when loading or playing music. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_music_error_a8297a16ec0b562c07e92f16072562ce0}\index{MusicError@{MusicError}!MusicError@{MusicError}}
+\index{MusicError@{MusicError}!MusicError@{MusicError}}
+\doxysubsubsection{\texorpdfstring{MusicError()}{MusicError()}}
+{\footnotesize\ttfamily \label{class_music_error_a8297a16ec0b562c07e92f16072562ce0} 
+Music\+Error\+::\+Music\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_music_error}{Music\+Error} with a message. 
+
+Constructs a \doxylink{class_music_error}{Music\+Error} with a custom error message.
+
+This constructor allows the creation of a \doxylink{class_music_error}{Music\+Error} exception with a specific message describing the music error.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The error message.\\
+\hline
+\end{DoxyParams}
+This constructor prepends the string "{}\+Music error\+: "{} to the provided message and passes it to the base class \doxylink{class_game_error}{Game\+Error}, which creates a \doxylink{class_music_error}{Music\+Error} exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The error message specific to the music-\/related issue. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

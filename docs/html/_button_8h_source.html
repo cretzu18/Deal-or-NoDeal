@@ -98,109 +98,165 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Errors.h&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">enum</span> GameState {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    MENU,</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    SETTINGS,</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    CASES,</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    GAME_OVER</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>};</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_button.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_button.html">Button</a> {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    sf::RectangleShape button;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    sf::Text buttonText;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    sf::Font font;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_button.html">Button</a>(<span class="keyword">const</span> std::string&amp; text = <span class="stringliteral">&quot;&quot;</span>, <span class="keywordtype">float</span> posX = 0, <span class="keywordtype">float</span> posY = 0, <span class="keywordtype">float</span> width = 100, <span class="keywordtype">float</span> height = 100);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_class" href="class_button.html">Button</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_button.html">Button</a>&amp; other);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_class" href="class_button.html">Button</a>&amp; operator=(<span class="keyword">const</span> <a class="code hl_class" href="class_button.html">Button</a>&amp; other);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_button.html">~Button</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">friend</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> <a class="code hl_class" href="class_button.html">Button</a>&amp; button);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> action(sf::RenderWindow&amp; window, GameState&amp; gameState, <span class="keywordtype">int</span>&amp; round) = 0;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> draw(sf::RenderWindow&amp; window) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">bool</span> isMouseOver(<span class="keyword">const</span> sf::RenderWindow&amp; window) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">bool</span> isClicked(<span class="keyword">const</span> sf::RenderWindow&amp; window) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_button.html">Button</a>* clone() = 0;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">enum</span> GameState {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    MENU,        </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    SETTINGS,    </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    CASES,       </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    GAME_OVER    </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_button.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="class_button.html">Button</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    sf::RectangleShape button;  </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    sf::Text buttonText;        </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    sf::Font font;              </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_button.html#ae4c907cbfa6d11ba0d95a72d6f85033c">Button</a>(<span class="keyword">const</span> std::string&amp; text = <span class="stringliteral">&quot;&quot;</span>, <span class="keywordtype">float</span> posX = 0, <span class="keywordtype">float</span> posY = 0, <span class="keywordtype">float</span> width = 100, <span class="keywordtype">float</span> height = 100);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="class_button.html#ae4c907cbfa6d11ba0d95a72d6f85033c">Button</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_button.html">Button</a>&amp; other);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_class" href="class_button.html">Button</a>&amp; <a class="code hl_function" href="class_button.html#a23f4691c5684ebacc5d30b6855b941e3">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_button.html">Button</a>&amp; other);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_button.html#afb6a5e927ef20e4017939af3524eed69">   57</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_button.html#afb6a5e927ef20e4017939af3524eed69">~Button</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">friend</span> std::ostream&amp; <a class="code hl_friend" href="class_button.html#a140560656134d8147332547fd3d54f4c">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code hl_class" href="class_button.html">Button</a>&amp; button);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_button.html#a6f469d05751775c702784e87217e470f">   75</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_button.html#a6f469d05751775c702784e87217e470f">action</a>(sf::RenderWindow&amp; window, GameState&amp; gameState, <span class="keywordtype">int</span>&amp; round) = 0;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_button.html#a95773eb0a0b33ac29517eac844d23dd9">draw</a>(sf::RenderWindow&amp; window) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_button.html#af7093489ef901bfe7e13f5308647789a">isMouseOver</a>(<span class="keyword">const</span> sf::RenderWindow&amp; window) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_button.html#af140dd001b92c62c8dd8235f8dbf2669">isClicked</a>(<span class="keyword">const</span> sf::RenderWindow&amp; window) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_button.html#a5b5655160041cd0bcc2d0034029d9f40">  107</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_button.html">Button</a>* <a class="code hl_function" href="class_button.html#a5b5655160041cd0bcc2d0034029d9f40">clone</a>() = 0;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>};</div>
 </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_play_button.html">   35</a></span><span class="keyword">class </span><a class="code hl_class" href="class_play_button.html">PlayButton</a> final : <span class="keyword">public</span> <a class="code hl_class" href="class_button.html">Button</a> {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_play_button.html">PlayButton</a>(<span class="keyword">const</span> std::string&amp; text = <span class="stringliteral">&quot;Play&quot;</span>, <span class="keyword">const</span> <span class="keywordtype">float</span> posX = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> posY = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> width = 100, <span class="keyword">const</span> <span class="keywordtype">float</span> height = 100)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        : <a class="code hl_class" href="class_button.html">Button</a>(text, posX, posY, width, height) {};</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    [[maybe_unused]] <a class="code hl_class" href="class_play_button.html">PlayButton</a>* clone()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_play_button.html">PlayButton</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> action(sf::RenderWindow&amp; window, GameState&amp; gameState, <span class="keywordtype">int</span>&amp; round)<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        window.clear();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        gameState = CASES;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        round = 1;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="};">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_play_button.html">  113</a></span><span class="keyword">class </span><a class="code hl_class" href="class_play_button.html">PlayButton</a> final : <span class="keyword">public</span> <a class="code hl_class" href="class_button.html">Button</a> {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="class_play_button.html#ab7b046f774a3083f21cbb31de668bcd1">  124</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_play_button.html#ab7b046f774a3083f21cbb31de668bcd1">PlayButton</a>(<span class="keyword">const</span> std::string&amp; text = <span class="stringliteral">&quot;Play&quot;</span>, <span class="keyword">const</span> <span class="keywordtype">float</span> posX = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> posY = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> width = 100, <span class="keyword">const</span> <span class="keywordtype">float</span> height = 100)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        : <a class="code hl_class" href="class_button.html">Button</a>(text, posX, posY, width, height) {};</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_exit_button.html">   50</a></span><span class="keyword">class </span><a class="code hl_class" href="class_exit_button.html">ExitButton</a> final : <span class="keyword">public</span> <a class="code hl_class" href="class_button.html">Button</a> {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_exit_button.html">ExitButton</a>(<span class="keyword">const</span> std::string&amp; text = <span class="stringliteral">&quot;Exit&quot;</span>, <span class="keyword">const</span> <span class="keywordtype">float</span> posX = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> posY = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> width = 100, <span class="keyword">const</span> <span class="keywordtype">float</span> height = 100)</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        : <a class="code hl_class" href="class_button.html">Button</a>(text, posX, posY, width, height) {};</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    [[maybe_unused]] <a class="code hl_class" href="class_exit_button.html">ExitButton</a>* clone()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_exit_button.html">ExitButton</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> action (sf::RenderWindow&amp; window, GameState&amp; gameState, <span class="keywordtype">int</span>&amp; round)<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        window.close();</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        gameState = MENU;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        round = 0;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="}">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="class_play_button.html#acb78ec8e035ab3af75039c5f06c7c223">  132</a></span>    [[maybe_unused]] <a class="code hl_class" href="class_play_button.html">PlayButton</a>* <a class="code hl_function" href="class_play_button.html#acb78ec8e035ab3af75039c5f06c7c223">clone</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="class_play_button.html#ab7b046f774a3083f21cbb31de668bcd1">PlayButton</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
 </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="foldopen" id="foldopen00065" data-start="{" data-end="};">
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_settings_button.html">   65</a></span><span class="keyword">class </span><a class="code hl_class" href="class_settings_button.html">SettingsButton</a> final : <span class="keyword">public</span> <a class="code hl_class" href="class_button.html">Button</a> {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_settings_button.html">SettingsButton</a>(<span class="keyword">const</span> std::string&amp; text = <span class="stringliteral">&quot;Settings&quot;</span>, <span class="keyword">const</span> <span class="keywordtype">float</span> posX = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> posY = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> width = 100, <span class="keyword">const</span> <span class="keywordtype">float</span> height = 100)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        : <a class="code hl_class" href="class_button.html">Button</a>(text, posX, posY, width, height) {};</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    [[maybe_unused]] <a class="code hl_class" href="class_settings_button.html">SettingsButton</a>* clone()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_settings_button.html">SettingsButton</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> action(sf::RenderWindow&amp; window, GameState&amp; gameState, <span class="keywordtype">int</span>&amp; round)<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        window.clear();</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        gameState = SETTINGS;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        round = 0;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="class_play_button.html#a69205a88a37dc270e92b0f2a0b1872d3">  145</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_play_button.html#a69205a88a37dc270e92b0f2a0b1872d3">action</a>(sf::RenderWindow&amp; window, GameState&amp; gameState, <span class="keywordtype">int</span>&amp; round)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        window.clear();</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        gameState = CASES;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        round = 1;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
 </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="foldopen" id="foldopen00080" data-start="{" data-end="};">
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_back_button.html">   80</a></span><span class="keyword">class </span><a class="code hl_class" href="class_back_button.html">BackButton</a> final : <span class="keyword">public</span> <a class="code hl_class" href="class_button.html">Button</a> {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_back_button.html">BackButton</a>(<span class="keyword">const</span> std::string&amp; text = <span class="stringliteral">&quot;Back&quot;</span>, <span class="keyword">const</span> <span class="keywordtype">float</span> posX = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> posY = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> width = 100, <span class="keyword">const</span> <span class="keywordtype">float</span> height = 100)</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        : <a class="code hl_class" href="class_button.html">Button</a>(text, posX, posY, width, height) {};</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    [[maybe_unused]] <a class="code hl_class" href="class_back_button.html">BackButton</a>* clone()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_back_button.html">BackButton</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">void</span> action(sf::RenderWindow&amp; window, GameState&amp; gameState, <span class="keywordtype">int</span>&amp; round)<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        window.clear();</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        gameState = MENU;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        round = 0;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>};</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>};</div>
 </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#endif </span><span class="comment">// BUTTON_HPP</span></div>
-<div class="ttc" id="aclass_back_button_html"><div class="ttname"><a href="class_back_button.html">BackButton</a></div><div class="ttdef"><b>Definition</b> Button.h:80</div></div>
-<div class="ttc" id="aclass_button_html"><div class="ttname"><a href="class_button.html">Button</a></div><div class="ttdef"><b>Definition</b> Button.h:15</div></div>
-<div class="ttc" id="aclass_exit_button_html"><div class="ttname"><a href="class_exit_button.html">ExitButton</a></div><div class="ttdef"><b>Definition</b> Button.h:50</div></div>
-<div class="ttc" id="aclass_play_button_html"><div class="ttname"><a href="class_play_button.html">PlayButton</a></div><div class="ttdef"><b>Definition</b> Button.h:35</div></div>
-<div class="ttc" id="aclass_settings_button_html"><div class="ttname"><a href="class_settings_button.html">SettingsButton</a></div><div class="ttdef"><b>Definition</b> Button.h:65</div></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="};">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="class_exit_button.html">  155</a></span><span class="keyword">class </span><a class="code hl_class" href="class_exit_button.html">ExitButton</a> final : <span class="keyword">public</span> <a class="code hl_class" href="class_button.html">Button</a> {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00166" data-start="{" data-end="}">
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="class_exit_button.html#a5b350a6f0183b66b83957b785c45b917">  166</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_exit_button.html#a5b350a6f0183b66b83957b785c45b917">ExitButton</a>(<span class="keyword">const</span> std::string&amp; text = <span class="stringliteral">&quot;Exit&quot;</span>, <span class="keyword">const</span> <span class="keywordtype">float</span> posX = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> posY = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> width = 100, <span class="keyword">const</span> <span class="keywordtype">float</span> height = 100)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        : <a class="code hl_class" href="class_button.html">Button</a>(text, posX, posY, width, height) {};</div>
+</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="foldopen" id="foldopen00174" data-start="{" data-end="}">
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="class_exit_button.html#ae71f0e2343cd9cd07053783d40673225">  174</a></span>    [[maybe_unused]] <a class="code hl_class" href="class_exit_button.html">ExitButton</a>* <a class="code hl_function" href="class_exit_button.html#ae71f0e2343cd9cd07053783d40673225">clone</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="class_exit_button.html#a5b350a6f0183b66b83957b785c45b917">ExitButton</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    }</div>
+</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="foldopen" id="foldopen00187" data-start="{" data-end="}">
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="class_exit_button.html#a2b8620a3a09206a79eb4e88f26430283">  187</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_exit_button.html#a2b8620a3a09206a79eb4e88f26430283">action</a> (sf::RenderWindow&amp; window, GameState&amp; gameState, <span class="keywordtype">int</span>&amp; round)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        window.close();</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        gameState = MENU;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        round = 0;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    }</div>
+</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>};</div>
+</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="foldopen" id="foldopen00197" data-start="{" data-end="};">
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="class_settings_button.html">  197</a></span><span class="keyword">class </span><a class="code hl_class" href="class_settings_button.html">SettingsButton</a> final : <span class="keyword">public</span> <a class="code hl_class" href="class_button.html">Button</a> {</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00208" data-start="{" data-end="}">
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="class_settings_button.html#abc7824423173665803954aa7f1a9bd63">  208</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_settings_button.html#abc7824423173665803954aa7f1a9bd63">SettingsButton</a>(<span class="keyword">const</span> std::string&amp; text = <span class="stringliteral">&quot;Settings&quot;</span>, <span class="keyword">const</span> <span class="keywordtype">float</span> posX = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> posY = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> width = 100, <span class="keyword">const</span> <span class="keywordtype">float</span> height = 100)</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        : <a class="code hl_class" href="class_button.html">Button</a>(text, posX, posY, width, height) {};</div>
+</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="foldopen" id="foldopen00216" data-start="{" data-end="}">
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="class_settings_button.html#a75e048328e1123c35881a2d24aa3f69b">  216</a></span>    [[maybe_unused]] <a class="code hl_class" href="class_settings_button.html">SettingsButton</a>* <a class="code hl_function" href="class_settings_button.html#a75e048328e1123c35881a2d24aa3f69b">clone</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="class_settings_button.html#abc7824423173665803954aa7f1a9bd63">SettingsButton</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    }</div>
+</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="foldopen" id="foldopen00229" data-start="{" data-end="}">
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="class_settings_button.html#a680186ddeacf25d0057ea0460b4711b8">  229</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_settings_button.html#a680186ddeacf25d0057ea0460b4711b8">action</a>(sf::RenderWindow&amp; window, GameState&amp; gameState, <span class="keywordtype">int</span>&amp; round)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        window.clear();</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        gameState = SETTINGS;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        round = 0;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    }</div>
+</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>};</div>
+</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="foldopen" id="foldopen00239" data-start="{" data-end="};">
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="class_back_button.html">  239</a></span><span class="keyword">class </span><a class="code hl_class" href="class_back_button.html">BackButton</a> final : <span class="keyword">public</span> <a class="code hl_class" href="class_button.html">Button</a> {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00250" data-start="{" data-end="}">
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="class_back_button.html#a62ad6cc1a829f8a6223c68d4dd4fa0bb">  250</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_back_button.html#a62ad6cc1a829f8a6223c68d4dd4fa0bb">BackButton</a>(<span class="keyword">const</span> std::string&amp; text = <span class="stringliteral">&quot;Back&quot;</span>, <span class="keyword">const</span> <span class="keywordtype">float</span> posX = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> posY = 0, <span class="keyword">const</span> <span class="keywordtype">float</span> width = 100, <span class="keyword">const</span> <span class="keywordtype">float</span> height = 100)</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        : <a class="code hl_class" href="class_button.html">Button</a>(text, posX, posY, width, height) {};</div>
+</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="foldopen" id="foldopen00258" data-start="{" data-end="}">
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="class_back_button.html#af67439777e89bbce236fc5646075ea4b">  258</a></span>    [[maybe_unused]] <a class="code hl_class" href="class_back_button.html">BackButton</a>* <a class="code hl_function" href="class_back_button.html#af67439777e89bbce236fc5646075ea4b">clone</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="class_back_button.html#a62ad6cc1a829f8a6223c68d4dd4fa0bb">BackButton</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    }</div>
+</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="foldopen" id="foldopen00271" data-start="{" data-end="}">
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="class_back_button.html#a88938319442bfe44e3a8c3e751a2d777">  271</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_back_button.html#a88938319442bfe44e3a8c3e751a2d777">action</a>(sf::RenderWindow&amp; window, GameState&amp; gameState, <span class="keywordtype">int</span>&amp; round)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        window.clear();</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        gameState = MENU;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        round = 0;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    }</div>
+</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>};</div>
+</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="preprocessor">#endif </span><span class="comment">// BUTTON_HPP</span></div>
+<div class="ttc" id="aclass_back_button_html"><div class="ttname"><a href="class_back_button.html">BackButton</a></div><div class="ttdoc">A Button to return to the main menu.</div><div class="ttdef"><b>Definition</b> Button.h:239</div></div>
+<div class="ttc" id="aclass_back_button_html_a62ad6cc1a829f8a6223c68d4dd4fa0bb"><div class="ttname"><a href="class_back_button.html#a62ad6cc1a829f8a6223c68d4dd4fa0bb">BackButton::BackButton</a></div><div class="ttdeci">BackButton(const std::string &amp;text=&quot;Back&quot;, const float posX=0, const float posY=0, const float width=100, const float height=100)</div><div class="ttdoc">Constructor to initialize the BackButton.</div><div class="ttdef"><b>Definition</b> Button.h:250</div></div>
+<div class="ttc" id="aclass_back_button_html_a88938319442bfe44e3a8c3e751a2d777"><div class="ttname"><a href="class_back_button.html#a88938319442bfe44e3a8c3e751a2d777">BackButton::action</a></div><div class="ttdeci">void action(sf::RenderWindow &amp;window, GameState &amp;gameState, int &amp;round) override</div><div class="ttdoc">Action performed when the BackButton is clicked.</div><div class="ttdef"><b>Definition</b> Button.h:271</div></div>
+<div class="ttc" id="aclass_back_button_html_af67439777e89bbce236fc5646075ea4b"><div class="ttname"><a href="class_back_button.html#af67439777e89bbce236fc5646075ea4b">BackButton::clone</a></div><div class="ttdeci">BackButton * clone() override</div><div class="ttdoc">Creates a copy of the BackButton.</div><div class="ttdef"><b>Definition</b> Button.h:258</div></div>
+<div class="ttc" id="aclass_button_html"><div class="ttname"><a href="class_button.html">Button</a></div><div class="ttdoc">Abstract base class representing a generic button in the game.</div><div class="ttdef"><b>Definition</b> Button.h:22</div></div>
+<div class="ttc" id="aclass_button_html_a140560656134d8147332547fd3d54f4c"><div class="ttname"><a href="class_button.html#a140560656134d8147332547fd3d54f4c">Button::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Button &amp;button)</div><div class="ttdoc">Stream insertion operator for displaying button details.</div><div class="ttdef"><b>Definition</b> Button.cpp:77</div></div>
+<div class="ttc" id="aclass_button_html_a23f4691c5684ebacc5d30b6855b941e3"><div class="ttname"><a href="class_button.html#a23f4691c5684ebacc5d30b6855b941e3">Button::operator=</a></div><div class="ttdeci">Button &amp; operator=(const Button &amp;other)</div><div class="ttdoc">Copy assignment operator for the Button class.</div><div class="ttdef"><b>Definition</b> Button.cpp:56</div></div>
+<div class="ttc" id="aclass_button_html_a5b5655160041cd0bcc2d0034029d9f40"><div class="ttname"><a href="class_button.html#a5b5655160041cd0bcc2d0034029d9f40">Button::clone</a></div><div class="ttdeci">virtual Button * clone()=0</div><div class="ttdoc">Pure virtual method for cloning the button.</div></div>
+<div class="ttc" id="aclass_button_html_a6f469d05751775c702784e87217e470f"><div class="ttname"><a href="class_button.html#a6f469d05751775c702784e87217e470f">Button::action</a></div><div class="ttdeci">virtual void action(sf::RenderWindow &amp;window, GameState &amp;gameState, int &amp;round)=0</div><div class="ttdoc">Pure virtual method defining the button's action when clicked.</div></div>
+<div class="ttc" id="aclass_button_html_a95773eb0a0b33ac29517eac844d23dd9"><div class="ttname"><a href="class_button.html#a95773eb0a0b33ac29517eac844d23dd9">Button::draw</a></div><div class="ttdeci">void draw(sf::RenderWindow &amp;window) const</div><div class="ttdoc">Draws the button on the given SFML render window.</div><div class="ttdef"><b>Definition</b> Button.cpp:89</div></div>
+<div class="ttc" id="aclass_button_html_ae4c907cbfa6d11ba0d95a72d6f85033c"><div class="ttname"><a href="class_button.html#ae4c907cbfa6d11ba0d95a72d6f85033c">Button::Button</a></div><div class="ttdeci">Button(const std::string &amp;text=&quot;&quot;, float posX=0, float posY=0, float width=100, float height=100)</div><div class="ttdoc">Constructor to initialize a Button with text, position, and size.</div><div class="ttdef"><b>Definition</b> Button.cpp:16</div></div>
+<div class="ttc" id="aclass_button_html_af140dd001b92c62c8dd8235f8dbf2669"><div class="ttname"><a href="class_button.html#af140dd001b92c62c8dd8235f8dbf2669">Button::isClicked</a></div><div class="ttdeci">bool isClicked(const sf::RenderWindow &amp;window) const</div><div class="ttdoc">Checks if the button has been clicked.</div><div class="ttdef"><b>Definition</b> Button.cpp:115</div></div>
+<div class="ttc" id="aclass_button_html_af7093489ef901bfe7e13f5308647789a"><div class="ttname"><a href="class_button.html#af7093489ef901bfe7e13f5308647789a">Button::isMouseOver</a></div><div class="ttdeci">bool isMouseOver(const sf::RenderWindow &amp;window) const</div><div class="ttdoc">Checks if the mouse is hovering over the button.</div><div class="ttdef"><b>Definition</b> Button.cpp:102</div></div>
+<div class="ttc" id="aclass_button_html_afb6a5e927ef20e4017939af3524eed69"><div class="ttname"><a href="class_button.html#afb6a5e927ef20e4017939af3524eed69">Button::~Button</a></div><div class="ttdeci">virtual ~Button()=default</div><div class="ttdoc">Virtual destructor for the Button class.</div></div>
+<div class="ttc" id="aclass_exit_button_html"><div class="ttname"><a href="class_exit_button.html">ExitButton</a></div><div class="ttdoc">A Button to exit the game.</div><div class="ttdef"><b>Definition</b> Button.h:155</div></div>
+<div class="ttc" id="aclass_exit_button_html_a2b8620a3a09206a79eb4e88f26430283"><div class="ttname"><a href="class_exit_button.html#a2b8620a3a09206a79eb4e88f26430283">ExitButton::action</a></div><div class="ttdeci">void action(sf::RenderWindow &amp;window, GameState &amp;gameState, int &amp;round) override</div><div class="ttdoc">Action performed when the ExitButton is clicked.</div><div class="ttdef"><b>Definition</b> Button.h:187</div></div>
+<div class="ttc" id="aclass_exit_button_html_a5b350a6f0183b66b83957b785c45b917"><div class="ttname"><a href="class_exit_button.html#a5b350a6f0183b66b83957b785c45b917">ExitButton::ExitButton</a></div><div class="ttdeci">ExitButton(const std::string &amp;text=&quot;Exit&quot;, const float posX=0, const float posY=0, const float width=100, const float height=100)</div><div class="ttdoc">Constructor to initialize the ExitButton.</div><div class="ttdef"><b>Definition</b> Button.h:166</div></div>
+<div class="ttc" id="aclass_exit_button_html_ae71f0e2343cd9cd07053783d40673225"><div class="ttname"><a href="class_exit_button.html#ae71f0e2343cd9cd07053783d40673225">ExitButton::clone</a></div><div class="ttdeci">ExitButton * clone() override</div><div class="ttdoc">Creates a copy of the ExitButton.</div><div class="ttdef"><b>Definition</b> Button.h:174</div></div>
+<div class="ttc" id="aclass_play_button_html"><div class="ttname"><a href="class_play_button.html">PlayButton</a></div><div class="ttdoc">A Button to start the game.</div><div class="ttdef"><b>Definition</b> Button.h:113</div></div>
+<div class="ttc" id="aclass_play_button_html_a69205a88a37dc270e92b0f2a0b1872d3"><div class="ttname"><a href="class_play_button.html#a69205a88a37dc270e92b0f2a0b1872d3">PlayButton::action</a></div><div class="ttdeci">void action(sf::RenderWindow &amp;window, GameState &amp;gameState, int &amp;round) override</div><div class="ttdoc">Action performed when the PlayButton is clicked.</div><div class="ttdef"><b>Definition</b> Button.h:145</div></div>
+<div class="ttc" id="aclass_play_button_html_ab7b046f774a3083f21cbb31de668bcd1"><div class="ttname"><a href="class_play_button.html#ab7b046f774a3083f21cbb31de668bcd1">PlayButton::PlayButton</a></div><div class="ttdeci">PlayButton(const std::string &amp;text=&quot;Play&quot;, const float posX=0, const float posY=0, const float width=100, const float height=100)</div><div class="ttdoc">Constructor to initialize the PlayButton.</div><div class="ttdef"><b>Definition</b> Button.h:124</div></div>
+<div class="ttc" id="aclass_play_button_html_acb78ec8e035ab3af75039c5f06c7c223"><div class="ttname"><a href="class_play_button.html#acb78ec8e035ab3af75039c5f06c7c223">PlayButton::clone</a></div><div class="ttdeci">PlayButton * clone() override</div><div class="ttdoc">Creates a copy of the PlayButton.</div><div class="ttdef"><b>Definition</b> Button.h:132</div></div>
+<div class="ttc" id="aclass_settings_button_html"><div class="ttname"><a href="class_settings_button.html">SettingsButton</a></div><div class="ttdoc">A Button to open the settings menu.</div><div class="ttdef"><b>Definition</b> Button.h:197</div></div>
+<div class="ttc" id="aclass_settings_button_html_a680186ddeacf25d0057ea0460b4711b8"><div class="ttname"><a href="class_settings_button.html#a680186ddeacf25d0057ea0460b4711b8">SettingsButton::action</a></div><div class="ttdeci">void action(sf::RenderWindow &amp;window, GameState &amp;gameState, int &amp;round) override</div><div class="ttdoc">Action performed when the SettingsButton is clicked.</div><div class="ttdef"><b>Definition</b> Button.h:229</div></div>
+<div class="ttc" id="aclass_settings_button_html_a75e048328e1123c35881a2d24aa3f69b"><div class="ttname"><a href="class_settings_button.html#a75e048328e1123c35881a2d24aa3f69b">SettingsButton::clone</a></div><div class="ttdeci">SettingsButton * clone() override</div><div class="ttdoc">Creates a copy of the SettingsButton.</div><div class="ttdef"><b>Definition</b> Button.h:216</div></div>
+<div class="ttc" id="aclass_settings_button_html_abc7824423173665803954aa7f1a9bd63"><div class="ttname"><a href="class_settings_button.html#abc7824423173665803954aa7f1a9bd63">SettingsButton::SettingsButton</a></div><div class="ttdeci">SettingsButton(const std::string &amp;text=&quot;Settings&quot;, const float posX=0, const float posY=0, const float width=100, const float height=100)</div><div class="ttdoc">Constructor to initialize the SettingsButton.</div><div class="ttdef"><b>Definition</b> Button.h:208</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

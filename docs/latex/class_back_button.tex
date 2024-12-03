@@ -1,5 +1,14 @@
 \doxysection{Back\+Button Class Reference}
 \hypertarget{class_back_button}{}\label{class_back_button}\index{BackButton@{BackButton}}
+
+
+A \doxylink{class_button}{Button} to return to the main menu.  
+
+
+
+
+{\ttfamily \#include $<$Button.\+h$>$}
+
 Inheritance diagram for Back\+Button\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,28 +18,58 @@ Inheritance diagram for Back\+Button\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_back_button_a62ad6cc1a829f8a6223c68d4dd4fa0bb}\label{class_back_button_a62ad6cc1a829f8a6223c68d4dd4fa0bb} 
-{\bfseries Back\+Button} (const std\+::string \&text="{}Back"{}, const float posX=0, const float posY=0, const float width=100, const float height=100)
-\item 
+\mbox{\hyperlink{class_back_button_a62ad6cc1a829f8a6223c68d4dd4fa0bb}{Back\+Button}} (const std\+::string \&text="{}Back"{}, const float posX=0, const float posY=0, const float width=100, const float height=100)
+\begin{DoxyCompactList}\small\item\em Constructor to initialize the \doxylink{class_back_button}{Back\+Button}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_back_button}{Back\+Button}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_back_button_af67439777e89bbce236fc5646075ea4b}{clone}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a copy of the \doxylink{class_back_button}{Back\+Button}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_back_button_a88938319442bfe44e3a8c3e751a2d777}{action}} (sf\+::\+Render\+Window \&window, Game\+State \&game\+State, int \&round) override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Action performed when the \doxylink{class_back_button}{Back\+Button} is clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_button}{Button}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Button} (const std\+::string \&text="{}"{}, float posX=0, float posY=0, float width=100, float height=100)
-\item 
-{\bfseries Button} (const \mbox{\hyperlink{class_button}{Button}} \&other)
-\item 
-\mbox{\hyperlink{class_button}{Button}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_button}{Button}} \&other)
-\item 
-void {\bfseries draw} (sf\+::\+Render\+Window \&window) const
-\item 
-bool {\bfseries is\+Mouse\+Over} (const sf\+::\+Render\+Window \&window) const
-\item 
-bool {\bfseries is\+Clicked} (const sf\+::\+Render\+Window \&window) const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_button_ae4c907cbfa6d11ba0d95a72d6f85033c}{Button}} (const std\+::string \&text="{}"{}, float posX=0, float posY=0, float width=100, float height=100)
+\begin{DoxyCompactList}\small\item\em Constructor to initialize a \doxylink{class_button}{Button} with text, position, and size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_button_a8e8beabd9ee3ea48b1e5819517f05cd0}{Button}} (const \mbox{\hyperlink{class_button}{Button}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for the \doxylink{class_button}{Button} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_button}{Button}} \& \mbox{\hyperlink{class_button_a23f4691c5684ebacc5d30b6855b941e3}{operator=}} (const \mbox{\hyperlink{class_button}{Button}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator for the \doxylink{class_button}{Button} class. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Button} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_button}{Button} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a95773eb0a0b33ac29517eac844d23dd9}{draw}} (sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Draws the button on the given SFML render window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_af7093489ef901bfe7e13f5308647789a}{is\+Mouse\+Over}} (const sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Checks if the mouse is hovering over the button. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_af140dd001b92c62c8dd8235f8dbf2669}{is\+Clicked}} (const sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Checks if the button has been clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{class_button}{Button} to return to the main menu. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_back_button_a62ad6cc1a829f8a6223c68d4dd4fa0bb}\index{BackButton@{BackButton}!BackButton@{BackButton}}
+\index{BackButton@{BackButton}!BackButton@{BackButton}}
+\doxysubsubsection{\texorpdfstring{BackButton()}{BackButton()}}
+{\footnotesize\ttfamily \label{class_back_button_a62ad6cc1a829f8a6223c68d4dd4fa0bb} 
+Back\+Button\+::\+Back\+Button (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text}{ = {\ttfamily "{}Back"{}}, }\item[{const float}]{posX}{ = {\ttfamily 0}, }\item[{const float}]{posY}{ = {\ttfamily 0}, }\item[{const float}]{width}{ = {\ttfamily 100}, }\item[{const float}]{height}{ = {\ttfamily 100}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor to initialize the \doxylink{class_back_button}{Back\+Button}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text displayed on the button (default\+: "{}\+Back"{}). \\
+\hline
+{\em posX} & X-\/coordinate of the button\textquotesingle{}s position. \\
+\hline
+{\em posY} & Y-\/coordinate of the button\textquotesingle{}s position. \\
+\hline
+{\em width} & Width of the button. \\
+\hline
+{\em height} & Height of the button. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -42,7 +81,22 @@ void Back\+Button\+::action (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Wind
 
 
 
-Implements \mbox{\hyperlink{class_button}{Button}}.
+Action performed when the \doxylink{class_back_button}{Back\+Button} is clicked. 
+
+Sets the game state to MENU.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window. \\
+\hline
+{\em game\+State} & The current game state to be modified. \\
+\hline
+{\em round} & The current game round to be reset. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_button_a6f469d05751775c702784e87217e470f}{Button}}.
 
 \Hypertarget{class_back_button_af67439777e89bbce236fc5646075ea4b}\index{BackButton@{BackButton}!clone@{clone}}
 \index{clone@{clone}!BackButton@{BackButton}}
@@ -52,7 +106,14 @@ Implements \mbox{\hyperlink{class_button}{Button}}.
 
 
 
-Implements \mbox{\hyperlink{class_button}{Button}}.
+Creates a copy of the \doxylink{class_back_button}{Back\+Button}. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the cloned \doxylink{class_back_button}{Back\+Button} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_button_a5b5655160041cd0bcc2d0034029d9f40}{Button}}.
 
 
 

@@ -13,20 +13,25 @@
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_settings}{Settings}}\ \{}
-\DoxyCodeLine{00013\ \ \ std::shared\_ptr<Button>\ backButton;}
-\DoxyCodeLine{00014\ \ \ \mbox{\hyperlink{class_volume_slider}{VolumeSlider}}\ menuSlider;}
-\DoxyCodeLine{00015\ \ \ \mbox{\hyperlink{class_volume_slider}{VolumeSlider}}\ gameSlider;}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018\ \ \ \mbox{\hyperlink{class_settings}{Settings}}();}
-\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{class_settings}{\string~Settings}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00020\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ getMenuVolumeLevel()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ menuSlider.getVolumeLevel();\ \}}
-\DoxyCodeLine{00021\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ getGameVolumeLevel()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ gameSlider.getVolumeLevel();\ \}}
-\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{void}\ draw(sf::RenderWindow\&\ window)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{void}\ update(\textcolor{keyword}{const}\ sf::RenderWindow\&\ window,\ \textcolor{keyword}{const}\ sf::Event\&\ event,\ GameState\&\ gameState);}
-\DoxyCodeLine{00024\ \};}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SETTINGS\_H}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_settings}{Settings}}\ \{}
+\DoxyCodeLine{00021\ \ \ std::shared\_ptr<Button>\ backButton;\ }
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{class_volume_slider}{VolumeSlider}}\ menuSlider;\ }
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{class_volume_slider}{VolumeSlider}}\ gameSlider;\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{class_settings_ab7169a6eefce79566dd07db3b1e5e967}{Settings}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{class_settings_a85757af9157689d156bc1516380c76c9}{\string~Settings}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00047\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_settings_acaff64f406e8ac6efdf6a3c28f93b660}{getMenuVolumeLevel}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ menuSlider.\mbox{\hyperlink{class_volume_slider_a57d577f2f80eda182313b30289866363}{getVolumeLevel}}();\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00056\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_settings_a74c9d61dcc27503b857fc99ab201432f}{getGameVolumeLevel}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ gameSlider.\mbox{\hyperlink{class_volume_slider_a57d577f2f80eda182313b30289866363}{getVolumeLevel}}();\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_a2215e3139ae91a73decf17c58a1c1bba}{draw}}(sf::RenderWindow\&\ window)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_settings_a112419cd8cea4ff8adbdbacd48afec50}{update}}(\textcolor{keyword}{const}\ sf::RenderWindow\&\ window,\ \textcolor{keyword}{const}\ sf::Event\&\ event,\ GameState\&\ gameState);}
+\DoxyCodeLine{00079\ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SETTINGS\_H}}
 
 \end{DoxyCode}

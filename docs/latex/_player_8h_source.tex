@@ -9,21 +9,25 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Case.h"{}}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}\ \{}
-\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00010\ \ \ \ \ std::string\ username;}
-\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_case}{Case}}*\ selectedCase;}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_player}{Player}}(std::string\ name\ =\ \textcolor{stringliteral}{"{}Player"{}});}
-\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_player}{Player}}\ \&other)\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_player}{Player}}\ \&other)\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_player}{\string~Player}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ std::string\ username;\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_case}{Case}}*\ selectedCase;\ }
 \DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_player}{Player}}\ \&p);}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ selectCase(\mbox{\hyperlink{class_case}{Case}}*\ selectedCase);}
-\DoxyCodeLine{00021\ \};}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLAYER\_HPP}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_player_ac6f239e98158f2324a0bf4cedcc921ba}{Player}}(std::string\ name\ =\ \textcolor{stringliteral}{"{}Player"{}});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_player_a93e83d153207eb4810ccd2d529ca0431}{Player}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_player}{Player}}\ \&other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ \&\mbox{\hyperlink{class_player_aea427047474cd99c0ce3399d7884ec44}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_player}{Player}}\ \&other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_player_a40d3c47b65e9652c363a8fde41f7bbf5}{\string~Player}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{class_player_a68d4ba1c9cf36c16ade913428d329b39}{operator<<}}(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_player}{Player}}\ \&p);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a88a21046fab185b3d38b6684f61531ae}{selectCase}}(\mbox{\hyperlink{class_case}{Case}}*\ selectedCase);}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLAYER\_HPP}}
 
 \end{DoxyCode}

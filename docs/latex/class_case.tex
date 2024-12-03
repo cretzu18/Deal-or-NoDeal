@@ -1,56 +1,397 @@
 \doxysection{Case Class Reference}
 \hypertarget{class_case}{}\label{class_case}\index{Case@{Case}}
+
+
+Represents a case in the Deal or No Deal game.  
+
+
+
+
+{\ttfamily \#include $<$Case.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_case_a9cf7f861b72f4ba880da836e82dd7c01}\label{class_case_a9cf7f861b72f4ba880da836e82dd7c01} 
-{\bfseries Case} (double money=0)
-\item 
-\Hypertarget{class_case_ae9641bdf996a0f4a2337bb86383ff6aa}\label{class_case_ae9641bdf996a0f4a2337bb86383ff6aa} 
-{\bfseries Case} (const \mbox{\hyperlink{class_case}{Case}} \&other)
-\item 
-\Hypertarget{class_case_ae32d00298789e5be6314c6cdceb2f064}\label{class_case_ae32d00298789e5be6314c6cdceb2f064} 
-\mbox{\hyperlink{class_case}{Case}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_case}{Case}} \&other)
-\item 
-\Hypertarget{class_case_a1681c68a3a3717f900f63f07c314c797}\label{class_case_a1681c68a3a3717f900f63f07c314c797} 
-void {\bfseries select\+Case} ()
-\item 
-\Hypertarget{class_case_a5077c7c53b25a426d6f85c618e4f67c3}\label{class_case_a5077c7c53b25a426d6f85c618e4f67c3} 
-void {\bfseries deselect\+Case} ()
-\item 
-\Hypertarget{class_case_a41454f8a38b2f0d13c4b49428fe3e2e7}\label{class_case_a41454f8a38b2f0d13c4b49428fe3e2e7} 
-bool {\bfseries is\+Selected} () const
-\item 
-\Hypertarget{class_case_ae22762b7ddcd724334b32f54cff9ec59}\label{class_case_ae22762b7ddcd724334b32f54cff9ec59} 
-void {\bfseries eliminate\+Case} ()
-\item 
-\Hypertarget{class_case_aaafe7b09f247610a4e27640cba2f78e6}\label{class_case_aaafe7b09f247610a4e27640cba2f78e6} 
-bool {\bfseries is\+Eliminated} () const
-\item 
-\Hypertarget{class_case_a2561ff75224b319e0b9ebe64b55c336c}\label{class_case_a2561ff75224b319e0b9ebe64b55c336c} 
-void {\bfseries set\+Position\+Text} ()
-\item 
-\Hypertarget{class_case_a8c0d95ca15f82e684af7973de3a69cb7}\label{class_case_a8c0d95ca15f82e684af7973de3a69cb7} 
-void {\bfseries draw} (sf\+::\+Render\+Window \&window) const
-\item 
-\Hypertarget{class_case_a43fabebfb36336ea08b33c101b0bb55d}\label{class_case_a43fabebfb36336ea08b33c101b0bb55d} 
-void {\bfseries set\+Position} (float x, float y)
-\item 
-\Hypertarget{class_case_ad7cde8510b756969915bd0617e6ce252}\label{class_case_ad7cde8510b756969915bd0617e6ce252} 
-bool {\bfseries is\+Mouse\+Over} (const sf\+::\+Render\+Window \&window) const
-\item 
-\Hypertarget{class_case_a3b6d76df79fb6d8eb71c2c276713a9e0}\label{class_case_a3b6d76df79fb6d8eb71c2c276713a9e0} 
-bool {\bfseries is\+Clicked} (const sf\+::\+Render\+Window \&window) const
-\item 
-\Hypertarget{class_case_a47f35550ce76e618c5a14dfb1253edcc}\label{class_case_a47f35550ce76e618c5a14dfb1253edcc} 
-double {\bfseries get\+Amount} () const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_case_a9cf7f861b72f4ba880da836e82dd7c01}{Case}} (double money=0)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_case}{Case} object with an optional initial amount. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_case_ae9641bdf996a0f4a2337bb86383ff6aa}{Case}} (const \mbox{\hyperlink{class_case}{Case}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for the \doxylink{class_case}{Case} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_case}{Case}} \& \mbox{\hyperlink{class_case_ae32d00298789e5be6314c6cdceb2f064}{operator=}} (const \mbox{\hyperlink{class_case}{Case}} \&other)
+\begin{DoxyCompactList}\small\item\em Assigns one \doxylink{class_case}{Case} object to another. \end{DoxyCompactList}\item 
+\Hypertarget{class_case_a2280c798cd72c6c4d32b8fb7f9c3fbb6}\label{class_case_a2280c798cd72c6c4d32b8fb7f9c3fbb6} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Case} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_case}{Case} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_case_a1681c68a3a3717f900f63f07c314c797}{select\+Case}} ()
+\begin{DoxyCompactList}\small\item\em Marks the case as selected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_case_a5077c7c53b25a426d6f85c618e4f67c3}{deselect\+Case}} ()
+\begin{DoxyCompactList}\small\item\em Marks the case as deselected. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_case_a41454f8a38b2f0d13c4b49428fe3e2e7}{is\+Selected}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the case is selected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_case_ae22762b7ddcd724334b32f54cff9ec59}{eliminate\+Case}} ()
+\begin{DoxyCompactList}\small\item\em Eliminates the case, making it unavailable in the game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_case_aaafe7b09f247610a4e27640cba2f78e6}{is\+Eliminated}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the case is eliminated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_case_a2561ff75224b319e0b9ebe64b55c336c}{set\+Position\+Text}} ()
+\begin{DoxyCompactList}\small\item\em Sets the position of the amount text relative to the case sprite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_case_a8c0d95ca15f82e684af7973de3a69cb7}{draw}} (sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Draws the \doxylink{class_case}{Case} object to the specified window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_case_a43fabebfb36336ea08b33c101b0bb55d}{set\+Position}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Sets the position of the case. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_case_ad7cde8510b756969915bd0617e6ce252}{is\+Mouse\+Over}} (const sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Checks if the mouse cursor is hovering over the case. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_case_a3b6d76df79fb6d8eb71c2c276713a9e0}{is\+Clicked}} (const sf\+::\+Render\+Window \&window) const
+\begin{DoxyCompactList}\small\item\em Checks if the case is clicked. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_case_a47f35550ce76e618c5a14dfb1253edcc}{get\+Amount}} () const
+\begin{DoxyCompactList}\small\item\em Returns the amount of money in the case. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_case_af6b3860f486cd1c254e9d45f1f826c62}\label{class_case_af6b3860f486cd1c254e9d45f1f826c62} 
-std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{class_case}{Case}} \&c)
-\end{DoxyCompactItemize}
+std\+::ostream \& \mbox{\hyperlink{class_case_af6b3860f486cd1c254e9d45f1f826c62}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_case}{Case}} \&c)
+\begin{DoxyCompactList}\small\item\em Outputs a description of the \doxylink{class_case}{Case} object to the output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a case in the Deal or No Deal game. 
+
+A \doxylink{class_case}{Case} object contains an amount of money, a sprite for display, and text representing the amount. The case can be selected, deselected, or eliminated, and has a visual representation in the game window. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_case_a9cf7f861b72f4ba880da836e82dd7c01}\index{Case@{Case}!Case@{Case}}
+\index{Case@{Case}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{Case()}{Case()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_case_a9cf7f861b72f4ba880da836e82dd7c01} 
+Case\+::\+Case (\begin{DoxyParamCaption}\item[{double}]{money}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_case}{Case} object with an optional initial amount. 
+
+Constructs a \doxylink{class_case}{Case} object with an optional initial amount of money.
+
+This constructor initializes a case with a specific amount of money. If no amount is provided, the default value of 0 is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em money} & The amount of money in the case. Defaults to 0.\\
+\hline
+\end{DoxyParams}
+This constructor initializes the \doxylink{class_case}{Case} object with a specified amount of money and loads the associated texture and font. The texture is applied to the sprite, and the amount is displayed as text on the sprite.
+
+
+\begin{DoxyParams}{Parameters}
+{\em money} & The amount of money in the case. Defaults to 0. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_texture_error}{Texture\+Error}} & If the texture file could not be loaded. \\
+\hline
+{\em \doxylink{class_font_error}{Font\+Error}} & If the font file could not be loaded. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_case_ae9641bdf996a0f4a2337bb86383ff6aa}\index{Case@{Case}!Case@{Case}}
+\index{Case@{Case}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{Case()}{Case()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_case_ae9641bdf996a0f4a2337bb86383ff6aa} 
+Case\+::\+Case (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_case}{Case}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor for the \doxylink{class_case}{Case} class. 
+
+Initializes a new \doxylink{class_case}{Case} as a copy of the given \doxylink{class_case}{Case} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{class_case}{Case} object to copy from.\\
+\hline
+\end{DoxyParams}
+This constructor creates a copy of the provided \doxylink{class_case}{Case} object, including its amount, selected state, sprite, texture, and text properties.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{class_case}{Case} object to copy. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_case_a5077c7c53b25a426d6f85c618e4f67c3}\index{Case@{Case}!deselectCase@{deselectCase}}
+\index{deselectCase@{deselectCase}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{deselectCase()}{deselectCase()}}
+{\footnotesize\ttfamily \label{class_case_a5077c7c53b25a426d6f85c618e4f67c3} 
+void Case\+::deselect\+Case (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Marks the case as deselected. 
+
+This function sets the case\textquotesingle{}s selected state to false.
+
+This function sets the case\textquotesingle{}s selected state to false and changes the sprite\textquotesingle{}s color to white. \Hypertarget{class_case_a8c0d95ca15f82e684af7973de3a69cb7}\index{Case@{Case}!draw@{draw}}
+\index{draw@{draw}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_case_a8c0d95ca15f82e684af7973de3a69cb7} 
+void Case\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption}) const}
+
+
+
+Draws the \doxylink{class_case}{Case} object to the specified window. 
+
+This function draws both the case sprite and the amount text to the render window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window to draw the case on.\\
+\hline
+\end{DoxyParams}
+This function draws the case sprite and, if the case is eliminated, also draws the amount text on top of the sprite.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window where the case should be drawn. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_case_ae22762b7ddcd724334b32f54cff9ec59}\index{Case@{Case}!eliminateCase@{eliminateCase}}
+\index{eliminateCase@{eliminateCase}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{eliminateCase()}{eliminateCase()}}
+{\footnotesize\ttfamily \label{class_case_ae22762b7ddcd724334b32f54cff9ec59} 
+void Case\+::eliminate\+Case (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Eliminates the case, making it unavailable in the game. 
+
+This function marks the case as eliminated.
+
+This function marks the case as eliminated by changing the sprite\textquotesingle{}s color to red and updating the text position. \Hypertarget{class_case_a47f35550ce76e618c5a14dfb1253edcc}\index{Case@{Case}!getAmount@{getAmount}}
+\index{getAmount@{getAmount}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{getAmount()}{getAmount()}}
+{\footnotesize\ttfamily \label{class_case_a47f35550ce76e618c5a14dfb1253edcc} 
+double Case\+::get\+Amount (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}}
+
+
+
+Returns the amount of money in the case. 
+
+Gets the amount of money in the case.
+
+This function retrieves the amount of money contained in the case.
+
+\begin{DoxyReturn}{Returns}
+The amount of money in the case.
+\end{DoxyReturn}
+This function returns the amount of money contained in the case.
+
+\begin{DoxyReturn}{Returns}
+The amount of money in the case. 
+\end{DoxyReturn}
+\Hypertarget{class_case_a3b6d76df79fb6d8eb71c2c276713a9e0}\index{Case@{Case}!isClicked@{isClicked}}
+\index{isClicked@{isClicked}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{isClicked()}{isClicked()}}
+{\footnotesize\ttfamily \label{class_case_a3b6d76df79fb6d8eb71c2c276713a9e0} 
+bool Case\+::is\+Clicked (\begin{DoxyParamCaption}\item[{const sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the case is clicked. 
+
+This function checks whether the mouse pointer is over the case and if the left mouse button is pressed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window used to get the mouse position and button state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mouse is over the case and clicked, otherwise false.
+\end{DoxyReturn}
+This function checks whether the mouse is hovering over the case and whether the left mouse button is pressed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window to get the mouse position and button state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the case is clicked, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{class_case_aaafe7b09f247610a4e27640cba2f78e6}\index{Case@{Case}!isEliminated@{isEliminated}}
+\index{isEliminated@{isEliminated}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{isEliminated()}{isEliminated()}}
+{\footnotesize\ttfamily \label{class_case_aaafe7b09f247610a4e27640cba2f78e6} 
+bool Case\+::is\+Eliminated (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the case is eliminated. 
+
+This function returns true if the case has been eliminated, otherwise false.
+
+\begin{DoxyReturn}{Returns}
+True if the case is eliminated, otherwise false.
+\end{DoxyReturn}
+This function checks if the case has been eliminated, indicated by the sprite\textquotesingle{}s color being red.
+
+\begin{DoxyReturn}{Returns}
+True if the case is eliminated, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{class_case_ad7cde8510b756969915bd0617e6ce252}\index{Case@{Case}!isMouseOver@{isMouseOver}}
+\index{isMouseOver@{isMouseOver}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{isMouseOver()}{isMouseOver()}}
+{\footnotesize\ttfamily \label{class_case_ad7cde8510b756969915bd0617e6ce252} 
+bool Case\+::is\+Mouse\+Over (\begin{DoxyParamCaption}\item[{const sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the mouse cursor is hovering over the case. 
+
+Checks if the mouse is hovering over the case.
+
+This function checks whether the mouse pointer is currently over the case\textquotesingle{}s area.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window used to get the mouse position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mouse is over the case, otherwise false.
+\end{DoxyReturn}
+This function checks if the mouse pointer is currently over the case sprite and if the case is not selected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window to get the mouse position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mouse is over the case and it is not selected, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{class_case_a41454f8a38b2f0d13c4b49428fe3e2e7}\index{Case@{Case}!isSelected@{isSelected}}
+\index{isSelected@{isSelected}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{isSelected()}{isSelected()}}
+{\footnotesize\ttfamily \label{class_case_a41454f8a38b2f0d13c4b49428fe3e2e7} 
+bool Case\+::is\+Selected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the case is selected. 
+
+This function returns true if the case is selected, otherwise false.
+
+\begin{DoxyReturn}{Returns}
+True if the case is selected, otherwise false.
+\end{DoxyReturn}
+This function checks if the case has been selected by the player, indicated by the sprite\textquotesingle{}s color being green.
+
+\begin{DoxyReturn}{Returns}
+True if the case is selected, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{class_case_ae32d00298789e5be6314c6cdceb2f064}\index{Case@{Case}!operator=@{operator=}}
+\index{operator=@{operator=}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_case_ae32d00298789e5be6314c6cdceb2f064} 
+\mbox{\hyperlink{class_case}{Case}} \& Case\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_case}{Case}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Assigns one \doxylink{class_case}{Case} object to another. 
+
+This operator allows for assigning the properties of one \doxylink{class_case}{Case} to another, ensuring that the amount, selection state, sprite, texture, and text are copied properly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{class_case}{Case} object to copy from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the current \doxylink{class_case}{Case} object. 
+\end{DoxyReturn}
+\Hypertarget{class_case_a1681c68a3a3717f900f63f07c314c797}\index{Case@{Case}!selectCase@{selectCase}}
+\index{selectCase@{selectCase}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{selectCase()}{selectCase()}}
+{\footnotesize\ttfamily \label{class_case_a1681c68a3a3717f900f63f07c314c797} 
+void Case\+::select\+Case (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Marks the case as selected. 
+
+This function sets the case\textquotesingle{}s selected state to true.
+
+This function sets the case\textquotesingle{}s selected state to true and changes the sprite\textquotesingle{}s color to green. The position of the amount text is also updated to be centered on the case sprite. \Hypertarget{class_case_a43fabebfb36336ea08b33c101b0bb55d}\index{Case@{Case}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily \label{class_case_a43fabebfb36336ea08b33c101b0bb55d} 
+void Case\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Sets the position of the case. 
+
+Sets the position of the case sprite.
+
+This function sets the position of the case sprite on the screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the case\textquotesingle{}s position. \\
+\hline
+{\em y} & The y-\/coordinate of the case\textquotesingle{}s position. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_case_a2561ff75224b319e0b9ebe64b55c336c}\index{Case@{Case}!setPositionText@{setPositionText}}
+\index{setPositionText@{setPositionText}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{setPositionText()}{setPositionText()}}
+{\footnotesize\ttfamily \label{class_case_a2561ff75224b319e0b9ebe64b55c336c} 
+void Case\+::set\+Position\+Text (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets the position of the amount text relative to the case sprite. 
+
+Centers the amount text on the case sprite.
+
+This function ensures that the amount text is centered on the case sprite.
+
+This function adjusts the position of the amount text so that it is centered within the bounds of the case sprite. 
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_case_af6b3860f486cd1c254e9d45f1f826c62}\index{Case@{Case}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_case_af6b3860f486cd1c254e9d45f1f826c62} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_case}{Case}} \&}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Outputs a description of the \doxylink{class_case}{Case} object to the output stream. 
+
+This operator outputs the amount of money in the case to the given output stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream to write to. \\
+\hline
+{\em c} & The \doxylink{class_case}{Case} object to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output stream with the added description.
+\end{DoxyReturn}
+This operator writes the amount of money in the case to the provided output stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream to write to. \\
+\hline
+{\em c} & The \doxylink{class_case}{Case} object to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output stream with the case\textquotesingle{}s amount information. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
