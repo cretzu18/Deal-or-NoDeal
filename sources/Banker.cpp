@@ -7,13 +7,12 @@ std::ostream& operator<<(std::ostream &os, const Banker &b) {
     return os;
 }
 
-/*
-// momentan nu folosesc functia
 void Banker::offer(const std::vector<Case>& remainingCases) {
     if (remainingCases.empty()) return;
 
     double totalAmount = 0;
     for (const Case& c : remainingCases) {
+        if (!c.isEliminated() && !c.isSelected())
         totalAmount += c.getAmount();
     }
 
@@ -28,4 +27,3 @@ void Banker::offer(const std::vector<Case>& remainingCases) {
 
     offersHistory.push_back(currentOffer);
 }
-*/

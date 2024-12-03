@@ -1,7 +1,7 @@
 #include "../headers/Settings.h"
 
 Settings::Settings(): menuSlider(VolumeSlider(100, 200)), gameSlider(VolumeSlider(100, 300)) {
-  backButton = std::make_shared<ExitButton>("Back", 50, 50, 300, 100);
+  backButton = std::make_shared<ExitButton>("BACK", 50, 50, 300, 100);
 }
 
 void Settings::draw(sf::RenderWindow& window) {

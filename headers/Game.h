@@ -15,11 +15,14 @@ private:
     sf::RenderWindow window;
     sf::Texture backgroundTexture;
     sf::Sprite background;
+    sf::Text gameText;
+    sf::Font font;
     sf::Music menuMusic;
     sf::Music gameMusic;
     Settings settings;
 
     Player player;
+    Banker banker;
     std::vector<Case> cases;
     std::vector<std::shared_ptr<Button>> menuButtons;
     int round;
@@ -38,7 +41,7 @@ private:
     void backgroundCases();
     void playMenuMusic();
     void playGameMusic();
-    void handleEvents();
+    void handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCases);
     void render();
 };
 

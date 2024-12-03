@@ -10,6 +10,8 @@ private:
     bool selected;
     sf::Sprite sprite;
     sf::Texture texture;
+    sf::Text text;
+    sf::Font font;
 
 public:
     explicit Case(double money = 0);
@@ -19,10 +21,16 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Case &c);
     void selectCase();
+    void deselectCase();
+    bool isSelected() const;
+    void eliminateCase(sf::RenderWindow &window);
+    bool isEliminated() const;
+    void setPositionText();
     void draw(sf::RenderWindow &window) const;
     void setPosition(float x, float y);
     bool isMouseOver(const sf::RenderWindow& window) const;
     bool isClicked(const sf::RenderWindow& window) const;
+    double getAmount() const;
 };
 
 #endif // CASE_HPP

@@ -1,6 +1,6 @@
 #include "../headers/Game.h"
 
-Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Titlebar)
+Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Titlebar | sf::Style::Close)
                , round (0)
                , gameState(MENU)
 {
@@ -12,18 +12,30 @@ Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Ti
         exit(1);
     gameMusic.setLoop(true);
     window.setFramerateLimit(60);
+
+    if (!font.loadFromFile("../resources/arial.ttf")) {
+        std::cerr << "Failed to load font." << std::endl;
+        exit(1);
+    }
+
+    gameText.setFont(font);
+    gameText.setString("");
+    gameText.setCharacterSize(50);
+    gameText.setFillColor(sf::Color::Red);
+    gameText.setPosition(1050, 150);
 }
 
 void Game::play() {
-    const std::vector<double> amounts = { 0.1, 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750,
+    const std::vector<double> amounts = { 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750,
                                         1000, 5000, 10000, 25000, 50000, 75000, 100000, 200000,
                                         300000, 400000, 500000, 750000, 1000000};
-    std::vector<int> casesPerRound = {6, 5, 4, 3, 2, 1, 1, 1, 1};
+    const std::vector<int> casesPerRound = {6, 5, 4, 3, 2, 1, 1, 1};
+    int eliminatedCases = 0;
 
     while (window.isOpen()) {
         if (round == 1)
             createCases(amounts);
-        handleEvents();
+        handleEvents(casesPerRound, eliminatedCases);
         render();
     }
 
@@ -31,9 +43,13 @@ void Game::play() {
     gameMusic.stop();
 }
 
-void Game::handleEvents() {
+void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCases) {
     sf::Event event{};
+
     while (window.pollEvent(event)) {
+         if (event.type == sf::Event::Closed)
+             window.close();
+
          if (gameState == MENU) {
              playMenuMusic();
              for (const auto & button : menuButtons) {
@@ -53,33 +69,59 @@ void Game::handleEvents() {
 
         if (gameState == CASES) {
             playGameMusic();
-            if (round == 1)
+            if (round == 1) {
+                gameText.setString("Choose your case!");
                 for (auto & it : cases) {
                     if (it.isClicked(window)) {
                         it.selectCase();
                         player.selectCase(&it);
                         round++;
-                        std::cout << player;
                         break;
                     }
                 }
-            else if (round == 2) {
-                for (auto it = cases.begin(); it != cases.end(); ) {
-                    if (it->isClicked(window)) {
-                        std::cout << *it;
-                        it = cases.erase(it);
-                    } else {
-                        ++it;
+            }
+            else if (round >= 2 && round <= 9) {
+                const int casesToEliminate = casesPerRound[round - 2];
+                if (casesToEliminate - eliminatedCases == 1)
+                    gameText.setString("Choose " + std::to_string(casesToEliminate - eliminatedCases) + " case!");
+                else
+                    gameText.setString("Choose " + std::to_string(casesToEliminate - eliminatedCases) + " cases!");
+
+                for (auto &it : cases) {
+                    if (it.isClicked(window)) {
+                        it.eliminateCase(window);
+                        eliminatedCases++;
+                    }
+                    if (eliminatedCases == casesToEliminate) {
+                        break;
                     }
                 }
-                if (cases.size() == 1) {
-                    std::cout << "Your case: " << cases[0];
-                    cases.erase(cases.begin());
+
+                if (eliminatedCases == casesToEliminate) {
+                    eliminatedCases = 0;
                     round++;
                 }
             }
-            else if (round == 3)
-                gameState = MENU;
+            else if (round == 10) {
+                for (auto &it : cases)
+                    if (it.isSelected()) {
+                        it.deselectCase();
+                        break;
+                    }
+
+                round++;
+            }
+            else if (round == 11) {
+                gameText.setString("Choose your final case!");
+                for (auto &it : cases)
+                    if (it.isClicked(window)) {
+                        player.selectCase(&it);
+                        it.selectCase();
+                        for (auto &case_ : cases)
+                            if (!case_.isEliminated() && !case_.isSelected())
+                                case_.eliminateCase(window);
+                    }
+            }
         }
     }
 }
@@ -104,6 +146,7 @@ void Game::render() {
         for (const Case& c : cases) {
             c.draw(window);
         }
+        window.draw(gameText);
     }
     else {
         settings.draw(window);
@@ -152,8 +195,8 @@ void Game::createCases(std::vector<double> amounts) {
     const sf::Vector2u windowSize = window.getSize();
     for (size_t i = 0; i < amounts.size(); ++i) {
         Case c(amounts[i]);
-        const float x = static_cast<float>(windowSize.x) * 0.03f + (i % 5) * (static_cast<float>(windowSize.x) * 0.09f);
-        const float y = static_cast<float>(windowSize.y) * 0.03f + (i / 5)  * (static_cast<float>(windowSize.x) * 0.09f);
+        const float x = static_cast<float>(windowSize.x) * 0.03f + (i % 5) * (static_cast<float>(windowSize.x) * 0.10f);
+        const float y = static_cast<float>(windowSize.y) * 0.03f + (i / 5)  * (static_cast<float>(windowSize.x) * 0.10f);
         c.setPosition(x, y);
         cases.push_back(c);
     }
