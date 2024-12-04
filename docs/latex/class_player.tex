@@ -106,7 +106,7 @@ A reference to the current \doxylink{class_player}{Player} object.
 \index{selectCase@{selectCase}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{selectCase()}{selectCase()}}
 {\footnotesize\ttfamily \label{class_player_a88a21046fab185b3d38b6684f61531ae} 
-void Player\+::select\+Case (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_case}{Case}} \texorpdfstring{$\ast$}{*}}]{selected}{}\end{DoxyParamCaption})}
+void Player\+::select\+Case (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_case}{Case}} \texorpdfstring{$\ast$}{*}}]{selected\+Case}{}\end{DoxyParamCaption})}
 
 
 
@@ -116,14 +116,7 @@ This function sets the player\textquotesingle{}s selected case.
 
 
 \begin{DoxyParams}{Parameters}
-{\em selected\+Case} & The \doxylink{class_case}{Case} object that the player selects.\\
-\hline
-\end{DoxyParams}
-This function assigns a selected case to the player. The selected case is set by the pointer {\ttfamily selected}.
-
-
-\begin{DoxyParams}{Parameters}
-{\em selected} & The \doxylink{class_case}{Case} object that the player selects. \\
+{\em selected\+Case} & The \doxylink{class_case}{Case} object that the player selects. \\
 \hline
 \end{DoxyParams}
 
@@ -140,18 +133,6 @@ std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream 
 Outputs the player\textquotesingle{}s information to a stream. 
 
 This function displays the player\textquotesingle{}s username.
-
-
-\begin{DoxyParams}{Parameters}
-{\em os} & The output stream. \\
-\hline
-{\em p} & The \doxylink{class_player}{Player} object to output. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The output stream with the player\textquotesingle{}s information.
-\end{DoxyReturn}
-This function displays the player\textquotesingle{}s username along with a message indicating that the player has selected a case.
 
 
 \begin{DoxyParams}{Parameters}

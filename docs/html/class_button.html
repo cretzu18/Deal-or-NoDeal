@@ -192,31 +192,13 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor to initialize a <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> with text, position, and size. </p>
-<p>Constructs a <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> with the specified text, position, size, and appearance.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>The text displayed on the button. </td></tr>
     <tr><td class="paramname">posX</td><td>X-coordinate of the button's position. </td></tr>
     <tr><td class="paramname">posY</td><td>Y-coordinate of the button's position. </td></tr>
     <tr><td class="paramname">width</td><td>Width of the button. </td></tr>
-    <tr><td class="paramname">height</td><td>Height of the button.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This constructor initializes the button with a specified text label, position, size, and font. It also sets the button's color and outlines.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">text</td><td>The text to display on the button. </td></tr>
-    <tr><td class="paramname">posX</td><td>The x-coordinate of the button's position. </td></tr>
-    <tr><td class="paramname">posY</td><td>The y-coordinate of the button's position. </td></tr>
-    <tr><td class="paramname">width</td><td>The width of the button. </td></tr>
-    <tr><td class="paramname">height</td><td>The height of the button. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_font_error.html" title="A custom exception class for font-related errors.">FontError</a></td><td>If the font file could not be loaded. </td></tr>
+    <tr><td class="paramname">height</td><td>Height of the button. </td></tr>
   </table>
   </dd>
 </dl>
@@ -239,13 +221,6 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copy constructor for the <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> class. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>The <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object to copy.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Initializes a new <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> as a copy of the given <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>The <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object to copy. </td></tr>
@@ -349,17 +324,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Draws the button on the given SFML render window. </p>
-<p>Draws the <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> to the specified window.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML render window.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This function draws both the button shape and the text to the given render window.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML render window to draw the button on. </td></tr>
+    <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
   </table>
   </dd>
 </dl>
@@ -382,22 +349,13 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if the button has been clicked. </p>
-<p>Checks if the button is clicked.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the button is clicked, otherwise false.</dd></dl>
-<p>This function checks whether the mouse pointer is over the button and if the left mouse button is pressed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML render window used to get the mouse position and button state. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the mouse is over the button and clicked, otherwise false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the button is clicked, otherwise false. </dd></dl>
 
 </div>
 </div>
@@ -417,18 +375,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if the mouse is hovering over the button. </p>
-<p>Checks if the mouse cursor is hovering over the button.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the mouse is over the button, otherwise false.</dd></dl>
-<p>This function checks whether the mouse pointer is currently over the button's area.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML render window used to get the mouse position. </td></tr>
   </table>
   </dd>
 </dl>
@@ -452,18 +401,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copy assignment operator for the <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> class. </p>
-<p>Assigns one <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object to another.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>The <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object to assign. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the current <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object.</dd></dl>
-<p>This operator allows for assigning the properties of one <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> to another, ensuring deep copies of the button and buttonText objects.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>The <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object to copy from. </td></tr>
   </table>
   </dd>
 </dl>
@@ -507,16 +447,7 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the output stream.</dd></dl>
-<p>This operator outputs a string indicating which button was pressed, using the button's label as part of the message.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">os</td><td>The output stream to write to. </td></tr>
-    <tr><td class="paramname">button</td><td>The <a class="el" href="class_button.html" title="Abstract base class representing a generic button in the game.">Button</a> object to output. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The output stream with the added description. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the output stream. </dd></dl>
 
 </div>
 </div>

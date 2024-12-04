@@ -58,8 +58,6 @@ Button\+::\+Button (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text
 
 Constructor to initialize a \doxylink{class_button}{Button} with text, position, and size. 
 
-Constructs a \doxylink{class_button}{Button} with the specified text, position, size, and appearance.
-
 
 \begin{DoxyParams}{Parameters}
 {\em text} & The text displayed on the button. \\
@@ -70,29 +68,9 @@ Constructs a \doxylink{class_button}{Button} with the specified text, position, 
 \hline
 {\em width} & Width of the button. \\
 \hline
-{\em height} & Height of the button.\\
+{\em height} & Height of the button. \\
 \hline
 \end{DoxyParams}
-This constructor initializes the button with a specified text label, position, size, and font. It also sets the button\textquotesingle{}s color and outlines.
-
-
-\begin{DoxyParams}{Parameters}
-{\em text} & The text to display on the button. \\
-\hline
-{\em posX} & The x-\/coordinate of the button\textquotesingle{}s position. \\
-\hline
-{\em posY} & The y-\/coordinate of the button\textquotesingle{}s position. \\
-\hline
-{\em width} & The width of the button. \\
-\hline
-{\em height} & The height of the button. \\
-\hline
-\end{DoxyParams}
-
-\begin{DoxyExceptions}{Exceptions}
-{\em \doxylink{class_font_error}{Font\+Error}} & If the font file could not be loaded. \\
-\hline
-\end{DoxyExceptions}
 \Hypertarget{class_button_a8e8beabd9ee3ea48b1e5819517f05cd0}\index{Button@{Button}!Button@{Button}}
 \index{Button@{Button}!Button@{Button}}
 \doxysubsubsection{\texorpdfstring{Button()}{Button()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -102,13 +80,6 @@ Button\+::\+Button (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_
 
 
 Copy constructor for the \doxylink{class_button}{Button} class. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em other} & The \doxylink{class_button}{Button} object to copy.\\
-\hline
-\end{DoxyParams}
-Initializes a new \doxylink{class_button}{Button} as a copy of the given \doxylink{class_button}{Button} object.
 
 
 \begin{DoxyParams}{Parameters}
@@ -170,18 +141,9 @@ void Button\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{
 
 Draws the button on the given SFML render window. 
 
-Draws the \doxylink{class_button}{Button} to the specified window.
-
 
 \begin{DoxyParams}{Parameters}
-{\em window} & The SFML render window.\\
-\hline
-\end{DoxyParams}
-This function draws both the button shape and the text to the given render window.
-
-
-\begin{DoxyParams}{Parameters}
-{\em window} & The SFML render window to draw the button on. \\
+{\em window} & The SFML render window. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_button_af140dd001b92c62c8dd8235f8dbf2669}\index{Button@{Button}!isClicked@{isClicked}}
@@ -194,25 +156,13 @@ bool Button\+::is\+Clicked (\begin{DoxyParamCaption}\item[{const sf\+::\+Render\
 
 Checks if the button has been clicked. 
 
-Checks if the button is clicked.
-
 
 \begin{DoxyParams}{Parameters}
 {\em window} & The SFML render window. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if the button is clicked, otherwise false.
-\end{DoxyReturn}
-This function checks whether the mouse pointer is over the button and if the left mouse button is pressed.
-
-
-\begin{DoxyParams}{Parameters}
-{\em window} & The SFML render window used to get the mouse position and button state. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if the mouse is over the button and clicked, otherwise false. 
+True if the button is clicked, otherwise false. 
 \end{DoxyReturn}
 \Hypertarget{class_button_af7093489ef901bfe7e13f5308647789a}\index{Button@{Button}!isMouseOver@{isMouseOver}}
 \index{isMouseOver@{isMouseOver}!Button@{Button}}
@@ -224,21 +174,9 @@ bool Button\+::is\+Mouse\+Over (\begin{DoxyParamCaption}\item[{const sf\+::\+Ren
 
 Checks if the mouse is hovering over the button. 
 
-Checks if the mouse cursor is hovering over the button.
-
 
 \begin{DoxyParams}{Parameters}
 {\em window} & The SFML render window. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if the mouse is over the button, otherwise false.
-\end{DoxyReturn}
-This function checks whether the mouse pointer is currently over the button\textquotesingle{}s area.
-
-
-\begin{DoxyParams}{Parameters}
-{\em window} & The SFML render window used to get the mouse position. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -254,21 +192,9 @@ True if the mouse is over the button, otherwise false.
 
 Copy assignment operator for the \doxylink{class_button}{Button} class. 
 
-Assigns one \doxylink{class_button}{Button} object to another.
-
 
 \begin{DoxyParams}{Parameters}
 {\em other} & The \doxylink{class_button}{Button} object to assign. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A reference to the current \doxylink{class_button}{Button} object.
-\end{DoxyReturn}
-This operator allows for assigning the properties of one \doxylink{class_button}{Button} to another, ensuring deep copies of the button and button\+Text objects.
-
-
-\begin{DoxyParams}{Parameters}
-{\em other} & The \doxylink{class_button}{Button} object to copy from. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -295,19 +221,7 @@ Stream insertion operator for displaying button details.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A reference to the output stream.
-\end{DoxyReturn}
-This operator outputs a string indicating which button was pressed, using the button\textquotesingle{}s label as part of the message.
-
-
-\begin{DoxyParams}{Parameters}
-{\em os} & The output stream to write to. \\
-\hline
-{\em button} & The \doxylink{class_button}{Button} object to output. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The output stream with the added description. 
+A reference to the output stream. 
 \end{DoxyReturn}
 
 

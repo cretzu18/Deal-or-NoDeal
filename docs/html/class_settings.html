@@ -186,24 +186,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Draws the settings menu to the window. </p>
-<p>Draws the settings screen including the volume sliders and text.</p>
 <p>This method renders the settings menu, including the sliders and the back button, to the given window. It updates the window display to show the settings interface.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>The window to draw the settings menu on.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This method renders the back button, the menu and game volume sliders, and the corresponding text labels for the volume settings onto the window.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>The render window where the settings are drawn. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_font_error.html" title="A custom exception class for font-related errors.">FontError</a></td><td>If the font could not be loaded. </td></tr>
+    <tr><td class="paramname">window</td><td>The window to draw the settings menu on. </td></tr>
   </table>
   </dd>
 </dl>
@@ -293,22 +279,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Updates the settings menu based on user input and changes the game state. </p>
-<p>Updates the settings based on user input.</p>
 <p>This method handles user interactions with the settings menu. It listens for input events, such as slider adjustments or button clicks, and updates the game state accordingly.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window</td><td>The window that receives the input events. </td></tr>
     <tr><td class="paramname">event</td><td>The event that occurred (e.g., button click or slider change). </td></tr>
-    <tr><td class="paramname">gameState</td><td>The current state of the game, which may be modified by the settings.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This method checks for events in the settings screen, such as the back button click and the adjustments made to the menu and game volume sliders. If the back button is clicked, it changes the game state to MENU.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>The render window where the settings are updated. </td></tr>
-    <tr><td class="paramname">event</td><td>The event to be processed for the settings screen. </td></tr>
-    <tr><td class="paramname">gameState</td><td>The current game state, which can be updated to MENU if the back button is clicked. </td></tr>
+    <tr><td class="paramname">gameState</td><td>The current state of the game, which may be modified by the settings. </td></tr>
   </table>
   </dd>
 </dl>

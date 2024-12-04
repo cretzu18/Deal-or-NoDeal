@@ -113,8 +113,9 @@ Inheritance diagram for Banker:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2bf4bc9123112c0d77885d3b989ea798" id="r_a2bf4bc9123112c0d77885d3b989ea798"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bf4bc9123112c0d77885d3b989ea798">Banker</a> ()</td></tr>
-<tr class="memdesc:a2bf4bc9123112c0d77885d3b989ea798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a>. Initializes the accept and reject buttons.  <br /></td></tr>
+<tr class="memitem:a2bf4bc9123112c0d77885d3b989ea798" id="r_a2bf4bc9123112c0d77885d3b989ea798"><td class="memItemLeft" align="right" valign="top"><a id="a2bf4bc9123112c0d77885d3b989ea798" name="a2bf4bc9123112c0d77885d3b989ea798"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Banker</b> ()</td></tr>
+<tr class="memdesc:a2bf4bc9123112c0d77885d3b989ea798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a>. Initializes the accept and reject buttons. <br /></td></tr>
 <tr class="separator:a2bf4bc9123112c0d77885d3b989ea798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dd0dfd8110dfab35a5f91d34f5b44b2" id="r_a2dd0dfd8110dfab35a5f91d34f5b44b2"><td class="memItemLeft" align="right" valign="top"><a id="a2dd0dfd8110dfab35a5f91d34f5b44b2" name="a2dd0dfd8110dfab35a5f91d34f5b44b2"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Banker</b> (const <a class="el" href="class_banker.html">Banker</a> &amp;other)=default</td></tr>
@@ -131,8 +132,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Banker</b> ()=def
 <tr class="memitem:a80ac287c083887d297bb383a2a728856" id="r_a80ac287c083887d297bb383a2a728856"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80ac287c083887d297bb383a2a728856">offer</a> (const std::vector&lt; <a class="el" href="class_case.html">Case</a> &gt; &amp;cases, int round)=0</td></tr>
 <tr class="memdesc:a80ac287c083887d297bb383a2a728856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method to calculate the banker's offer.  <br /></td></tr>
 <tr class="separator:a80ac287c083887d297bb383a2a728856"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac71c2f36d57a5c6c95b0a7a63140ec0e" id="r_ac71c2f36d57a5c6c95b0a7a63140ec0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac71c2f36d57a5c6c95b0a7a63140ec0e">clearOffers</a> ()</td></tr>
-<tr class="memdesc:ac71c2f36d57a5c6c95b0a7a63140ec0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the history of offers.  <br /></td></tr>
+<tr class="memitem:ac71c2f36d57a5c6c95b0a7a63140ec0e" id="r_ac71c2f36d57a5c6c95b0a7a63140ec0e"><td class="memItemLeft" align="right" valign="top"><a id="ac71c2f36d57a5c6c95b0a7a63140ec0e" name="ac71c2f36d57a5c6c95b0a7a63140ec0e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearOffers</b> ()</td></tr>
+<tr class="memdesc:ac71c2f36d57a5c6c95b0a7a63140ec0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the history of offers. <br /></td></tr>
 <tr class="separator:ac71c2f36d57a5c6c95b0a7a63140ec0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1671f20a2a59618aeb1f8a7345171af7" id="r_a1671f20a2a59618aeb1f8a7345171af7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1671f20a2a59618aeb1f8a7345171af7">draw</a> (sf::RenderWindow &amp;window) const</td></tr>
 <tr class="memdesc:a1671f20a2a59618aeb1f8a7345171af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the accept and reject buttons on the window.  <br /></td></tr>
@@ -169,55 +171,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class representing a <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a> in the game. </p>
 <p>The <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a> class handles the calculation of offers, rendering of accept/reject buttons, and maintains the history of offers. It is designed to be extended by derived classes that provide specific offer calculation strategies. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2bf4bc9123112c0d77885d3b989ea798" name="a2bf4bc9123112c0d77885d3b989ea798"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bf4bc9123112c0d77885d3b989ea798">&#9670;&#160;</a></span>Banker()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Banker::Banker </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Default constructor for <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a>. Initializes the accept and reject buttons. </p>
-<p>Default constructor for the <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a> class.</p>
-<p>Initializes the accept and reject buttons and loads the font used for displaying offers.</p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_font_error.html" title="A custom exception class for font-related errors.">FontError</a></td><td>if the font file cannot be loaded. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac71c2f36d57a5c6c95b0a7a63140ec0e" name="ac71c2f36d57a5c6c95b0a7a63140ec0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac71c2f36d57a5c6c95b0a7a63140ec0e">&#9670;&#160;</a></span>clearOffers()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Banker::clearOffers </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Clears the history of offers. </p>
-<p>Clears the history of offers made by the banker. </p>
-
-</div>
-</div>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1ffe1e1f13db8a25c2187eeb9d72aaa6" name="a1ffe1e1f13db8a25c2187eeb9d72aaa6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ffe1e1f13db8a25c2187eeb9d72aaa6">&#9670;&#160;</a></span>clone()</h2>
 
@@ -264,11 +218,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Draws the accept and reject buttons on the window. </p>
-<p>Draws the accept and reject buttons on the provided window.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>The render window.</td></tr>
-    <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
+    <tr><td class="paramname">window</td><td>The render window. </td></tr>
   </table>
   </dd>
 </dl>
@@ -291,17 +243,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Displays the history of offers made by the banker. </p>
-<p>Draws the history of offers made by the banker.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>The render window.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Displays the list of offers at a specific position in the game window.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
+    <tr><td class="paramname">window</td><td>The render window. </td></tr>
   </table>
   </dd>
 </dl>
@@ -354,21 +298,13 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if the accept button was clicked. </p>
-<p>Checks if the accept button has been clicked.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window</td><td>The render window. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the accept button was clicked, false otherwise.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the accept button is clicked, otherwise false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the accept button was clicked, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -388,21 +324,13 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if the reject button was clicked. </p>
-<p>Checks if the reject button has been clicked.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window</td><td>The render window. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the reject button was clicked, false otherwise.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML render window. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the reject button is clicked, otherwise false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the reject button was clicked, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -483,16 +411,7 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The modified output stream.</dd></dl>
-<p>Displays the latest offer made by the banker.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">os</td><td>The output stream. </td></tr>
-    <tr><td class="paramname">b</td><td>The banker object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the output stream. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The modified output stream. </dd></dl>
 
 </div>
 </div>

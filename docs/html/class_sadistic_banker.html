@@ -117,8 +117,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6e9bea0a2ea9879e29e9de6c7f504664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of banker.  <br /></td></tr>
 <tr class="separator:a6e9bea0a2ea9879e29e9de6c7f504664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_banker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_banker')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_banker.html">Banker</a></td></tr>
-<tr class="memitem:a2bf4bc9123112c0d77885d3b989ea798 inherit pub_methods_class_banker" id="r_a2bf4bc9123112c0d77885d3b989ea798"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_banker.html#a2bf4bc9123112c0d77885d3b989ea798">Banker</a> ()</td></tr>
-<tr class="memdesc:a2bf4bc9123112c0d77885d3b989ea798 inherit pub_methods_class_banker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a>. Initializes the accept and reject buttons.  <br /></td></tr>
+<tr class="memitem:a2bf4bc9123112c0d77885d3b989ea798 inherit pub_methods_class_banker" id="r_a2bf4bc9123112c0d77885d3b989ea798"><td class="memItemLeft" align="right" valign="top">
+&#160;</td><td class="memItemRight" valign="bottom"><b>Banker</b> ()</td></tr>
+<tr class="memdesc:a2bf4bc9123112c0d77885d3b989ea798 inherit pub_methods_class_banker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="class_banker.html" title="Base class representing a Banker in the game.">Banker</a>. Initializes the accept and reject buttons. <br /></td></tr>
 <tr class="separator:a2bf4bc9123112c0d77885d3b989ea798 inherit pub_methods_class_banker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dd0dfd8110dfab35a5f91d34f5b44b2 inherit pub_methods_class_banker" id="r_a2dd0dfd8110dfab35a5f91d34f5b44b2"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><b>Banker</b> (const <a class="el" href="class_banker.html">Banker</a> &amp;other)=default</td></tr>
@@ -132,8 +133,9 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Banker</b> ()=default</td></tr>
 <tr class="memdesc:ad32621d3bd4c00efcde2694df46549d5 inherit pub_methods_class_banker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for polymorphism. <br /></td></tr>
 <tr class="separator:ad32621d3bd4c00efcde2694df46549d5 inherit pub_methods_class_banker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac71c2f36d57a5c6c95b0a7a63140ec0e inherit pub_methods_class_banker" id="r_ac71c2f36d57a5c6c95b0a7a63140ec0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_banker.html#ac71c2f36d57a5c6c95b0a7a63140ec0e">clearOffers</a> ()</td></tr>
-<tr class="memdesc:ac71c2f36d57a5c6c95b0a7a63140ec0e inherit pub_methods_class_banker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the history of offers.  <br /></td></tr>
+<tr class="memitem:ac71c2f36d57a5c6c95b0a7a63140ec0e inherit pub_methods_class_banker" id="r_ac71c2f36d57a5c6c95b0a7a63140ec0e"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearOffers</b> ()</td></tr>
+<tr class="memdesc:ac71c2f36d57a5c6c95b0a7a63140ec0e inherit pub_methods_class_banker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the history of offers. <br /></td></tr>
 <tr class="separator:ac71c2f36d57a5c6c95b0a7a63140ec0e inherit pub_methods_class_banker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1671f20a2a59618aeb1f8a7345171af7 inherit pub_methods_class_banker" id="r_a1671f20a2a59618aeb1f8a7345171af7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_banker.html#a1671f20a2a59618aeb1f8a7345171af7">draw</a> (sf::RenderWindow &amp;window) const</td></tr>
 <tr class="memdesc:a1671f20a2a59618aeb1f8a7345171af7 inherit pub_methods_class_banker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the accept and reject buttons on the window.  <br /></td></tr>
@@ -248,7 +250,6 @@ std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 </div><div class="memdoc">
 
 <p>Calculates the offer based on a sadistic formula. </p>
-<p>Calculates an offer designed to frustrate the player by being as low as possible.</p>
 <p>The <a class="el" href="class_sadistic_banker.html" title="Represents a Banker who makes the worst possible offers.">SadisticBanker</a> makes offers using the minimum remaining case amount or a fraction of the average, ensuring very low offers.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -257,19 +258,7 @@ std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The offer amount.</dd></dl>
-<ul>
-<li>In early rounds (&lt;= 6), the offer is half of the average of all remaining amounts.</li>
-<li>In later rounds, the offer is the lowest remaining amount.</li>
-</ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cases</td><td>The remaining cases in the game. </td></tr>
-    <tr><td class="paramname">round</td><td>The current round of the game. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The calculated offer. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The offer amount. </dd></dl>
 
 <p>Implements <a class="el" href="class_banker.html#a80ac287c083887d297bb383a2a728856">Banker</a>.</p>
 

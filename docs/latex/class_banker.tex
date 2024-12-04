@@ -18,7 +18,8 @@ Inheritance diagram for Banker\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_banker_a2bf4bc9123112c0d77885d3b989ea798}{Banker}} ()
+\Hypertarget{class_banker_a2bf4bc9123112c0d77885d3b989ea798}\label{class_banker_a2bf4bc9123112c0d77885d3b989ea798} 
+{\bfseries Banker} ()
 \begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_banker}{Banker}. Initializes the accept and reject buttons. \end{DoxyCompactList}\item 
 \Hypertarget{class_banker_a2dd0dfd8110dfab35a5f91d34f5b44b2}\label{class_banker_a2dd0dfd8110dfab35a5f91d34f5b44b2} 
 {\bfseries Banker} (const \mbox{\hyperlink{class_banker}{Banker}} \&other)=default
@@ -31,7 +32,8 @@ virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Banker} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor for polymorphism. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_banker_a80ac287c083887d297bb383a2a728856}{offer}} (const std\+::vector$<$ \mbox{\hyperlink{class_case}{Case}} $>$ \&cases, int round)=0
 \begin{DoxyCompactList}\small\item\em Pure virtual method to calculate the banker\textquotesingle{}s offer. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_banker_ac71c2f36d57a5c6c95b0a7a63140ec0e}{clear\+Offers}} ()
+\Hypertarget{class_banker_ac71c2f36d57a5c6c95b0a7a63140ec0e}\label{class_banker_ac71c2f36d57a5c6c95b0a7a63140ec0e} 
+void {\bfseries clear\+Offers} ()
 \begin{DoxyCompactList}\small\item\em Clears the history of offers. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_banker_a1671f20a2a59618aeb1f8a7345171af7}{draw}} (sf\+::\+Render\+Window \&window) const
 \begin{DoxyCompactList}\small\item\em Draws the accept and reject buttons on the window. \end{DoxyCompactList}\item 
@@ -63,40 +65,8 @@ Base class representing a \doxylink{class_banker}{Banker} in the game.
 
 The \doxylink{class_banker}{Banker} class handles the calculation of offers, rendering of accept/reject buttons, and maintains the history of offers. It is designed to be extended by derived classes that provide specific offer calculation strategies. 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_banker_a2bf4bc9123112c0d77885d3b989ea798}\index{Banker@{Banker}!Banker@{Banker}}
-\index{Banker@{Banker}!Banker@{Banker}}
-\doxysubsubsection{\texorpdfstring{Banker()}{Banker()}}
-{\footnotesize\ttfamily \label{class_banker_a2bf4bc9123112c0d77885d3b989ea798} 
-Banker\+::\+Banker (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-Default constructor for \doxylink{class_banker}{Banker}. Initializes the accept and reject buttons. 
-
-Default constructor for the \doxylink{class_banker}{Banker} class.
-
-Initializes the accept and reject buttons and loads the font used for displaying offers.
-
-
-\begin{DoxyExceptions}{Exceptions}
-{\em \doxylink{class_font_error}{Font\+Error}} & if the font file cannot be loaded. \\
-\hline
-\end{DoxyExceptions}
-
-
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_banker_ac71c2f36d57a5c6c95b0a7a63140ec0e}\index{Banker@{Banker}!clearOffers@{clearOffers}}
-\index{clearOffers@{clearOffers}!Banker@{Banker}}
-\doxysubsubsection{\texorpdfstring{clearOffers()}{clearOffers()}}
-{\footnotesize\ttfamily \label{class_banker_ac71c2f36d57a5c6c95b0a7a63140ec0e} 
-void Banker\+::clear\+Offers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-Clears the history of offers. 
-
-Clears the history of offers made by the banker. \Hypertarget{class_banker_a1ffe1e1f13db8a25c2187eeb9d72aaa6}\index{Banker@{Banker}!clone@{clone}}
+\Hypertarget{class_banker_a1ffe1e1f13db8a25c2187eeb9d72aaa6}\index{Banker@{Banker}!clone@{clone}}
 \index{clone@{clone}!Banker@{Banker}}
 \doxysubsubsection{\texorpdfstring{clone()}{clone()}}
 {\footnotesize\ttfamily \label{class_banker_a1ffe1e1f13db8a25c2187eeb9d72aaa6} 
@@ -123,13 +93,9 @@ void Banker\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{
 
 Draws the accept and reject buttons on the window. 
 
-Draws the accept and reject buttons on the provided window.
-
 
 \begin{DoxyParams}{Parameters}
-{\em window} & The render window.\\
-\hline
-{\em window} & The SFML render window. \\
+{\em window} & The render window. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_banker_a587e62c61ed15ede7d57ddb4c052f7c4}\index{Banker@{Banker}!drawOffers@{drawOffers}}
@@ -142,18 +108,9 @@ void Banker\+::draw\+Offers (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Wind
 
 Displays the history of offers made by the banker. 
 
-Draws the history of offers made by the banker.
-
 
 \begin{DoxyParams}{Parameters}
-{\em window} & The render window.\\
-\hline
-\end{DoxyParams}
-Displays the list of offers at a specific position in the game window.
-
-
-\begin{DoxyParams}{Parameters}
-{\em window} & The SFML render window. \\
+{\em window} & The render window. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_banker_a9c6f9751f13045ddf54b587db974e34e}\index{Banker@{Banker}!getType@{getType}}
@@ -183,23 +140,13 @@ bool Banker\+::is\+Accept\+Button\+Clicked (\begin{DoxyParamCaption}\item[{const
 
 Checks if the accept button was clicked. 
 
-Checks if the accept button has been clicked.
-
 
 \begin{DoxyParams}{Parameters}
 {\em window} & The render window. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if the accept button was clicked, false otherwise.
-\end{DoxyReturn}
-
-\begin{DoxyParams}{Parameters}
-{\em window} & The SFML render window. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if the accept button is clicked, otherwise false. 
+True if the accept button was clicked, false otherwise. 
 \end{DoxyReturn}
 \Hypertarget{class_banker_a4fc4abe440adc381d08c487f8ab070a1}\index{Banker@{Banker}!isRejectButtonClicked@{isRejectButtonClicked}}
 \index{isRejectButtonClicked@{isRejectButtonClicked}!Banker@{Banker}}
@@ -211,23 +158,13 @@ bool Banker\+::is\+Reject\+Button\+Clicked (\begin{DoxyParamCaption}\item[{const
 
 Checks if the reject button was clicked. 
 
-Checks if the reject button has been clicked.
-
 
 \begin{DoxyParams}{Parameters}
 {\em window} & The render window. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if the reject button was clicked, false otherwise.
-\end{DoxyReturn}
-
-\begin{DoxyParams}{Parameters}
-{\em window} & The SFML render window. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if the reject button is clicked, otherwise false. 
+True if the reject button was clicked, false otherwise. 
 \end{DoxyReturn}
 \Hypertarget{class_banker_a80ac287c083887d297bb383a2a728856}\index{Banker@{Banker}!offer@{offer}}
 \index{offer@{offer}!Banker@{Banker}}
@@ -274,19 +211,7 @@ Overloaded output operator for displaying banker details.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The modified output stream.
-\end{DoxyReturn}
-Displays the latest offer made by the banker.
-
-
-\begin{DoxyParams}{Parameters}
-{\em os} & The output stream. \\
-\hline
-{\em b} & The banker object. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A reference to the output stream. 
+The modified output stream. 
 \end{DoxyReturn}
 
 

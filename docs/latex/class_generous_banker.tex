@@ -27,7 +27,7 @@ std\+::string \mbox{\hyperlink{class_generous_banker_a72559e5b35e53659e5f4f4bd68
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_banker}{Banker}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_banker_a2bf4bc9123112c0d77885d3b989ea798}{Banker}} ()
+{\bfseries Banker} ()
 \begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_banker}{Banker}. Initializes the accept and reject buttons. \end{DoxyCompactList}\item 
 {\bfseries Banker} (const \mbox{\hyperlink{class_banker}{Banker}} \&other)=default
 \begin{DoxyCompactList}\small\item\em Default copy constructor. \end{DoxyCompactList}\item 
@@ -35,7 +35,7 @@ std\+::string \mbox{\hyperlink{class_generous_banker_a72559e5b35e53659e5f4f4bd68
 \begin{DoxyCompactList}\small\item\em Default copy assignment operator. \end{DoxyCompactList}\item 
 virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Banker} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor for polymorphism. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_banker_ac71c2f36d57a5c6c95b0a7a63140ec0e}{clear\+Offers}} ()
+void {\bfseries clear\+Offers} ()
 \begin{DoxyCompactList}\small\item\em Clears the history of offers. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_banker_a1671f20a2a59618aeb1f8a7345171af7}{draw}} (sf\+::\+Render\+Window \&window) const
 \begin{DoxyCompactList}\small\item\em Draws the accept and reject buttons on the window. \end{DoxyCompactList}\item 
@@ -103,8 +103,6 @@ double Generous\+Banker\+::offer (\begin{DoxyParamCaption}\item[{const std\+::ve
 
 Calculates the offer based on a generous formula. 
 
-Calculates an offer that is slightly higher than the average remaining case amounts.
-
 The \doxylink{class_generous_banker}{Generous\+Banker} considers the average of the remaining case amounts and increases it slightly to provide more appealing offers.
 
 
@@ -115,23 +113,7 @@ The \doxylink{class_generous_banker}{Generous\+Banker} considers the average of 
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The offer amount.
-\end{DoxyReturn}
-
-\begin{DoxyItemize}
-\item In early rounds (\texorpdfstring{$<$}{<}= 6), the offer is between 30\% and 40\% of the average.
-\item In later rounds, the offer is between 60\% and 75\% of the average.
-\end{DoxyItemize}
-
-
-\begin{DoxyParams}{Parameters}
-{\em cases} & The remaining cases in the game. \\
-\hline
-{\em round} & The current round of the game. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The calculated offer. 
+The offer amount. 
 \end{DoxyReturn}
 
 

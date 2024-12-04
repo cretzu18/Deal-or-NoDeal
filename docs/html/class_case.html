@@ -180,25 +180,10 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a <a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a> object with an optional initial amount. </p>
-<p>Constructs a <a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a> object with an optional initial amount of money.</p>
 <p>This constructor initializes a case with a specific amount of money. If no amount is provided, the default value of 0 is used.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">money</td><td>The amount of money in the case. Defaults to 0.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This constructor initializes the <a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a> object with a specified amount of money and loads the associated texture and font. The texture is applied to the sprite, and the amount is displayed as text on the sprite.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
     <tr><td class="paramname">money</td><td>The amount of money in the case. Defaults to 0. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_texture_error.html" title="A custom exception class for texture-related errors.">TextureError</a></td><td>If the texture file could not be loaded. </td></tr>
-    <tr><td class="paramname"><a class="el" href="class_font_error.html" title="A custom exception class for font-related errors.">FontError</a></td><td>If the font file could not be loaded. </td></tr>
   </table>
   </dd>
 </dl>
@@ -224,14 +209,7 @@ Friends</h2></td></tr>
 <p>Initializes a new <a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a> as a copy of the given <a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a> object.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td>The <a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a> object to copy from.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This constructor creates a copy of the provided <a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a> object, including its amount, selected state, sprite, texture, and text properties.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>The <a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a> object to copy. </td></tr>
+    <tr><td class="paramname">other</td><td>The <a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a> object to copy from. </td></tr>
   </table>
   </dd>
 </dl>
@@ -255,8 +233,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Marks the case as deselected. </p>
-<p>This function sets the case's selected state to false.</p>
-<p>This function sets the case's selected state to false and changes the sprite's color to white. </p>
+<p>This function sets the case's selected state to false. </p>
 
 </div>
 </div>
@@ -279,14 +256,7 @@ Friends</h2></td></tr>
 <p>This function draws both the case sprite and the amount text to the render window.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML render window to draw the case on.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This function draws the case sprite and, if the case is eliminated, also draws the amount text on top of the sprite.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML render window where the case should be drawn. </td></tr>
+    <tr><td class="paramname">window</td><td>The SFML render window to draw the case on. </td></tr>
   </table>
   </dd>
 </dl>
@@ -309,8 +279,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Eliminates the case, making it unavailable in the game. </p>
-<p>This function marks the case as eliminated.</p>
-<p>This function marks the case as eliminated by changing the sprite's color to red and updating the text position. </p>
+<p>This function marks the case as eliminated. </p>
 
 </div>
 </div>
@@ -338,10 +307,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the amount of money in the case. </p>
-<p>Gets the amount of money in the case.</p>
 <p>This function retrieves the amount of money contained in the case.</p>
-<dl class="section return"><dt>Returns</dt><dd>The amount of money in the case.</dd></dl>
-<p>This function returns the amount of money contained in the case.</p>
 <dl class="section return"><dt>Returns</dt><dd>The amount of money in the case. </dd></dl>
 
 </div>
@@ -369,15 +335,7 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the mouse is over the case and clicked, otherwise false.</dd></dl>
-<p>This function checks whether the mouse is hovering over the case and whether the left mouse button is pressed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML render window to get the mouse position and button state. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the case is clicked, otherwise false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the mouse is over the case and clicked, otherwise false. </dd></dl>
 
 </div>
 </div>
@@ -398,8 +356,6 @@ Friends</h2></td></tr>
 
 <p>Checks if the case is eliminated. </p>
 <p>This function returns true if the case has been eliminated, otherwise false.</p>
-<dl class="section return"><dt>Returns</dt><dd>True if the case is eliminated, otherwise false.</dd></dl>
-<p>This function checks if the case has been eliminated, indicated by the sprite's color being red.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if the case is eliminated, otherwise false. </dd></dl>
 
 </div>
@@ -420,7 +376,6 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if the mouse cursor is hovering over the case. </p>
-<p>Checks if the mouse is hovering over the case.</p>
 <p>This function checks whether the mouse pointer is currently over the case's area.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -428,15 +383,7 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the mouse is over the case, otherwise false.</dd></dl>
-<p>This function checks if the mouse pointer is currently over the case sprite and if the case is not selected.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>The SFML render window to get the mouse position. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the mouse is over the case and it is not selected, otherwise false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the mouse is over the case, otherwise false. </dd></dl>
 
 </div>
 </div>
@@ -457,8 +404,6 @@ Friends</h2></td></tr>
 
 <p>Checks if the case is selected. </p>
 <p>This function returns true if the case is selected, otherwise false.</p>
-<dl class="section return"><dt>Returns</dt><dd>True if the case is selected, otherwise false.</dd></dl>
-<p>This function checks if the case has been selected by the player, indicated by the sprite's color being green.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if the case is selected, otherwise false. </dd></dl>
 
 </div>
@@ -506,8 +451,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Marks the case as selected. </p>
-<p>This function sets the case's selected state to true.</p>
-<p>This function sets the case's selected state to true and changes the sprite's color to green. The position of the amount text is also updated to be centered on the case sprite. </p>
+<p>This function sets the case's selected state to true. </p>
 
 </div>
 </div>
@@ -531,7 +475,6 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the position of the case. </p>
-<p>Sets the position of the case sprite.</p>
 <p>This function sets the position of the case sprite on the screen.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -559,9 +502,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the position of the amount text relative to the case sprite. </p>
-<p>Centers the amount text on the case sprite.</p>
-<p>This function ensures that the amount text is centered on the case sprite.</p>
-<p>This function adjusts the position of the amount text so that it is centered within the bounds of the case sprite. </p>
+<p>This function ensures that the amount text is centered on the case sprite. </p>
 
 </div>
 </div>
@@ -602,16 +543,7 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The output stream with the added description.</dd></dl>
-<p>This operator writes the amount of money in the case to the provided output stream.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">os</td><td>The output stream to write to. </td></tr>
-    <tr><td class="paramname">c</td><td>The <a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a> object to output. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The output stream with the case's amount information. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The output stream with the added description. </dd></dl>
 
 </div>
 </div>

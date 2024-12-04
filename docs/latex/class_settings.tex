@@ -65,27 +65,13 @@ void Settings\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}
 
 Draws the settings menu to the window. 
 
-Draws the settings screen including the volume sliders and text.
-
 This method renders the settings menu, including the sliders and the back button, to the given window. It updates the window display to show the settings interface.
 
 
 \begin{DoxyParams}{Parameters}
-{\em window} & The window to draw the settings menu on.\\
+{\em window} & The window to draw the settings menu on. \\
 \hline
 \end{DoxyParams}
-This method renders the back button, the menu and game volume sliders, and the corresponding text labels for the volume settings onto the window.
-
-
-\begin{DoxyParams}{Parameters}
-{\em window} & The render window where the settings are drawn. \\
-\hline
-\end{DoxyParams}
-
-\begin{DoxyExceptions}{Exceptions}
-{\em \doxylink{class_font_error}{Font\+Error}} & If the font could not be loaded. \\
-\hline
-\end{DoxyExceptions}
 \Hypertarget{class_settings_a74c9d61dcc27503b857fc99ab201432f}\index{Settings@{Settings}!getGameVolumeLevel@{getGameVolumeLevel}}
 \index{getGameVolumeLevel@{getGameVolumeLevel}!Settings@{Settings}}
 \doxysubsubsection{\texorpdfstring{getGameVolumeLevel()}{getGameVolumeLevel()}}
@@ -126,8 +112,6 @@ void Settings\+::update (\begin{DoxyParamCaption}\item[{const sf\+::\+Render\+Wi
 
 Updates the settings menu based on user input and changes the game state. 
 
-Updates the settings based on user input.
-
 This method handles user interactions with the settings menu. It listens for input events, such as slider adjustments or button clicks, and updates the game state accordingly.
 
 
@@ -136,18 +120,7 @@ This method handles user interactions with the settings menu. It listens for inp
 \hline
 {\em event} & The event that occurred (e.\+g., button click or slider change). \\
 \hline
-{\em game\+State} & The current state of the game, which may be modified by the settings.\\
-\hline
-\end{DoxyParams}
-This method checks for events in the settings screen, such as the back button click and the adjustments made to the menu and game volume sliders. If the back button is clicked, it changes the game state to MENU.
-
-
-\begin{DoxyParams}{Parameters}
-{\em window} & The render window where the settings are updated. \\
-\hline
-{\em event} & The event to be processed for the settings screen. \\
-\hline
-{\em game\+State} & The current game state, which can be updated to MENU if the back button is clicked. \\
+{\em game\+State} & The current state of the game, which may be modified by the settings. \\
 \hline
 \end{DoxyParams}
 
