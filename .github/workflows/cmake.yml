@@ -25,7 +25,6 @@ env:
   EXECUTABLE_NAME: "oop"
   INPUT_FILENAME: "tastatura.txt"
   BIN_DIR: "bin"       # update in cmake/Options.cmake:6 if changing name here
-  RESOURCES_DIR: "resources"
   BUILD_DIR: "build"
   EXT_DIR: "ext"
   GEN_DIR: "generated"
@@ -205,11 +204,8 @@ jobs:
 
       - name: Move artifacts
         run: |
-          mkdir -p ${{ env.ZIP_NAME }}/game
-          mkdir -p ${{ env.ZIP_NAME }}/resources
-          mv artifacts/${{ env.BIN_DIR }}/* ${{ env.ZIP_NAME }}/game/
-          mv artifacts/${{ env.BIN_DIR }}/oop ${{ env.ZIP_NAME }}/
-          cp -r ${{ env.RESOURCES_DIR }}/* ${{ env.ZIP_NAME }}/resources/
+          mkdir ${{ env.ZIP_NAME }}
+          mv artifacts/${{ env.BIN_DIR }}/* ${{ env.ZIP_NAME }}
           ls -la ${{ env.ZIP_NAME }}
 
       - name: Process artifacts
