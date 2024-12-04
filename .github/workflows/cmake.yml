@@ -205,8 +205,7 @@ jobs:
       - name: Move artifacts
         run: |
           mkdir ${{ env.ZIP_NAME }}
-          mkdir ${{ env.ZIP_NAME }}/game
-          mv artifacts/${{ env.BIN_DIR }}/* ${{ env.ZIP_NAME }}/game
+          mv artifacts/${{ env.BIN_DIR }}/* ${{ env.ZIP_NAME }}
           ls -la ${{ env.ZIP_NAME }}
 
       - name: Process artifacts
