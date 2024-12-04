@@ -207,7 +207,7 @@ jobs:
         run: |
           mkdir ${{ env.ZIP_NAME }}
           mv artifacts/${{ env.BIN_DIR }}/* ${{ env.ZIP_NAME }}
-          mv artifacts/${{ env.RESOURCES_DIR }}/* ${{ env.ZIP_NAME }}
+          cp -r ${{ env.RESOURCES_DIR }}/* ${{ env.ZIP_NAME }}
           ls -la ${{ env.ZIP_NAME }}
 
       - name: Process artifacts
