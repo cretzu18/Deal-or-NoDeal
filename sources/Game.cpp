@@ -7,15 +7,15 @@ Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Ti
 	createButtons();
 	randomizeBanker();
 
-	if(!menuMusic.openFromFile("./resources/menu.ogg"))
+	if(!menuMusic.openFromFile("../resources/menu.ogg"))
 		throw MusicError("No menu music found!");
 	menuMusic.setLoop(true);
-	if(!gameMusic.openFromFile("./resources/game.ogg"))
+	if(!gameMusic.openFromFile("../resources/game.ogg"))
 		throw MusicError("No game music found!");
 	gameMusic.setLoop(true);
 	window.setFramerateLimit(60);
 
-	if (!font.loadFromFile("./resources/arial.ttf"))
+	if (!font.loadFromFile("../resources/arial.ttf"))
 		throw FontError("The font could not be loaded!");
 
 	gameText.setFont(font);
@@ -210,14 +210,14 @@ void Game::render(const bool offered) {
 }
 
 void Game::backgroundCases() {
-	if (!backgroundTexture.loadFromFile("./resources/background2.png")) {
+	if (!backgroundTexture.loadFromFile("../resources/background2.png")) {
 		throw BackgroundError("The background could not be loaded!");
 	}
 	background.setTexture(backgroundTexture);
 }
 
 void Game::backgroundMenu() {
-	if (!backgroundTexture.loadFromFile("./resources/background.png")) {
+	if (!backgroundTexture.loadFromFile("../resources/background.png")) {
 		throw BackgroundError("The background could not be loaded!");
 	}
 	background.setTexture(backgroundTexture);

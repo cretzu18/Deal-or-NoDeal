@@ -13,7 +13,7 @@ void Settings::draw(sf::RenderWindow& window) const {
 	gameSlider.draw(window);
 
 	sf::Font font;
-	if (!font.loadFromFile("./resources/arial.ttf"))
+	if (!font.loadFromFile("../resources/arial.ttf"))
 		throw FontError("The font could not be loaded!");
 
 	sf::Text menuText;
