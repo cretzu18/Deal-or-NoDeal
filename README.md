@@ -70,5 +70,6 @@ The goal of the game is to maximize your winnings by chossing cases and deciding
 - [ ] tag de `git`: de exemplu `v0.3` sau `v1.0`
 
 ## Resurse
-[SFML](https://www.sfml-dev.org/index.php)
-[doxygen](https://www.doxygen.nl/)
+- [SFML](https://www.sfml-dev.org/index.php)
+- [OpenAL](https://openal-soft.org/)
+- [doxygen](https://www.doxygen.nl/)
