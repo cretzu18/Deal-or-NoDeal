@@ -280,6 +280,6 @@ void Game::renderRemainingValues(std::vector<double> amounts) {
 		m[c.getAmount()] = c;
 
     std::ranges::stable_sort(amounts, std::greater<double>());
-	for (int i = 0; i < amounts.size(); ++i)
+	for (unsigned long i = 0; i < amounts.size(); ++i)
 		m[amounts[i]].drawAmount(window, 1400, static_cast<float>(200 + i * 25));
 }
