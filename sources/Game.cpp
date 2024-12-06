@@ -13,6 +13,7 @@ Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Ti
 	if(!gameMusic.openFromFile("./game.ogg"))
 		throw MusicError("No game music found!");
 	gameMusic.setLoop(true);
+
 	window.setFramerateLimit(60);
 
 	if (!font.loadFromFile("./arial.ttf"))
@@ -22,7 +23,7 @@ Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Ti
 	gameText.setString("");
 	gameText.setCharacterSize(30);
 	gameText.setFillColor(sf::Color::Red);
-	gameText.setPosition(1050, 150);
+	gameText.setPosition(1050, 50);
 }
 
 void Game::play() {
@@ -49,7 +50,7 @@ void Game::play() {
 			lastOffer = 0;
 		}
 		handleEvents(casesPerRound, eliminatedCases, offered, lastOffer);
-		render(offered);
+		render(offered, amounts);
 	}
 
 	menuMusic.stop();
@@ -166,7 +167,7 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
 	}
 }
 
-void Game::render(const bool offered) {
+void Game::render(const bool offered, const std::vector<double>& amounts) {
 	window.clear();
 
 	if (gameState == CASES) {
@@ -188,6 +189,7 @@ void Game::render(const bool offered) {
 			c.draw(window);
 		}
 		window.draw(gameText);
+		renderRemainingValues(amounts);
 		banker->drawOffers(window);
 		if (offered == true)
 			banker->draw(window);
@@ -203,7 +205,6 @@ void Game::render(const bool offered) {
 			if (std::dynamic_pointer_cast<BackButton>(button))
 				button->draw(window);
 		window.draw(gameText);
-
 	}
 
 	window.display();
@@ -271,4 +272,14 @@ void Game::randomizeBanker() {
 	};
 
 	banker = allBankers[RandomUtil::getRandomInt(0, static_cast<int>(allBankers.size()) - 1)]();
+}
+
+void Game::renderRemainingValues(std::vector<double> amounts) {
+	std::map <double, Case> m;
+	for (const Case& c : cases)
+		m[c.getAmount()] = c;
+
+    std::ranges::stable_sort(amounts, std::greater<double>());
+	for (int i = 0; i < amounts.size(); ++i)
+		m[amounts[i]].drawAmount(window, 1400, static_cast<float>(200 + i * 25));
 }

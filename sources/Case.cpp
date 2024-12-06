@@ -73,6 +73,16 @@ void Case::draw(sf::RenderWindow &window) const {
 		window.draw(text);
 }
 
+void Case::drawAmount(sf::RenderWindow &window, const float x, const float y) const {
+	if (!isEliminated()) {
+		sf::Text textAmount = text;
+		textAmount.setCharacterSize(30);
+		textAmount.setFillColor(sf::Color::Red);
+		textAmount.setPosition(x, y);
+		window.draw(textAmount);
+	}
+}
+
 void Case::setPosition(const float x, const float y) {
 	sprite.setPosition(x, y);
 }

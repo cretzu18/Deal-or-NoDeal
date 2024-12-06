@@ -120,6 +120,8 @@ public:
      */
     void draw(sf::RenderWindow &window) const;
 
+    void drawAmount(sf::RenderWindow &window, float x, float y) const;
+
     /**
      * @brief Sets the position of the case.
      *
@@ -158,6 +160,8 @@ public:
      * @return The amount of money in the case.
      */
     [[nodiscard]] double getAmount() const;
+
+    void drawAmount(const sf::RenderWindow & window);
 };
 
 #endif // CASE_HPP

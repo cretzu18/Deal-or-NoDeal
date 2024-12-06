@@ -1,8 +1,8 @@
 #include "../headers/Banker.h"
 
 Banker::Banker()
-	: rejectButton (std::make_shared<ExitButton>("REJECT", 1300, 200, 120, 50))
-	, acceptButton (std::make_shared<ExitButton>("ACCEPT", 1100, 200, 120, 50))
+	: rejectButton (std::make_shared<ExitButton>("REJECT", 1300, 100, 120, 50))
+	, acceptButton (std::make_shared<ExitButton>("ACCEPT", 1100, 100, 120, 50))
 {
 	if (!font.loadFromFile("./arial.ttf"))
 		throw FontError("The font could not be loaded!");
@@ -28,7 +28,7 @@ void Banker::drawOffers(sf::RenderWindow &window) const {
 	text.setString("Offers history:");
 	text.setCharacterSize(30);
 	text.setFillColor(sf::Color::Yellow);
-	text.setPosition(1050, 350);
+	text.setPosition(1050, 200);
 	window.draw(text);
 
 	std::vector<sf::Text> offersText;
@@ -39,7 +39,7 @@ void Banker::drawOffers(sf::RenderWindow &window) const {
 		offersText.back().setFont(font);
 		offersText.back().setCharacterSize(30);
 		offersText.back().setFillColor(sf::Color::Yellow);
-		offersText.back().setPosition(1050,static_cast<float>(400 + i * 50));
+		offersText.back().setPosition(1050,static_cast<float>(250 + i * 50));
 	}
 
 	for (const sf::Text& txt : offersText)
