@@ -142,17 +142,19 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> handleEvents(<span class="keyword">const</span> std::vector&lt;int&gt;&amp; casesPerRound, <span class="keywordtype">int</span>&amp; eliminatedCases, <span class="keywordtype">bool</span>&amp; offered, <span class="keywordtype">int</span>&amp; lastOffer);</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">void</span> render(<span class="keywordtype">bool</span> offered);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">void</span> randomizeBanker();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>};</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">void</span> renderRemainingAmounts(std::vector&lt;double&gt; amounts, std::map &lt;<span class="keywordtype">double</span>, std::reference_wrapper&lt;Case&gt;&gt;&amp; map);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">void</span> render(<span class="keywordtype">bool</span> offered, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; amounts, std::map &lt;<span class="keywordtype">double</span>, std::reference_wrapper&lt;Case&gt;&gt;&amp; map);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordtype">void</span> randomizeBanker();</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>};</div>
 </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#endif </span><span class="comment">// GAME_HPP</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#endif </span><span class="comment">// GAME_HPP</span></div>
 <div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">Manages the core logic, rendering, and events of the Deal or No Deal game.</div><div class="ttdef"><b>Definition</b> Game.h:15</div></div>
 <div class="ttc" id="aclass_game_html_a3d09cd0b68ef69107d36360ca903e023"><div class="ttname"><a href="class_game.html#a3d09cd0b68ef69107d36360ca903e023">Game::~Game</a></div><div class="ttdeci">~Game()=default</div><div class="ttdoc">Default destructor.</div></div>
-<div class="ttc" id="aclass_game_html_aa333825d0bca80e91e53c7e23f053405"><div class="ttname"><a href="class_game.html#aa333825d0bca80e91e53c7e23f053405">Game::play</a></div><div class="ttdeci">void play()</div><div class="ttdoc">Main loop for running the game.</div><div class="ttdef"><b>Definition</b> Game.cpp:28</div></div>
-<div class="ttc" id="aclass_game_html_ad59df6562a58a614fda24622d3715b65"><div class="ttname"><a href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game::Game</a></div><div class="ttdeci">Game()</div><div class="ttdoc">Constructs a new Game object, initializing all resources and state.</div><div class="ttdef"><b>Definition</b> Game.cpp:3</div></div>
+<div class="ttc" id="aclass_game_html_aa333825d0bca80e91e53c7e23f053405"><div class="ttname"><a href="class_game.html#aa333825d0bca80e91e53c7e23f053405">Game::play</a></div><div class="ttdeci">void play()</div><div class="ttdoc">Main loop for running the game.</div><div class="ttdef"><b>Definition</b> Game.cpp:31</div></div>
+<div class="ttc" id="aclass_game_html_ad59df6562a58a614fda24622d3715b65"><div class="ttname"><a href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game::Game</a></div><div class="ttdeci">Game()</div><div class="ttdoc">Constructs a new Game object, initializing all resources and state.</div><div class="ttdef"><b>Definition</b> Game.cpp:5</div></div>
 <div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdoc">Represents a player in the game, including their username and the selected case.</div><div class="ttdef"><b>Definition</b> Player.h:14</div></div>
 <div class="ttc" id="aclass_settings_html"><div class="ttname"><a href="class_settings.html">Settings</a></div><div class="ttdoc">Handles the game settings such as volume levels and provides a menu interface.</div><div class="ttdef"><b>Definition</b> Settings.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->

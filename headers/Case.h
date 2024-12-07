@@ -120,6 +120,13 @@ public:
      */
     void draw(sf::RenderWindow &window) const ;
 
+    /**
+    * @brief Draws the amount associated with this `Case` object to the screen.
+    *
+    * @param window A reference to the `sf::RenderWindow` object used to render the game.
+    * @param x The x-coordinate where the amount text will be positioned.
+    * @param y The y-coordinate where the amount text will be positioned.
+    */
     void drawAmount(sf::RenderWindow &window, float x, float y) const;
 
     /**

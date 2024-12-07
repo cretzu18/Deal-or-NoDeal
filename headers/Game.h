@@ -89,6 +89,12 @@ private:
      */
     void handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCases, bool& offered, int& lastOffer);
 
+    /**
+    * @brief Renders the remaining amounts on the screen.
+    *
+    * @param amounts A vector of `double` values representing the amounts left in the game.
+    * @param map A map where each key is a `double` value representing an amount, and the value is a reference to a `Case` object.
+    */
     void renderRemainingAmounts(std::vector<double> amounts, std::map <double, std::reference_wrapper<Case>>& map);
 
     /**
@@ -96,8 +102,9 @@ private:
      *
      * @param offered Boolean indicating if an offer has been made.
      * @param amounts Amounts of the cases that can be won
+     * @param map A map where each key is an amount (double) and the value is a reference to a `Case` object.
      */
-    void render(bool offered, std::vector<double> amounts, std::map <double, std::reference_wrapper<Case>>& map);
+    void render(bool offered, const std::vector<double>& amounts, std::map <double, std::reference_wrapper<Case>>& map);
 
     /**
      * @brief Randomly assigns a Banker type to the game.

@@ -133,6 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8c0d95ca15f82e684af7973de3a69cb7" id="r_a8c0d95ca15f82e684af7973de3a69cb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c0d95ca15f82e684af7973de3a69cb7">draw</a> (sf::RenderWindow &amp;window) const</td></tr>
 <tr class="memdesc:a8c0d95ca15f82e684af7973de3a69cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the <a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a> object to the specified window.  <br /></td></tr>
 <tr class="separator:a8c0d95ca15f82e684af7973de3a69cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3d780f556791278e810b01a539ad03a" id="r_aa3d780f556791278e810b01a539ad03a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3d780f556791278e810b01a539ad03a">drawAmount</a> (sf::RenderWindow &amp;window, float x, float y) const</td></tr>
+<tr class="memdesc:aa3d780f556791278e810b01a539ad03a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the amount associated with this <code><a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a></code> object to the screen.  <br /></td></tr>
+<tr class="separator:aa3d780f556791278e810b01a539ad03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43fabebfb36336ea08b33c101b0bb55d" id="r_a43fabebfb36336ea08b33c101b0bb55d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43fabebfb36336ea08b33c101b0bb55d">setPosition</a> (float x, float y)</td></tr>
 <tr class="memdesc:a43fabebfb36336ea08b33c101b0bb55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the position of the case.  <br /></td></tr>
 <tr class="separator:a43fabebfb36336ea08b33c101b0bb55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -257,6 +260,42 @@ Friends</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window</td><td>The SFML render window to draw the case on. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa3d780f556791278e810b01a539ad03a" name="aa3d780f556791278e810b01a539ad03a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3d780f556791278e810b01a539ad03a">&#9670;&#160;</a></span>drawAmount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Case::drawAmount </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws the amount associated with this <code><a class="el" href="class_case.html" title="Represents a case in the Deal or No Deal game.">Case</a></code> object to the screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>A reference to the <code>sf::RenderWindow</code> object used to render the game. </td></tr>
+    <tr><td class="paramname">x</td><td>The x-coordinate where the amount text will be positioned. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate where the amount text will be positioned. </td></tr>
   </table>
   </dd>
 </dl>

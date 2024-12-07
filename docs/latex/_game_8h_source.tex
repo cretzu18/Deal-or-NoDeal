@@ -52,11 +52,13 @@
 \DoxyCodeLine{00081\ }
 \DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ handleEvents(\textcolor{keyword}{const}\ std::vector<int>\&\ casesPerRound,\ \textcolor{keywordtype}{int}\&\ eliminatedCases,\ \textcolor{keywordtype}{bool}\&\ offered,\ \textcolor{keywordtype}{int}\&\ lastOffer);}
 \DoxyCodeLine{00091\ }
-\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ render(\textcolor{keywordtype}{bool}\ offered);}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ randomizeBanker();}
-\DoxyCodeLine{00103\ \};}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAME\_HPP}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ renderRemainingAmounts(std::vector<double>\ amounts,\ std::map\ <\textcolor{keywordtype}{double},\ std::reference\_wrapper<Case>>\&\ map);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ render(\textcolor{keywordtype}{bool}\ offered,\ \textcolor{keyword}{const}\ std::vector<double>\&\ amounts,\ std::map\ <\textcolor{keywordtype}{double},\ std::reference\_wrapper<Case>>\&\ map);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ randomizeBanker();}
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAME\_HPP}}
 
 \end{DoxyCode}

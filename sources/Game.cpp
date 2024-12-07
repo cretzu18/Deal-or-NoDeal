@@ -175,7 +175,7 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
 	}
 }
 
-void Game::render(const bool offered, std::vector<double> amounts, std::map <double, std::reference_wrapper<Case>>& map) {
+void Game::render(const bool offered, const std::vector<double> &amounts, std::map <double, std::reference_wrapper<Case>>& map) {
 	window.clear();
 
 	if (gameState == CASES) {

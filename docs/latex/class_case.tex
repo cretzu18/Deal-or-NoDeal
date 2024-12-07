@@ -35,6 +35,8 @@ void \mbox{\hyperlink{class_case_a2561ff75224b319e0b9ebe64b55c336c}{set\+Positio
 \begin{DoxyCompactList}\small\item\em Sets the position of the amount text relative to the case sprite. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_case_a8c0d95ca15f82e684af7973de3a69cb7}{draw}} (sf\+::\+Render\+Window \&window) const
 \begin{DoxyCompactList}\small\item\em Draws the \doxylink{class_case}{Case} object to the specified window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_case_aa3d780f556791278e810b01a539ad03a}{draw\+Amount}} (sf\+::\+Render\+Window \&window, float x, float y) const
+\begin{DoxyCompactList}\small\item\em Draws the amount associated with this {\ttfamily \doxylink{class_case}{Case}} object to the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_case_a43fabebfb36336ea08b33c101b0bb55d}{set\+Position}} (float x, float y)
 \begin{DoxyCompactList}\small\item\em Sets the position of the case. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_case_ad7cde8510b756969915bd0617e6ce252}{is\+Mouse\+Over}} (const sf\+::\+Render\+Window \&window) const
@@ -118,6 +120,25 @@ This function draws both the case sprite and the amount text to the render windo
 
 \begin{DoxyParams}{Parameters}
 {\em window} & The SFML render window to draw the case on. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_case_aa3d780f556791278e810b01a539ad03a}\index{Case@{Case}!drawAmount@{drawAmount}}
+\index{drawAmount@{drawAmount}!Case@{Case}}
+\doxysubsubsection{\texorpdfstring{drawAmount()}{drawAmount()}}
+{\footnotesize\ttfamily \label{class_case_aa3d780f556791278e810b01a539ad03a} 
+void Case\+::draw\+Amount (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{, }\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption}) const}
+
+
+
+Draws the amount associated with this {\ttfamily \doxylink{class_case}{Case}} object to the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & A reference to the {\ttfamily sf\+::\+Render\+Window} object used to render the game. \\
+\hline
+{\em x} & The x-\/coordinate where the amount text will be positioned. \\
+\hline
+{\em y} & The y-\/coordinate where the amount text will be positioned. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_case_ae22762b7ddcd724334b32f54cff9ec59}\index{Case@{Case}!eliminateCase@{eliminateCase}}
