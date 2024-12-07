@@ -89,22 +89,20 @@ private:
      */
     void handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCases, bool& offered, int& lastOffer);
 
-    void renderRemainingValues(std::vector<double> vector);
+    void renderRemainingAmounts(std::vector<double> amounts, std::map <double, std::reference_wrapper<Case>>& map);
 
     /**
      * @brief Renders the game elements.
      *
      * @param offered Boolean indicating if an offer has been made.
-     * @param amounts Amounts of the cases that can be won 
+     * @param amounts Amounts of the cases that can be won
      */
-    void render(bool offered, const std::vector<double>& amounts);
+    void render(bool offered, std::vector<double> amounts, std::map <double, std::reference_wrapper<Case>>& map);
 
     /**
      * @brief Randomly assigns a Banker type to the game.
      */
     void randomizeBanker();
-
-    void renderRemainingValues();
 };
 
 #endif // GAME_HPP

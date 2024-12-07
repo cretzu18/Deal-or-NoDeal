@@ -1,8 +1,10 @@
 #include "../headers/Game.h"
 
+#include <map>
+
 Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Titlebar | sf::Style::Close)
-	, round (0)
-	, gameState(MENU)
+               , round (0)
+               , gameState(MENU)
 {
 	createButtons();
 	randomizeBanker();
@@ -36,21 +38,27 @@ void Game::play() {
 	bool offered = false;
 	int lastOffer = 0;
 	bool create = false;
+	std::map <double, std::reference_wrapper<Case>> map;
 
 	while (window.isOpen()) {
-		if (round == 0)
+		if (round == 0) {
+			map.clear();
 			create = false;
+		}
 
 		if (round == 1 && !create) {
 			create = true;
 			createCases(amounts);
+			for (Case& c : cases) {
+				map.insert({c.getAmount(), std::ref(c)});
+			}
 			randomizeBanker();
 			eliminatedCases = 0;
 			offered = false;
 			lastOffer = 0;
 		}
 		handleEvents(casesPerRound, eliminatedCases, offered, lastOffer);
-		render(offered, amounts);
+		render(offered, amounts, map);
 	}
 
 	menuMusic.stop();
@@ -167,7 +175,7 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
 	}
 }
 
-void Game::render(const bool offered, const std::vector<double>& amounts) {
+void Game::render(const bool offered, std::vector<double> amounts, std::map <double, std::reference_wrapper<Case>>& map) {
 	window.clear();
 
 	if (gameState == CASES) {
@@ -189,7 +197,7 @@ void Game::render(const bool offered, const std::vector<double>& amounts) {
 			c.draw(window);
 		}
 		window.draw(gameText);
-		renderRemainingValues(amounts);
+		renderRemainingAmounts(amounts, map);
 		banker->drawOffers(window);
 		if (offered == true)
 			banker->draw(window);
@@ -274,12 +282,16 @@ void Game::randomizeBanker() {
 	banker = allBankers[RandomUtil::getRandomInt(0, static_cast<int>(allBankers.size()) - 1)]();
 }
 
-void Game::renderRemainingValues(std::vector<double> amounts) {
-	std::map <double, Case> m;
-	for (const Case& c : cases)
-		m[c.getAmount()] = c;
+void Game::renderRemainingAmounts(std::vector<double> amounts, std::map <double, std::reference_wrapper<Case>>& map) {
+	sf::RectangleShape box;
+	box.setFillColor(sf::Color::Black);
+	box.setSize(sf::Vector2f(150, 650));
+	box.setPosition(sf::Vector2f(1400, 200));
+	window.draw(box);
 
-    std::ranges::stable_sort(amounts, std::greater<double>());
-	for (unsigned long i = 0; i < amounts.size(); ++i)
-		m[amounts[i]].drawAmount(window, 1400, static_cast<float>(200 + i * 25));
+	std::ranges::sort(amounts);
+	for (size_t i = 0; i < amounts.size(); ++i) {
+		if (auto it = map.find(amounts[i]); it != map.end())
+			it->second.get().drawAmount(window, 1400, static_cast<float>(200 + i * 25));
+	}
 }

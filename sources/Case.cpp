@@ -74,13 +74,17 @@ void Case::draw(sf::RenderWindow &window) const {
 }
 
 void Case::drawAmount(sf::RenderWindow &window, const float x, const float y) const {
-	if (!isEliminated()) {
-		sf::Text textAmount = text;
-		textAmount.setCharacterSize(30);
+	sf::Text textAmount = text;
+	textAmount.setFont(font);
+	textAmount.setCharacterSize(30);
+	if (isEliminated()) {
 		textAmount.setFillColor(sf::Color::Red);
-		textAmount.setPosition(x, y);
-		window.draw(textAmount);
 	}
+	else {
+		textAmount.setFillColor(sf::Color::Green);
+	}
+	textAmount.setPosition(x, y);
+	window.draw(textAmount);
 }
 
 void Case::setPosition(const float x, const float y) {

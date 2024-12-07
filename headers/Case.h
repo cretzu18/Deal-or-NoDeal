@@ -118,7 +118,7 @@ public:
      *
      * @param window The SFML render window to draw the case on.
      */
-    void draw(sf::RenderWindow &window) const;
+    void draw(sf::RenderWindow &window) const ;
 
     void drawAmount(sf::RenderWindow &window, float x, float y) const;
 
@@ -160,8 +160,6 @@ public:
      * @return The amount of money in the case.
      */
     [[nodiscard]] double getAmount() const;
-
-    void drawAmount(const sf::RenderWindow & window);
 };
 
 #endif // CASE_HPP
