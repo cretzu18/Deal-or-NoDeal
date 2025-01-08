@@ -18,7 +18,7 @@
  * It provides methods to draw the settings menu, update the settings based on user input, and access the
  * volume levels for the menu and the game.
  */
-class Settings: public Singleton<Settings> {
+class Settings final : public Singleton<Settings> {
   std::shared_ptr<Button> backButton; ///< Button to go back to the main menu
   VolumeSlider menuSlider; ///< Slider to adjust the menu volume
   VolumeSlider gameSlider; ///< Slider to adjust the game volume

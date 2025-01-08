@@ -77,7 +77,7 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
 		if (gameState == MENU) {
 			playMenuMusic();
 			for (const auto & button : menuButtons) {
-				if (!std::dynamic_pointer_cast<BackButton>(button) && button->isClicked(window)) {
+				if (!std::dynamic_pointer_cast<BackCommand>(button->getCommand()) && button->isClicked(window)) {
 					button->action(window, gameState, round);
 					break;
 				}
@@ -168,7 +168,7 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
 
 		if (gameState == GAME_OVER) {
 			for (const auto & button : menuButtons) {
-				if (std::dynamic_pointer_cast<BackButton>(button) && button->isClicked(window)) {
+				if (std::dynamic_pointer_cast<BackCommand>(button->getCommand()) && button->isClicked(window)) {
 					button->action(window, gameState, round);
 					break;
 				}
@@ -191,7 +191,7 @@ void Game::render(const bool offered, const std::vector<double> &amounts, std::m
 
 	if (gameState == MENU) {
 		for (const auto & button : menuButtons)
-			if (!std::dynamic_pointer_cast<BackButton>(button))
+			if (!std::dynamic_pointer_cast<BackCommand>(button->getCommand()))
 				button->draw(window);
 	}
 	else if (gameState == CASES) {
@@ -212,7 +212,7 @@ void Game::render(const bool offered, const std::vector<double> &amounts, std::m
 			c.draw(window);
 		}
 		for (const auto & button : menuButtons)
-			if (std::dynamic_pointer_cast<BackButton>(button))
+			if (std::dynamic_pointer_cast<BackCommand>(button->getCommand()))
 				button->draw(window);
 		window.draw(gameText);
 	}
@@ -266,10 +266,14 @@ void Game::createCases(std::vector<double> amounts) {
 }
 
 void Game::createButtons() {
-	menuButtons.push_back(std::make_shared<PlayButton>("PLAY", 50, 840, 300, 50));
-	menuButtons.push_back(std::make_shared<SettingsButton>("SETTINGS", 650, 840, 300, 50));
-	menuButtons.push_back(std::make_shared<ExitButton>("EXIT", 1250, 840, 300, 50));
-	menuButtons.push_back(std::make_shared<BackButton>("BACK", 1250, 750, 300, 100));
+	menuButtons.push_back(std::make_shared<Button>("PLAY", 50, 840, 300, 50));
+	menuButtons.back()->setCommand(std::make_unique<PlayCommand>());
+	menuButtons.push_back(std::make_shared<Button>("SETTINGS", 650, 840, 300, 50));
+	menuButtons.back()->setCommand(std::make_unique<SettingsCommand>());
+	menuButtons.push_back(std::make_shared<Button>("EXIT", 1250, 840, 300, 50));
+	menuButtons.back()->setCommand(std::make_unique<ExitCommand>());
+	menuButtons.push_back(std::make_shared<Button>("BACK", 1250, 750, 300, 100));
+	menuButtons.back()->setCommand(std::make_unique<BackCommand>());
 }
 
 void Game::randomizeBanker() {

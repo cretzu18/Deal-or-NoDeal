@@ -1,10 +1,11 @@
 #include "../headers/Settings.h"
 
 Settings::Settings()
-	: backButton (std::make_shared<ExitButton>("BACK", 50, 50, 300, 100))
+	: backButton (std::make_shared<Button>("Back", 50, 50, 300, 100))
 	, menuSlider(VolumeSlider(100, 200))
 	, gameSlider(VolumeSlider(100, 300))
 {
+	backButton->setCommand(std::make_shared<BackCommand>());
 }
 
 void Settings::draw(sf::RenderWindow& window) const {

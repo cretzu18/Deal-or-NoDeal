@@ -13,7 +13,7 @@
  * @class Game
  * @brief Manages the core logic, rendering, and events of the Deal or No Deal game.
  */
-class Game : public Singleton<Game> {
+class Game final : public Singleton<Game> {
 private:
     sf::RenderWindow window; ///< The main game window.
     sf::Texture backgroundTexture; ///< Texture for the game background.
