@@ -26,6 +26,8 @@ Game::Game() : window(sf::VideoMode(1600, 900), "Deal or No Deal", sf::Style::Ti
 	gameText.setCharacterSize(30);
 	gameText.setFillColor(sf::Color::Red);
 	gameText.setPosition(1050, 50);
+
+	settings = Settings::getInstance();
 }
 
 void Game::play() {
@@ -83,9 +85,9 @@ void Game::handleEvents(const std::vector<int>& casesPerRound, int& eliminatedCa
 		}
 
 		if(gameState == SETTINGS) {
-			settings.update(window, event, gameState);
-			menuMusic.setVolume(settings.getMenuVolumeLevel());
-			gameMusic.setVolume(settings.getGameVolumeLevel());
+			settings->update(window, event, gameState);
+			menuMusic.setVolume(settings->getMenuVolumeLevel());
+			gameMusic.setVolume(settings->getGameVolumeLevel());
 		}
 
 		if (gameState == CASES) {
@@ -203,7 +205,7 @@ void Game::render(const bool offered, const std::vector<double> &amounts, std::m
 			banker->draw(window);
 	}
 	else if (gameState == SETTINGS) {
-		settings.draw(window);
+		settings->draw(window);
 	}
 	else if (gameState == GAME_OVER) {
 		for (const Case& c : cases) {

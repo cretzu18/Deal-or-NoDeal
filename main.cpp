@@ -1,9 +1,10 @@
 #include "headers/Game.h"
+#include "headers/Singleton.h"
 
 int main() {
     try {
-        Game game;
-        game.play();
+        Game* game = Game::getInstance();
+        game->play();
     } catch (const FontError& e) {
         std::cerr << e.what() << std::endl;
         exit(1);

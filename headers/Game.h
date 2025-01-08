@@ -7,12 +7,13 @@
 #include "Player.h"
 #include "Banker.h"
 #include "Settings.h"
+#include "Singleton.h"
 
 /**
  * @class Game
  * @brief Manages the core logic, rendering, and events of the Deal or No Deal game.
  */
-class Game {
+class Game : public Singleton<Game> {
 private:
     sf::RenderWindow window; ///< The main game window.
     sf::Texture backgroundTexture; ///< Texture for the game background.
@@ -21,7 +22,7 @@ private:
     sf::Font font; ///< Font used for game text.
     sf::Music menuMusic; ///< Music played in the menu.
     sf::Music gameMusic; ///< Music played during gameplay.
-    Settings settings; ///< Manages game settings like volume and preferences.
+    Settings* settings; ///< Manages game settings like volume and preferences.
 
     Player player; ///< Represents the player's state and actions.
     std::unique_ptr<Banker> banker; ///< Banker for calculating offers.
@@ -29,22 +30,21 @@ private:
     std::vector<std::shared_ptr<Button>> menuButtons; ///< Buttons in the main menu.
     int round; ///< Current game round.
     GameState gameState; ///< Current state of the game (menu, gameplay, etc.).
+    friend class Singleton<Game>;
 
 public:
-    /**
-     * @brief Constructs a new Game object, initializing all resources and state.
-     */
-    Game();
-
-    /**
-     * @brief Default destructor.
-     */
-    ~Game() = default;
-
     /**
      * @brief Main loop for running the game.
      */
     void play();
+
+    static Game* getInstance() { return Singleton::getInstance(); }
+
+protected:
+    /**
+     * @brief Constructs a new Game object, initializing all resources and state.
+     */
+    Game();
 
 private:
     /**

@@ -7,6 +7,7 @@
 #include "VolumeSlider.h"
 #include "Errors.h"
 #include <memory>
+#include "Singleton.h"
 
 
 /**
@@ -17,26 +18,14 @@
  * It provides methods to draw the settings menu, update the settings based on user input, and access the
  * volume levels for the menu and the game.
  */
-class Settings {
+class Settings: public Singleton<Settings> {
   std::shared_ptr<Button> backButton; ///< Button to go back to the main menu
   VolumeSlider menuSlider; ///< Slider to adjust the menu volume
   VolumeSlider gameSlider; ///< Slider to adjust the game volume
+  friend Singleton<Settings>;
 
 public:
-  /**
-   * @brief Constructs a Settings object and initializes the sliders and back button.
-   *
-   * The constructor sets up the back button and volume sliders for both the menu and the game.
-   */
-  Settings();
-
-  /**
-   * @brief Destructor for the Settings class.
-   *
-   * Cleans up any resources used by the `Settings` class (e.g., buttons, sliders).
-   */
-  ~Settings() = default;
-
+  static Settings* getInstance() { return Singleton::getInstance(); }
   /**
    * @brief Gets the current menu volume level.
    *
@@ -76,6 +65,14 @@ public:
    * @param gameState The current state of the game, which may be modified by the settings.
    */
   void update(const sf::RenderWindow& window, const sf::Event& event, GameState& gameState);
+
+protected:
+   /**
+    * @brief Constructs a Settings object and initializes the sliders and back button.
+    *
+    * The constructor sets up the back button and volume sliders for both the menu and the game.
+    */
+   Settings();
 };
 
 #endif //SETTINGS_H

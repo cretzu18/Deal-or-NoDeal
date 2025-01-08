@@ -71,6 +71,7 @@ add_executable(${PROJECT_NAME}
         env_fixes.h
         headers/Errors.h
         sources/Errors.cpp
+        headers/Singleton.h
 )
 
 include(cmake/CompilerFlags.cmake)
