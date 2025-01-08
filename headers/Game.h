@@ -30,15 +30,13 @@ private:
     std::vector<std::shared_ptr<Button>> menuButtons; ///< Buttons in the main menu.
     int round; ///< Current game round.
     GameState gameState; ///< Current state of the game (menu, gameplay, etc.).
-    friend class Singleton<Game>;
+    friend class Singleton;
 
 public:
     /**
      * @brief Main loop for running the game.
      */
     void play();
-
-    static Game* getInstance() { return Singleton::getInstance(); }
 
 protected:
     /**

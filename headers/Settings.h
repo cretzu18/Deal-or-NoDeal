@@ -22,10 +22,9 @@ class Settings: public Singleton<Settings> {
   std::shared_ptr<Button> backButton; ///< Button to go back to the main menu
   VolumeSlider menuSlider; ///< Slider to adjust the menu volume
   VolumeSlider gameSlider; ///< Slider to adjust the game volume
-  friend Singleton<Settings>;
+  friend Singleton;
 
 public:
-  static Settings* getInstance() { return Singleton::getInstance(); }
   /**
    * @brief Gets the current menu volume level.
    *

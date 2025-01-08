@@ -273,7 +273,7 @@ void Game::createButtons() {
 }
 
 void Game::randomizeBanker() {
-	const std::vector<std::function<std::unique_ptr<Banker>()>> allBankers = {
+	const std::vector<std::function<std::unique_ptr<Banker>()>> bankerFactory = {
 		[]() { return std::make_unique<GenerousBanker>(); },
 		[]() { return std::make_unique<GreedyBanker>(); },
 		[]() { return std::make_unique<LuckyBanker>(); },
@@ -281,7 +281,7 @@ void Game::randomizeBanker() {
 		[]() { return std::make_unique<HelperBanker>(); }
 	};
 
-	banker = allBankers[RandomUtil::getRandomInt(0, static_cast<int>(allBankers.size()) - 1)]();
+	banker = bankerFactory[RandomUtil::getRandomInt(0, static_cast<int>(bankerFactory.size()) - 1)]();
 }
 
 void Game::renderRemainingAmounts(std::vector<double> amounts, std::map <double, std::reference_wrapper<Case>>& map) {
