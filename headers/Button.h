@@ -18,46 +18,100 @@ enum GameState {
 };
 
 
+/**
+ * @brief Abstract base class for game commands.
+ */
 class Command {
 public:
-	virtual ~Command() = default;
-	virtual void execute(sf::RenderWindow& window, GameState& gameState, int& round) = 0;
+    /**
+     * @brief Virtual destructor for the Command class.
+     */
+    virtual ~Command() = default;
+
+    /**
+     * @brief Executes the command.
+     *
+     * @param window The SFML render window.
+     * @param gameState The current state of the game.
+     * @param round The current round of the game.
+     */
+    virtual void execute(sf::RenderWindow& window, GameState& gameState, int& round) = 0;
 };
 
+/**
+ * @brief Command that starts the game and transitions to the case selection state.
+ */
 class PlayCommand final : public Command {
 public:
-	void execute(sf::RenderWindow& window, GameState& gameState, int& round) override {
-		window.clear();
-		gameState = CASES;
-		round = 1;
-	}
+    /**
+     * @brief Executes the play command, starting the game.
+     *
+     * @param window The SFML render window.
+     * @param gameState The current state of the game.
+     * @param round The current round of the game.
+     */
+    void execute(sf::RenderWindow& window, GameState& gameState, int& round) override {
+        window.clear();
+        gameState = CASES;
+        round = 1;
+    }
 };
 
+/**
+ * @brief Command that closes the game and returns to the menu state.
+ */
 class ExitCommand final : public Command {
 public:
-	void execute(sf::RenderWindow& window, GameState& gameState, int& round) override {
-		window.close();
-		gameState = MENU;
-		round = 0;
-	}
+    /**
+     * @brief Executes the exit command, closing the game.
+     *
+     * @param window The SFML render window.
+     * @param gameState The current state of the game.
+     * @param round The current round of the game.
+     */
+    void execute(sf::RenderWindow& window, GameState& gameState, int& round) override {
+        window.close();
+        gameState = MENU;
+        round = 0;
+    }
 };
 
+/**
+ * @brief Command that takes the game to the settings state.
+ */
 class SettingsCommand final : public Command {
 public:
-	void execute(sf::RenderWindow& window, GameState& gameState, int& round) override {
-		window.clear();
-		gameState = SETTINGS;
-		round = 0;
-	}
+    /**
+     * @brief Executes the settings command, transitioning to the settings menu.
+     *
+     * @param window The SFML render window.
+     * @param gameState The current state of the game.
+     * @param round The current round of the game.
+     */
+    void execute(sf::RenderWindow& window, GameState& gameState, int& round) override {
+        window.clear();
+        gameState = SETTINGS;
+        round = 0;
+    }
 };
 
+/**
+ * @brief Command that takes the game back to the menu state.
+ */
 class BackCommand final : public Command {
 public:
-	void execute(sf::RenderWindow& window, GameState& gameState, int& round) override {
-		window.clear();
-		gameState = MENU;
-		round = 0;
-	}
+    /**
+     * @brief Executes the back command, returning to the main menu.
+     *
+     * @param window The SFML render window.
+     * @param gameState The current state of the game.
+     * @param round The current round of the game.
+     */
+    void execute(sf::RenderWindow& window, GameState& gameState, int& round) override {
+        window.clear();
+        gameState = MENU;
+        round = 0;
+    }
 };
 
 
